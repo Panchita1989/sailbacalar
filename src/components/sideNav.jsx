@@ -28,7 +28,7 @@ const SideNav = ({visible, onClose}) => {
                 })}
                     <li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Book Now</li>
                 </ul> 
-                <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Pucté. All rights reserved.</span>           
+                <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Franciska Landwehr. All rights reserved.</span>           
         </div>
     )
 }
