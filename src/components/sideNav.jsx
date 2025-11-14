@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SideNav = ({visible, onClose}) => {
-    const navMenu = ['Our Tours', 'Location', 'Contact']
+    const navMenu = ['Tours', 'Location', 'Contact']
     return(
         <div
             className={`z-20 flex flex-col justify-between z-10 rounded-xl fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
