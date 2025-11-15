@@ -10,10 +10,19 @@ import Tours from './components/tours.jsx'
 function App() {
 
   const {pathname} = useLocation()
+  const location = useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(()=>{
+    if(location.pathname === '/'){
+      document.body.style.backgroundColor = "#0f1212ff"
+    }else{
+      document.body.style.backgroundColor = "#d4d4d4"
+    }
+  }, [location.pathname])
 
   return(
     <>

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 export default function Footer() {
     return(
-        <section className='text-neutral-300 my-5 flex md:flex-row gap-5 items-center justify-center md:justify-around rounded'>
+        <section className='text-neutral-800 my-5 flex md:flex-row gap-5 items-center justify-center md:justify-around rounded'>
             <section className='hidden md:block text-center'>
                 <h2>LOCATION</h2>
                 <p>Carretera Federal 307 KM 23 <br /> Bacalar, Quintana Roo, México</p>
