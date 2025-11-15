@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 export default function Footer() {
     return(
-        <section className='text-neutral-800 my-5 flex md:flex-row gap-5 items-center justify-center md:justify-around rounded'>
+        <footer className='text-neutral-800 flex md:flex-row gap-5 items-center justify-center md:justify-around '>
             <section className='hidden md:block text-center'>
                 <h2>LOCATION</h2>
                 <p>Carretera Federal 307 KM 23 <br /> Bacalar, Quintana Roo, México</p>
@@ -21,6 +21,7 @@ export default function Footer() {
             <section className='text-center md:hidden'>
                 <a href='https://www.instagram.com/pucte_bacalar/' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faWhatsapp} /></a>
             </section>
-        </section>
+        </footer>
     )
 }
+
