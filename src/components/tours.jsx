@@ -1,13 +1,42 @@
 import Card from './card.jsx'
 import Footer from './footer.jsx'
+import Button from './button.jsx'
+import {useCollapse} from 'react-collapsed';
+import {fotoList} from '../data/gallery.js'
 
-export default function Tours(params) {
+
+export default function Tours() {
+
+    const{
+        getCollapseProps: getCollapsePrivat, 
+        getToggleProps: getTogglePrivat, 
+        isExpanded: isPrivatExpanded
+    } = useCollapse()
+
+    const{
+        getCollapseProps: getCollapseCollect, 
+        getToggleProps: getToggleCollect, 
+        isExpanded: isCollectExpanded
+    } = useCollapse()
+
     return(
         <>
-        <main className='mx-10 py-5 text-center text-neutral-300 '>
+        <main className='mx-10 py-5 text-center bg-neutral-300 '>
             <h1 className='h1'>TOURS</h1>
             <section className='lg:flex lg:gap-4'>
             <Card img='./images/privat.jpg' alt='privat boat tour' title='Private Tour'>
+            {isPrivatExpanded ? '' : (
+                <div className="flex justify-center">
+                    <button 
+                        className=" mt-2 mb-4 leading-none "
+                        {...getTogglePrivat()}
+                    >
+                       Show More ▼
+                    </button>
+                </div>
+
+            )}
+             <section {...getCollapsePrivat()}>
                 <p className='xl:px-30 '>
                     Set sail on a private adventure in the breathtaking Bacalar Lagoon with our 34-foot catamaran.
                     Whether you're celebrating a special occasion, enjoying time with family, or creating unforgettable moments with friends, 
@@ -15,8 +44,31 @@ export default function Tours(params) {
                     in snacks and drinks onboard. For an extra touch, upgrade to our premium food and beverage package. Discover Bacalar from 
                     a whole new perspective with a fully customizable experience.
                 </p>
+            </section>
+            {!isPrivatExpanded ? '' : (
+                <div className="flex justify-center">
+                    <button 
+                        className="mt-2 mb-4 leading-none "
+                        {...getTogglePrivat()}
+                    >
+                        Show Less ▲
+                    </button>
+                </div>
+
+            )}
             </Card>
             <Card img='./images/collective.jpg' alt='boat tour' title='Collective Tour'>
+                {isCollectExpanded ? '' : (
+                    <div className="flex justify-center">
+                        <button 
+                            className=" mt-2 mb-4 leading-none "
+                            {...getToggleCollect()}
+                        >
+                            Show More ▼
+                        </button>
+                    </div>
+                )}
+            <section {...getCollapseCollect()}>
                 <p className='xl:px-30 '>
                     Join us on an unforgettable group adventure aboard our 30-foot sailing catamaran 
                     and discover the stunning Bacalar Lagoon. Sail through the magical turquoise 
@@ -26,15 +78,33 @@ export default function Tours(params) {
                     perfect for solo travelers, couples, and small groups seeking an affordable yet 
                     unique way to explore the wonders of Bacalar. 
                 </p>
+            </section>
+            {!isCollectExpanded ? '' : (
+                <div className="flex justify-center">
+                    <button 
+                        className="mt-2 mb-4 leading-none "
+                        {...getToggleCollect()}
+                    >
+                        Show Less ▲
+                    </button>
+                </div>
+            )}
             </Card>
             </section>
-            <section className='sail flex flex-col gap-2 items-center justify-center rounded xl:flex-row'>
+            <section className='sail flex flex-col text-neutral-300 font-black md:font-normal gap-2 items-center justify-center rounded xl:flex-row'>
                 <h2 className='xl:text-8xl xl:w-1/2'>Sail With Us</h2>
                 <p className='xl:text-xl xl:w-1/2 xl:px-5'>Escape to paradise with our private 34-foot catamaran tour on Bacalar Lagoon.
                     Whether you're marking a special occasion or 
                     just spending quality time with loved ones, this exclusive sailing experience offers tranquility, adventure, 
                     and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
-            </section>            
+            </section>
+            <section className='flex justify-center'>
+                
+                <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>
+               
+            </section>     
+            
+                      
         </main>
         <Footer/>
         </>        
