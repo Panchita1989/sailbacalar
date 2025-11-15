@@ -20,8 +20,8 @@ export default function Tours() {
     } = useCollapse()
 
     return(
-        <>
-        <main className='mx-10 py-5 text-center bg-neutral-300 '>
+        
+        <main className='m-10  text-center bg-neutral-300 '>
             <h1 className='h1'>TOURS</h1>
             <section className='lg:flex lg:gap-4'>
             <Card img='./images/privat.jpg' alt='privat boat tour' title='Private Tour'>
@@ -100,11 +100,9 @@ export default function Tours() {
             </section>
             <section className='flex justify-center'>                
                 <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>               
-            </section>     
-            
-                      
-        </main>
-        <Footer/>
-        </>        
+            </section>         
+            <Footer/>         
+        </main>    
     )
+    
 }
