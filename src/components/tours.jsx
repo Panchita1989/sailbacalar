@@ -98,10 +98,8 @@ export default function Tours() {
                     just spending quality time with loved ones, this exclusive sailing experience offers tranquility, adventure, 
                     and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
             </section>
-            <section className='flex justify-center'>
-                
-                <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>
-               
+            <section className='flex justify-center'>                
+                <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>               
             </section>     
             
                       
