@@ -9,6 +9,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   color: #262626;
+  font-family: 'Oswald';
 }
 
 body {
@@ -148,14 +149,16 @@ body.home .footer {
   to { opacity: 1; pointer-events: auto; }
 }
 
-.h1{
-  font-size: 2em;
-}
 .sail{
   margin-top: 10px;
-  background-image: url('/images/laguna.png');
+  background-image: url('/images/gallery/pakalito.jpg');
   background-size: cover;
-  background-position: bottom;
+  background-position: 10% 35%;;
   background-repeat: no-repeat;
   height: 200px;
 }
+.title{
+  font-size: 2em;
+}
+
+
