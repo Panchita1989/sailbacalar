@@ -22,7 +22,7 @@ export default function Tours() {
     return(
         
         <main className='m-10  text-center bg-neutral-300 '>
-            <h1 className='h1'>TOURS</h1>
+            <h1 className='title'>TOURS</h1>
             <section className='lg:flex lg:gap-4'>
             <Card img='./images/privat.jpg' alt='privat boat tour' title='Private Tour'>
             {isPrivatExpanded ? '' : (
@@ -91,12 +91,13 @@ export default function Tours() {
             )}
             </Card>
             </section>
-            <section className='sail flex flex-col text-neutral-300 font-black md:font-normal gap-2 items-center justify-center rounded xl:flex-row'>
+            <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-start md:justify-center rounded xl:flex-row'>
                 <h2 className='xl:text-8xl xl:w-1/2'>Sail With Us</h2>
-                <p className='xl:text-xl xl:w-1/2 xl:px-5'>Escape to paradise with our private 34-foot catamaran tour on Bacalar Lagoon.
-                    Whether you're marking a special occasion or 
-                    just spending quality time with loved ones, this exclusive sailing experience offers tranquility, adventure, 
+                <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl xl:px-5">
+                <p className=''>Escape to paradise with our private 34-foot catamaran tour on Bacalar Lagoon.
+                    Whether you're marking a special occasion or just spending quality time with loved ones.</p> <p className='hidden md:block'>This exclusive sailing experience offers tranquility, adventure, 
                     and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
+                </div>
             </section>
             <section className='flex justify-center'>                
                 <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>               

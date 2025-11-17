@@ -9,7 +9,7 @@ export default function ScrollToButton({handleShowMore}){
 
 
     return(
-        <section className='info content-animate  text-2xl text-center '>
+        <section className='info content-animate  md:text-2xl text-gr text-center '>
             <p>Sail with us</p>
             <Button 
                 content={<FontAwesomeIcon icon={faArrowDown} /> }
