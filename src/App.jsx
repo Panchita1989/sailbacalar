@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Banner from './components/banner.jsx'
 import Header from './components/header.jsx'
 import Tours from './components/tours.jsx'
+import Location from './components/location.jsx'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Routes >
         <Route path='/' element={<Banner/>} />
         <Route path='/tours' element={<Tours />} />
+        <Route path='/location' element={<Location />} />
       </Routes>
     </>
     
