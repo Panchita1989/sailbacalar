@@ -1,8 +1,10 @@
 import Card from './card.jsx'
 import Footer from './footer.jsx'
 import Button from './button.jsx'
+import Reviews from './reviews.jsx'
 import {useCollapse} from 'react-collapsed';
 import {fotoList} from '../data/gallery.js'
+
 
 
 export default function Tours() {
@@ -20,7 +22,7 @@ export default function Tours() {
     } = useCollapse()
 
     return(
-        
+        <>
         <main className='m-10  text-center bg-neutral-300 '>
             <h1 className='title'>TOURS</h1>
             <section className='lg:flex lg:gap-4'>
@@ -101,9 +103,11 @@ export default function Tours() {
             </section>
             <section className='flex justify-center'>                
                 <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false}/>               
-            </section>         
-            <Footer/>         
-        </main>    
+            </section>           
+        </main>  
+        <Reviews /> 
+        <Footer/>      
+        </>  
     )
     
 }
