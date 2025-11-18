@@ -26,8 +26,8 @@ const SideNav = ({visible, onClose}) => {
                                 </Link>
                     </li>
                 })}
-                    <li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Instagram</li>
-                    <li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Book Now</li>
+                    <a href='https://www.instagram.com/sail.bacalar/' target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Instagram</li></a>
+                    <a href="https://wa.me/9831551313" target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Book Now</li></a>
                 </ul> 
                 <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Franciska Landwehr. All rights reserved.</span>           
         </div>
