@@ -8,11 +8,11 @@ export default function Footer() {
         <footer className='text-neutral-800 flex md:flex-row gap-5 items-center justify-center md:justify-around '>
             <section className='hidden md:block text-center'>
                 <h2>LOCATION</h2>
-                <p>Carretera Federal 307 KM 23 <br /> Bacalar, Quintana Roo, México</p>
+                <p>Carretera Federal 307 KM 22.5 <br /> Bacalar, Quintana Roo, México</p>
             </section>
             <section className='hidden md:block text-center'>
                 <h2>CONTACT</h2>
-                <p>info@pucte.com <br /> (+52) 983 752 96 59</p>
+                <p>sail.bacalar@gmail.com<br /> (+52) 983 155 13 13</p>
             </section>
             <section className='text-center' >
                 <h2 className='hidden md:block'>FOLLOW</h2>

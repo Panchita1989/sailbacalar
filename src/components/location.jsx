@@ -1,10 +1,12 @@
 import Card from './card.jsx'
+import Footer from './footer.jsx'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Location(){
     return(
-        <section className='flex justify-center bg-neutral-300 '>
+        <>
+        <section className='flex flex-col items-center bg-neutral-300 '>
         <Card 
             title='Location' 
             titleAboveImage 
@@ -28,5 +30,7 @@ export default function Location(){
             </p>
         </Card>
         </section>
+      
+        </>
     )
 }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SideNav = ({visible, onClose}) => {
-    const navMenu = ['Tours', 'Location', 'Contact']
+    const navMenu = ['Tours', 'Location']
     return(
         <div
             className={`z-20 flex flex-col justify-between z-10 rounded-xl fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
@@ -26,6 +26,7 @@ const SideNav = ({visible, onClose}) => {
                                 </Link>
                     </li>
                 })}
+                    <li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Instagram</li>
                     <li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Book Now</li>
                 </ul> 
                 <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Franciska Landwehr. All rights reserved.</span>           
