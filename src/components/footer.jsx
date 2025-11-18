@@ -12,14 +12,14 @@ export default function Footer() {
             </section>
             <section className='hidden md:block text-center'>
                 <h2>CONTACT</h2>
-                <p>sail.bacalar@gmail.com<br /> (+52) 983 155 13 13</p>
+                <p>sail.bacalar@gmail.com<br /><a href="https://wa.me/9831551313"> (+52) 983 155 13 13</a></p>
             </section>
             <section className='text-center' >
                 <h2 className='hidden md:block'>FOLLOW</h2>
-                <a href='https://www.instagram.com/pucte_bacalar/' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faInstagram} /></a>
+                <a href='https://www.instagram.com/sail.bacalar/' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faInstagram} /></a>
             </section>
             <section className='text-center md:hidden'>
-                <a href='https://www.instagram.com/pucte_bacalar/' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faWhatsapp} /></a>
+                <a href='https://wa.me/9831551313' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faWhatsapp} /></a>
             </section>
         </footer>
     )
