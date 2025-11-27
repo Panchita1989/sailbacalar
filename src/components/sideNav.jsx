@@ -4,8 +4,8 @@ const SideNav = ({visible, onClose}) => {
     const navMenu = ['Tours', 'Location']
     return(
         <div
-            className={`fixed top-0 right-0 h-full rounded-xl md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
-                visible ? "translate-x-0 z-50 pointer-events-auto" : "translate-x-full z-0 pointer-events-none"
+            className={`flex flex-col justify-between z-10 rounded-xl fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
+                visible ? "translate-x-0" : "translate-x-full"
                 }`}
         >
                 <button
