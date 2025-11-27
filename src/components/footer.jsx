@@ -10,19 +10,18 @@ export default function Footer() {
                 <h2>LOCATION</h2>
                 <p>Carretera Federal 307 KM 22.5 <br /> Bacalar, Quintana Roo, México</p>
             </section>
-            <section className='hidden md:block text-center'>
+            <section className='block text-center'>
                 <h2>CONTACT</h2>
-                <p>sail.bacalar@gmail.com<br /><a href="https://wa.me/9831551313"> (+52) 983 155 13 13</a></p>
+                <p className='hidden md:block'>sail.bacalar@gmail.com</p>
+                <a className='block md:hidden' href="https://wa.me/9831551313"> <FontAwesomeIcon className='block md:hidden mt-1 text-lg' icon={faWhatsapp} /></a>
+                <a className='hidden md:block' href="https://wa.me/9831551313"> (+52) 983 155 13 13</a>
             </section>
             <a href='https://www.instagram.com/sail.bacalar/' target='blank'>
             <section className='text-center' >
-                <h2 className='hidden md:block'>FOLLOW</h2>
+                <h2 className=''>FOLLOW</h2>
                 <FontAwesomeIcon className='mt-1 text-lg' icon={faInstagram} />
             </section>
             </a>
-            <section className='text-center md:hidden'>
-                <a href='https://wa.me/9831551313' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faWhatsapp} /></a>
-            </section>
         </footer>
     )
 }
