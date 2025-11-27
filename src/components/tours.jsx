@@ -40,7 +40,7 @@ export default function Tours() {
             )}
              <section {...getCollapsePrivat()}>
                 <p className='xl:px-30 '>
-                    Set sail on a private adventure in the breathtaking Bacalar Lagoon with our 34-foot catamaran.
+                    Set sail on a private adventure in the breathtaking Bacalar Lagoon with our 30-foot catamaran.
                     Whether you're celebrating a special occasion, enjoying time with family, or creating unforgettable moments with friends, 
                     this personalized tour is designed just for you. Swim in pristine waters, soak up the beauty of the lagoon, and indulge 
                     in snacks and drinks onboard. For an extra touch, upgrade to our premium food and beverage package. Discover Bacalar from 
@@ -96,7 +96,7 @@ export default function Tours() {
             <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-start md:justify-center rounded xl:flex-row'>
                 <h2 className='xl:text-8xl xl:w-1/2'>Sail With Us</h2>
                 <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl xl:px-5">
-                <p className=''>Escape to paradise with our private 34-foot catamaran tour on Bacalar Lagoon.
+                <p className=''>Escape to paradise with our private 30-foot catamaran tour on Bacalar Lagoon.
                     Whether you're marking a special occasion or just spending quality time with loved ones.</p> <p className='hidden md:block'>This exclusive sailing experience offers tranquility, adventure, 
                     and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
                 </div>
