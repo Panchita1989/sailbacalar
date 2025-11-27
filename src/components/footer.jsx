@@ -14,10 +14,12 @@ export default function Footer() {
                 <h2>CONTACT</h2>
                 <p>sail.bacalar@gmail.com<br /><a href="https://wa.me/9831551313"> (+52) 983 155 13 13</a></p>
             </section>
+            <a href='https://www.instagram.com/sail.bacalar/' target='blank'>
             <section className='text-center' >
                 <h2 className='hidden md:block'>FOLLOW</h2>
-                <a href='https://www.instagram.com/sail.bacalar/' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faInstagram} /></a>
+                <FontAwesomeIcon className='mt-1 text-lg' icon={faInstagram} />
             </section>
+            </a>
             <section className='text-center md:hidden'>
                 <a href='https://wa.me/9831551313' target='blank'><FontAwesomeIcon className='mt-1 text-lg' icon={faWhatsapp} /></a>
             </section>
