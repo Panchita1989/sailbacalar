@@ -1,0 +1,41 @@
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Banner from './components/banner.jsx'
+import Header from './components/header.jsx'
+import Tours from './components/tours.jsx'
+import Location from './components/location.jsx'
+
+
+function App() {
+
+  const {pathname} = useLocation()
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(()=>{
+    if(location.pathname === '/'){
+      document.body.style.backgroundColor = "#0f1212ff"
+    }else{
+      document.body.style.backgroundColor = "#d4d4d4"
+    }
+  }, [location.pathname])
+
+  return(
+    <>
+      <Header />
+      <Routes >
+        <Route path='/' element={<Banner/>} />
+        <Route path='/tours' element={<Tours />} />
+        <Route path='/location' element={<Location />} />
+      </Routes>
+    </>
+    
+  )
+}
+
+export default App
