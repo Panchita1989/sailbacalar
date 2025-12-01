@@ -6,6 +6,7 @@ import Banner from './components/banner.jsx'
 import Header from './components/header.jsx'
 import Tours from './components/tours.jsx'
 import Location from './components/location.jsx'
+import BookPrivat from './components/bookPrivat.jsx'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/' element={<Banner/>} />
         <Route path='/tours' element={<Tours />} />
         <Route path='/location' element={<Location />} />
+        <Route path='bookPrivat' element={<BookPrivat />} />
       </Routes>
     </>
     
