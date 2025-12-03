@@ -150,7 +150,7 @@ body.home .footer {
 
 .sail{
   margin-top: 10px;
-  background-image: url('/images/gallery/pakalito.jpg');
+  background-color: rgb(127, 187, 192);
   background-size: cover;
   background-position: 10% 35%;;
   background-repeat: no-repeat;

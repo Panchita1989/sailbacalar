@@ -93,10 +93,10 @@ export default function Tours() {
             )}
             </Card>
             </section>
-            <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-start md:justify-center rounded xl:flex-row'>
+            <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-15'>
                 <h2 className='xl:text-8xl xl:w-1/2'>Sail With Us</h2>
                 <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl xl:px-5">
-                <p className=''>Escape to paradise with our private 30-foot catamaran tour on Bacalar Lagoon.
+                <p className=''>Escape to paradise with our private 30-ft catamaran tour on Bacalar Lagoon.
                     Whether you're marking a special occasion or just spending quality time with loved ones.</p> <p className='hidden md:block'>This exclusive sailing experience offers tranquility, adventure, 
                     and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
                 </div>
