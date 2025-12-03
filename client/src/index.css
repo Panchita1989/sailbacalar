@@ -88,7 +88,7 @@ body {
   position: absolute;
   height: 2px;
   width: 100%;
-  background: rgb(162, 158, 158);
+  background: rgb(158, 161, 162);
   transform: scaleX(0);
 }
 
@@ -160,11 +160,11 @@ body.home .footer {
   font-size: 2em;
 }
 .beaver-widget_plain{
-  background-color: rgba(255, 255, 255, 0.2) ;
+  background-color: rgba(255, 255, 255, 0.8) ;
 }
 .beaver-widget_review {
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 .beaver-widget_review-footer{
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }

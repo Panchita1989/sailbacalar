@@ -22,7 +22,7 @@ function App() {
     if(location.pathname === '/'){
       document.body.style.backgroundColor = "#0f1212ff"
     }else{
-      document.body.style.backgroundColor = "#d4d4d4"
+      document.body.style.backgroundColor = "#e4f8fbff"
     }
   }, [location.pathname])
 

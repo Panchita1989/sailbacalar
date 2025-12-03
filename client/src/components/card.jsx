@@ -4,7 +4,7 @@ import Gallery from './gallery.jsx'
 
 export default function Card({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false }) {
     return (
-        <section className='mt-5 mb-5 p-3 lg:w-1/2 flex flex-col items-center rounded bg-white/20'>
+        <section className='mt-5 mb-5 p-3 lg:w-1/2 flex flex-col items-center rounded bg-neutral-300/20'>
             
             {titleAboveImage && <h2 className='mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
 

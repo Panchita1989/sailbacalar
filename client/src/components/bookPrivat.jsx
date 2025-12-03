@@ -8,7 +8,7 @@ import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 
 export default function BookPrivat() {
     return(
-        <section className='p-10 mx-35 rounded bg-white/20'>
+        <section className='p-10 mx-35 rounded bg-neutral-300/20'>
             <h1 className='mb-5 text-3xl text-center'>Privat Catamaran Tour</h1>
             <section className='flex justify-center'>
                 <div className='flex-[2]'>
