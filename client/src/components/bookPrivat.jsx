@@ -11,7 +11,7 @@ import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 export default function BookPrivat() {
 
     return(
-        <section className='p-10 xl:mx-60 rounded bg-neutral-300/20 text-center'>
+        <section className='p-10 xl:mx-60 rounded bg-neutral-300/20 '>
             <h1 className='mb-5 text-xl md:text-3xl text-center'>Privat Catamaran Tour</h1>
             <h2>4 Hour Privat Tour</h2>
             <h3>Starting at $5000mxn | 4h | max 10 persons | 30ft. Catamaran</h3>           

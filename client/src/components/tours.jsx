@@ -24,7 +24,7 @@ export default function Tours() {
     return(
         <>
         <main className='m-10  text-center  '>
-            <h1 className='title'>TOURS</h1>
+            <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='lg:flex lg:gap-4'>
             <Card img='./images/privat.jpg' alt='privat boat tour' title='Private Tour'>
             {isPrivatExpanded ? '' : (

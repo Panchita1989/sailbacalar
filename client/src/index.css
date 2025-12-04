@@ -36,7 +36,7 @@ body {
   inset: 0;
   background-image: url('/images/laguna.png');
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   animation: fadeBg 2s forwards;

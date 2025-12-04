@@ -20,9 +20,9 @@ function App() {
 
   useEffect(()=>{
     if(location.pathname === '/'){
-      document.body.style.backgroundColor = "#0f1212ff"
+      document.body.style.backgroundColor = "#c9efefff"
     }else{
-      document.body.style.backgroundColor = "#cdf2f8ff"
+      document.body.style.backgroundColor = "#dffbffff"
     }
   }, [location.pathname])
 
