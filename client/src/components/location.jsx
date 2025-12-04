@@ -6,7 +6,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 export default function Location(){
     return(
         <>
-        <section className='flex flex-col items-center bg-neutral-300 '>
+        <section className='flex flex-col items-center  '>
         <Card 
             title='Location' 
             titleAboveImage 
