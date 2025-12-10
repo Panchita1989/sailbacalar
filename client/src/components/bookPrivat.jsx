@@ -6,9 +6,13 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faIdBadge } from "@fortawesome/free-regular-svg-icons";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 
 export default function BookPrivat() {
+
+    const[selectedDate, setSelectedDate] = useState(null)
+    const[availableHours, setAvailableHours] = useState([])
 
     return(
         <section className='p-10 xl:mx-60 rounded bg-neutral-300/20 '>
@@ -211,7 +215,12 @@ export default function BookPrivat() {
                 </div>
                 <div className='text-center order-1 lg:order-2'>
                     <h2 className='lg:flex-[1] mt-10'>Choose your date</h2>
-                    <BookingCalendar />
+                    <BookingCalendar setAvailableHours={setAvailableHours} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    {selectedDate && (
+                        availableHours.map(e =>{
+                            return <button key={e} className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
+                        })
+                    )}
                 </div>
                 
             </section>
