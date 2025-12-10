@@ -17,6 +17,7 @@ export const bookingHandlers = [
     http.get('/api/available-times', ({request}) => {
           const url = new URL(request.url)
           const isoDate = url.searchParams.get('date')
+          console.log(isoDate)
           const date = isoToDate(isoDate)
 
           const timeSlots = ['10am', '3pm']
