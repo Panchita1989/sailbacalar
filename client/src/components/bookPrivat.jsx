@@ -1,4 +1,5 @@
 import BookingCalendar from './bookingCalendar.jsx'
+import BookingForm from './bookingForm.jsx'
 import InformationCard from './informationCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
@@ -13,6 +14,12 @@ export default function BookPrivat() {
 
     const[selectedDate, setSelectedDate] = useState(null)
     const[availableHours, setAvailableHours] = useState([])
+    const[selectedHour, setSelectedHour] = useState(null)
+
+    const handleSelectHour = (time) => {
+        setSelectedHour(time)
+    }
+    console.log(selectedHour)
 
     return(
         <section className='p-10 xl:mx-60 rounded bg-neutral-300/20 '>
@@ -218,8 +225,11 @@ export default function BookPrivat() {
                     <BookingCalendar setAvailableHours={setAvailableHours} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                     {selectedDate && (
                         availableHours.map(e =>{
-                            return <button key={e} className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
+                            return <button key={e} value={e} onClick={() => handleSelectHour(e)} className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
                         })
+                    )}
+                    {(selectedDate && selectedHour) && (
+                        <BookingForm selectedDate={selectedDate} selectedHour={selectedHour} />
                     )}
                 </div>
                 

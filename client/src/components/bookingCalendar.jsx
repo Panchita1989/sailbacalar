@@ -49,7 +49,7 @@ export default function BookingCalendar({selectedDate, setSelectedDate, availabl
         fetch(`/api/available-times?date=${iso}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data.time)
             setAvailableHours(data.time)
         })
         .catch(error => console.log(error))
