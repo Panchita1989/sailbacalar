@@ -16,13 +16,15 @@ export default function BookPrivat() {
     const[availableHours, setAvailableHours] = useState([])
     const[selectedHour, setSelectedHour] = useState(null)
 
+    const title = 'Privat Catamaran Tour 4hrs'
+
     const handleSelectHour = (time) => {
         setSelectedHour(time)
     }
     console.log(selectedHour)
 
     return(
-        <section className='p-10 xl:mx-60 rounded bg-neutral-300/20 '>
+        <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
             <h1 className='mb-5 text-xl md:text-3xl text-center'>Privat Catamaran Tour</h1>
             <h2>4 Hour Privat Tour</h2>
             <h3>Starting at $5000mxn | 4h | max 10 persons | 30ft. Catamaran</h3>           
@@ -222,14 +224,19 @@ export default function BookPrivat() {
                 </div>
                 <div className='text-center order-1 lg:order-2'>
                     <h2 className='lg:flex-[1] mt-10'>Choose your date</h2>
-                    <BookingCalendar setAvailableHours={setAvailableHours} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    <BookingCalendar 
+                        setSelectedHour={setSelectedHour} 
+                        setAvailableHours={setAvailableHours}  
+                        selectedDate={selectedDate} 
+                        setSelectedDate={setSelectedDate} 
+                    />
                     {selectedDate && (
                         availableHours.map(e =>{
                             return <button key={e} value={e} onClick={() => handleSelectHour(e)} className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
                         })
                     )}
                     {(selectedDate && selectedHour) && (
-                        <BookingForm selectedDate={selectedDate} selectedHour={selectedHour} />
+                        <BookingForm title={title} selectedDate={selectedDate} selectedHour={selectedHour} />
                     )}
                 </div>
                 

@@ -3,7 +3,7 @@ import 'react-calendar/dist/Calendar.css';
 import openWednesday from '../mock/data/openWednesday.js'
 import { useEffect, useState } from "react";
 
-export default function BookingCalendar({selectedDate, setSelectedDate, availableHours, setAvailableHours}){
+export default function BookingCalendar({setSelectedHour, selectedDate, setSelectedDate, availableHours, setAvailableHours}){
     const[fullyBookedDays, setfullybookedDays] = useState([])
     
     const today= new Date()
@@ -13,6 +13,7 @@ export default function BookingCalendar({selectedDate, setSelectedDate, availabl
     console.log(selectedDate)
 
     const handleChangeDate = (e) => {
+        setSelectedHour(null)
         setSelectedDate(e)
         console.log(selectedDate)
     }
@@ -57,7 +58,7 @@ export default function BookingCalendar({selectedDate, setSelectedDate, availabl
 
     return(
         <Calendar
-            className='mt-5'
+            className='max-w-fit mt-5 '
             minDate={today}
             maxDate={maxDate}
             onChange={handleChangeDate}

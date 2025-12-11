@@ -14,7 +14,10 @@ html, body {
 body {
   font-size: 0.75em;
 }
-
+@media (max-width: 450px) {
+  .react-calendar {
+    width: 100% !important;
+  }}
 
 /* ====================
    BANNER (Container)
