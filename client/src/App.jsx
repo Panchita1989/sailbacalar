@@ -8,6 +8,7 @@ import Tours from './components/tours.jsx'
 import Location from './components/location.jsx'
 import BookPrivat from './components/bookPrivat.jsx'
 import BookingForm from './components/bookingForm.jsx'
+import Payment from './components/payment.jsx'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path='/location' element={<Location />} />
         <Route path='/bookPrivat' element={<BookPrivat />} />
         <Route path='/bookingForm' element={<BookingForm />} />
+        <Route path='/payment' element={<Payment />} />
       </Routes>
     </>
     
