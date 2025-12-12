@@ -9,6 +9,7 @@ import Location from './components/location.jsx'
 import BookPrivat from './components/bookPrivat.jsx'
 import BookingForm from './components/bookingForm.jsx'
 import Payment from './components/payment.jsx'
+import ThankYou from './components/thankYou.jsx'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/bookPrivat' element={<BookPrivat />} />
         <Route path='/bookingForm' element={<BookingForm />} />
         <Route path='/payment' element={<Payment />} />
+        <Route path='/thankYou' element={<ThankYou />} />
       </Routes>
     </>
     

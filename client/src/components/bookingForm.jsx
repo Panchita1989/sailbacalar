@@ -7,6 +7,22 @@ import { useNavigate } from "react-router-dom";
 
 export default function BookingForm({selectedDate, selectedHour, title}) {
 
+    const basePrice = 5000
+    const baseAmountPersons = 3
+    const extraPersonPrice = 700
+
+    const[name, setName] = useState('')
+    const[email, setEmail] = useState('')
+    const [phone, setPhone] = useState("")
+    const[price, setPrice] = useState(basePrice)
+    const[persons, setPersons] = useState(baseAmountPersons)
+    const[time, setTime] = useState(null)
+        
+    const prepayment = price/2
+
+    const navigate = useNavigate()
+  
+
     const formatDate = (dateObj) =>{
         return new Intl.DateTimeFormat('en-GB',{
             weekday: 'long',
@@ -15,16 +31,6 @@ export default function BookingForm({selectedDate, selectedHour, title}) {
             year: 'numeric'
         }).format(dateObj)
     }
-
-    const basePrice = 5000
-    const baseAmountPersons = 3
-    
-
-    const[price, setPrice] = useState(basePrice)
-    const[persons, setPersons] = useState(baseAmountPersons)
-    
-    const[time, setTime] = useState(null)
-    const extraPersonPrice = 700
 
     useEffect(() => {
         if(selectedHour === '10am'){
@@ -43,16 +49,24 @@ export default function BookingForm({selectedDate, selectedHour, title}) {
         setPrice(basePrice + extraPrice)
         setPersons(baseAmountPersons + count)
     }
-    const prepayment = price/2
-
-    const [phone, setPhone] = useState("");
-
-    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        navigate('/payment')
+        navigate('/payment',{
+            state:{
+                name,
+                email,
+                phone,
+                selectedDate,
+                selectedHour,
+                price,
+                title,
+                persons,
+                prepayment,
+
+            }
+        })
     }
     
     return(
@@ -79,16 +93,16 @@ export default function BookingForm({selectedDate, selectedHour, title}) {
             <form onSubmit={handleSubmit} className='text-sm mt-5 flex flex-col items-start gap-3 w-full'>
                 Contact Details 
             <label htmlFor="name" className='text-sm'>Full Name</label>
-            <input required type="text" id='name' placeholder='Enter Full Name'className='border-1 rounded w-full'/>
+            <input required type="text" id='name' placeholder='Enter Full Name'className='border-1 rounded w-full' onChange={(e) => setName(e.target.value)}/>
             <label htmlFor="email">Email</label>
-            <input required type="email" id='email' placeholder='Enter Email' className='border-1 rounded w-full' />
+            <input required type="email" id='email' placeholder='Enter Email' className='border-1 rounded w-full' onChange={(e) => setEmail(e.target.value)} />
             <label htmlFor="phone">Phone</label>
             <PhoneInput 
                 required
                 id='phone'
                 className='border-1 rounded w-full'
                 placeholder="Enter phone number"
-                $value={phone}
+                value={phone}
                 onChange={setPhone}
                 defaultCountry="MX"
             />
