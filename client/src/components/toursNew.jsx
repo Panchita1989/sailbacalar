@@ -49,7 +49,12 @@ export default function ToursNew() {
         <main className='m-10  text-center  '>
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='lg:flex lg:justify-center lg:items-start  flex-wrap lg:gap-10'>
-            <CardNew img='./images/privat.jpg' alt='privat boat tour' title='Classic Private Tour'>
+            <CardNew 
+                img='./images/privat.jpg' 
+                alt='privat boat tour' 
+                title='Classic Private Tour' 
+                bookingPath='/bookPrivat' 
+            >
             {isPrivatExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
@@ -135,7 +140,7 @@ export default function ToursNew() {
             )}
             
             </CardNew> 
-             <CardNew img='./images/allInclusive.jpg' alt='boat tour' title='All Inclusive Private Tour'>
+             <CardNew img='./images/allInclusive.jpg' alt='boat tour' title='All Inclusive Private Tour' bookingPath='/bookPrivat' >
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
@@ -222,7 +227,7 @@ export default function ToursNew() {
                 </div>
             )}
              </CardNew>
-             <CardNew img='./images/allDay.jpeg' alt='boat tour' title='All Day Private Tour'>
+             <CardNew img='./images/allDay.jpeg' alt='boat tour' title='All Day Private Tour' bookingPath='/bookPrivat'>
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
@@ -311,7 +316,7 @@ export default function ToursNew() {
                 </div>
              )}
              </CardNew>
-             <CardNew img='./images/romantic.jpg' alt='boat tour' title='Romantic Private Tour'>
+             <CardNew img='./images/romantic.jpg' alt='boat tour' title='Romantic Private Tour' bookingPath='/bookPrivat'>
              {isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
@@ -394,7 +399,7 @@ export default function ToursNew() {
                 </div>
              )}
              </CardNew>
-             <CardNew img='./images/sunrise.jpg' alt='boat tour' title='Sunrise Private Sail Tour'>
+             <CardNew img='./images/sunrise.jpg' alt='boat tour' title='Sunrise Private Sail Tour' bookingPath='/bookPrivat'>
              {isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button

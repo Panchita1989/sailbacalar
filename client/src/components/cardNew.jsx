@@ -1,8 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import Button from './button.jsx'
 import Gallery from './gallery.jsx'
 
 
-export default function CardNew({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false }) {
+export default function CardNew({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath}) {
+    
+    const navigate = useNavigate()
+
+    const goToBooking = () => {
+        navigate(bookingPath,{
+            state: {title}
+        })
+    }
+
     return (
         <section className={titleAboveImage ? 'mt-5 mb-5 p-3 flex flex-col items-center rounded bg-neutral-300/20 ' : 'mt-5 mb-5 p-3 lg:w-1/4 flex flex-col items-center rounded bg-neutral-300/20'}>
             
@@ -21,7 +31,7 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
             </div>
 
             {showButton && (
-                <a href="https://wa.me/9831551313" target='blank'><Button className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950' content='Book now'/></a>
+                <Button onClick={goToBooking} className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950' content='Book now'/>
             )}
         </section>
     )
