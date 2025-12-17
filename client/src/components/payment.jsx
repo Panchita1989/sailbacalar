@@ -14,18 +14,42 @@ export default function Payment() {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-        })
-        .catch(error => console.log(error))
 
-        fetch('api/bookings', {method: 'POST'})
-        .then(res => res.json)
+            if (!data.success) {
+                alert('Payment failed')
+                return
+            }
+
+       return fetch('api/bookings', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                name,
+                email,
+                phone,
+                selectedDate,
+                selectedHour,
+                persons,
+                price,
+                prepayment
+            })
+        })
+        })
+        .then(res => res.json())
         .then(data => {
             console.log('Reservation succsessfull')
-            
+            navigate('/thankYou',{state: {
+                name,
+                title,
+                selectedDate,
+                selectedHour,
+                persons,
+                price,
+                prepayment}
+            })            
         })
         .catch(error => console.log(error))
 
-          navigate('/thankYou',{state: {name}})
     }
 
     return(
