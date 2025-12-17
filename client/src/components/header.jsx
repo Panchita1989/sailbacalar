@@ -37,8 +37,8 @@ export default function Header() {
         {show && (
           <Link to="/" onClick={onClose}>
             <img
-              className="h-40 rounded ml-5"
-              src="images/logo.png"
+              className="h-20 rounded ml-5"
+              src="images/logoNew.png"
               alt="sail bacalar"
             />
           </Link>
