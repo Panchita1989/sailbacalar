@@ -10,13 +10,13 @@ import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 
-export default function BookPrivat() {
+export default function BookCollective() {
 
     const[selectedDate, setSelectedDate] = useState(null)
     const[availableHours, setAvailableHours] = useState([])
     const[selectedHour, setSelectedHour] = useState(null)
 
-    const title = 'Privat Catamaran Tour 4hrs'
+    const title = 'Collective Catamaran Tour 4hrs'
 
     const handleSelectHour = (time) => {
         setSelectedHour(time)
@@ -25,9 +25,9 @@ export default function BookPrivat() {
 
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
-            <h1 className='mb-5 text-xl md:text-3xl text-center'>Privat Catamaran Tour</h1>
-            <h2>4 Hour Privat Tour</h2>
-            <h3>Starting at $5000mxn | 4h | max 10 persons | 30ft. Catamaran</h3>           
+            <h1 className='mb-5 text-xl md:text-3xl text-center'>{title}</h1>
+            <h2>4 Hour Tour</h2>
+            <h3>$ 700 MXN p.p | 4h | max 10 persons | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
@@ -36,45 +36,45 @@ export default function BookPrivat() {
                     <InformationCard title='Overview'>
                         <ul>
                             <li className=''>
-                                <div className='flex gap-3'>
+                                <div className='flex items-center gap-3'>
                                     <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
-                                    <div className='text-left'>
-                                        <h4>Duration:</h4>
+                                    <div>
+                                        <h4>Duration</h4>
                                         <p>4 hours</p>
                                     </div>
                                 </div>
                             </li>
                             <li className='mt-3'>
-                                <div className='flex gap-3'>
-                                    <FontAwesomeIcon className='text-xl md:text-2xl' icon={faLocationDot} />
-                                    <div className='text-left'>
-                                        <h4>Meeting Point:</h4>
+                                <div className='flex items-center gap-3'>
+                                    <FontAwesomeIcon className='text-2xl' icon={faLocationDot} />
+                                    <div>
+                                        <h4>Meeting Point</h4>
                                         <p>Asana Glamping, km 22.5 Carretera Bacalar</p>
                                     </div>
                                 </div>
                             </li>
                             <li className='mt-3'>
-                                <div className='flex gap-3'>
+                                <div className='flex items-center gap-3'>
                                     <FontAwesomeIcon className='text-2xl' icon={faCircleXmark} /> 
-                                    <div className='text-left'>
-                                        <h4>Cancellations:</h4>
+                                    <div>
+                                        <h4>Cancellations</h4>
                                         <p>48 hours in advance</p>
                                     </div>
                                 </div>
                             </li>
                             <li className='mt-3'>
-                                <div className='flex gap-3'>
+                                <div className='flex items-center gap-3'>
                                     <FontAwesomeIcon className='text-2xl' icon={faIdBadge} /> 
-                                    <div className='text-left'>
-                                        <h4>Age:</h4>
+                                    <div>
+                                        <h4>Age</h4>
                                         <p>90 years and younger</p>
                                     </div>
                                 </div>
                             </li>
                             <li className='mt-3'>
-                                <div className='flex gap-3'> 
+                                <div className='flex items-center gap-3'> 
                                     <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
-                                    <div className='text-left'>
+                                    <div>
                                         <h4>Group Size</h4>
                                         <p>max 10 people</p>
                                     </div>

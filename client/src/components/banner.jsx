@@ -14,9 +14,9 @@ export default function Banner(){
 
     return(
         <>
-        <main className='banner text-teal-950 h-screen flex flex-col md:justify-start justify-center items-center '>
+        <main className='banner text-teal-950 h-screen flex flex-col md:justify-start pt-10 items-center '>
             <title>Sail Bacalar – Discover Bacalar Lagoon on a Catamaran</title>
-            <img className='md:max-h-100  max-h-80 z-10 h1-animate' src="/images/logo.png" alt="sail bacalar logo" />
+            <img className='md:max-h-80  max-h-60 z-10 h1-animate' src="/images/logoNew.png" alt="sail bacalar logo" />
             <h1 className='h1 md:text-5xl text-lg banner-content z-10 '>SAIL - ENJOY - GET INSPIRED</h1>
             <meta name="description" content="Relax at Pucté Hotel, directly on Bacalar Lagoon. Comfortable rooms, stunning views, and unforgettable boat tours." />
             <meta name="keywords" content="Hotel Bacalar, Bacalar Lagoon, Pucté Hotel, Lagoonfront Hotel, Bacalar Accommodation" />

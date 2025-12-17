@@ -2,16 +2,16 @@ import Button from './button.jsx'
 import Gallery from './gallery.jsx'
 
 
-export default function Card({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false }) {
+export default function CardNew({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false }) {
     return (
-        <section className='mt-5 mb-5 p-3 lg:w-1/2 flex flex-col items-center rounded bg-neutral-300/20'>
+        <section className={titleAboveImage ? 'mt-5 mb-5 p-3 flex flex-col items-center rounded bg-neutral-300/20 ' : 'mt-5 mb-5 p-3 lg:w-1/4 flex flex-col items-center rounded bg-neutral-300/20'}>
             
             {titleAboveImage && <h2 className='mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
 
             {iframe ? (
                 iframe
             ) : img ? (
-                <img src={img} alt={alt || title} className='lg:max-w-100 ' />
+                <img src={img} alt={alt || title} className='lg:max-h-80' />
             ) : <Gallery images={images} />}
 
             {!titleAboveImage && <h2 className='mt-4 mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
