@@ -31,10 +31,10 @@ export const bookingHandlers = [
             time: available
           })
     }),
-    http.post('api/payment', ({body}) => {        
+    http.post('/api/payment', ({body}) => {        
         return HttpResponse.json({success:true})
     }),
-    http.post('api/bookings', ({body}) => {   
+    http.post('/api/bookings', ({body}) => {   
         bookings.push({...body, id:Date.now() }) 
         console.log(bookings)   
         return HttpResponse.json({...body, id: Date.now()}, {status: 201})

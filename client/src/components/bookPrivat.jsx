@@ -19,8 +19,6 @@ export default function BookPrivat() {
 
     const { tour } = useLocation().state || {};
 
-    console.log(tour.basePrice)
-
     const handleSelectHour = (time) => {
         setSelectedHour(time)
     }
@@ -231,7 +229,12 @@ export default function BookPrivat() {
                         })
                     )}
                     {(selectedDate && selectedHour) && (
-                        <BookingForm title={title} selectedDate={selectedDate} selectedHour={selectedHour} />
+                        <BookingForm 
+                            title={tour.title} 
+                            extraPerson={tour.extraPerson}
+                            basePrice={tour.basePrice} 
+                            selectedDate={selectedDate} 
+                            selectedHour={selectedHour} />
                     )}
                 </div>
                 

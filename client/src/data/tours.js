@@ -12,7 +12,7 @@ const tours = [
     in snacks and drinks onboard. Discover Bacalar from a whole new perspective with a fully customizable experience.`,
     idealFor: `Families, couples, or groups of friends looking for a relaxed and private tour.`,
     basePrice: `$4'500`,
-    extraPerson: `$800`,
+    extraPerson: 800,
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 },{
@@ -26,7 +26,7 @@ const tours = [
     personalized and carefree experience.`,
     idealFor: `Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.`,
     basePrice: `$5'800`,
-    extraPerson: '$900',
+    extraPerson: 900,
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Beers', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
@@ -40,7 +40,7 @@ const tours = [
       in a truly personalized and carefree way.`,
     idealFor: `Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.`,
     basePrice: `$6'800`,
-    extraPerson: `$1'000`,
+    extraPerson: 1000,
     stops: ['Canal Xtomoc', 'Isla de los Cocos', 'Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Beers', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
@@ -65,7 +65,7 @@ const tours = [
     and experience Bacalar at its most tranquil.`,
     idealFor: `Early risers, couples, and nature lovers seeking a peaceful sunrise experience on the lagoon.`,
     basePrice: `$4'500 MXN`,
-    extraPerson: '$800',
+    extraPerson: 800,
     stops: ['Pirats Chanel', 'Isla de los Cocos'],
     included: ['Water', 'Coffee', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }
