@@ -103,16 +103,16 @@ export default function BookPrivat() {
                         </ul>
                     </InformationCard>
                     <InformationCard title='Prices'>
-                        <p>
+                        <p className='text-left'>
                             The cost of our tour is {tour.basePrice} MXN for groups of up to 2 people. If you’d like to add more guests, 
                             there is an additional fee of {tour.extraPerson} MXN per extra person, with a maximum capacity of {tour.maxPersons} people in total.
                         </p>
-                        <p>Enjoy an exclusive and personalized experience on the beautiful Bacalar Lagoon! </p>
+                        <p className='text-left'>Enjoy an exclusive and personalized experience on the beautiful Bacalar Lagoon! </p>
                     </InformationCard>
                     <InformationCard title='Additional Information'>
-                        <h3 className='mb-3'>What to Bring</h3>
-                        <p>To enjoy our tour to the fullest, we recommend bringing the following items:</p>
-                        <ul className='list-disc list-inside space-y-1 my-5'>
+                        <h3 className='mb-3 text-left'>What to Bring</h3>
+                        <p className='text-left'>To enjoy our tour to the fullest, we recommend bringing the following items:</p>
+                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
                             <li>Cap or hat</li>
                             <li>Towel</li>
                             <li>Sunglasses</li>
@@ -120,12 +120,12 @@ export default function BookPrivat() {
                             <li>Swimsuit</li>
                             <li>Camera</li>
                         </ul>
-                        <p className='mb-3'>Your comfort and safety are our priority, so don’t forget these essential items for an amazing day 
+                        <p className='mb-3 text-left'>Your comfort and safety are our priority, so don’t forget these essential items for an amazing day 
                             in Bacalar.</p>
-                        <h3 className='mb-3'>Restrictions</h3>
-                        <p>To ensure the safety and comfort of all our passengers, please take the following restrictions 
+                        <h3 className='mb-3 text-left'>Restrictions</h3>
+                        <p className='text-left'>To ensure the safety and comfort of all our passengers, please take the following restrictions 
                             into consideration before booking:</p>
-                        <ul className='list-disc list-inside space-y-1 my-5'>
+                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
                             <li><b>Pregnant women:</b> We recommend that women over 7 months pregnant consult their doctor before participating in the tour, 
                                 as it may not be suitable for safety reasons.</li>
                             <li>
@@ -137,18 +137,18 @@ export default function BookPrivat() {
                                 to drink responsibly. Excessive alcohol consumption may compromise the safety and enjoyment of the experience for everyone.
                             </li>
                         </ul>
-                        <p>Our team is here to ensure you have a safe and pleasant experience, and we appreciate your understanding and cooperation.</p>
-                        <h3 className='mb-3'>Extras</h3>
-                        <ul className='list-disc list-inside space-y-1 my-5'>
+                        <p className='text-left'>Our team is here to ensure you have a safe and pleasant experience, and we appreciate your understanding and cooperation.</p>
+                        <h3 className='mb-3 text-left'>Extras</h3>
+                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
                             <li>French-speaking guide: $650 MXN</li>
                             <li>Private ground pick-up service (taxi): $100 MXN</li>
                         </ul>
-                        <h3 className='mb-3'>Disclaimers</h3>
-                        <p>
+                        <h3 className='mb-3 text-left'>Disclaimers</h3>
+                        <p className='text-left'>
                             Before boarding our tours with Sail Bacalar, it is important that clients understand and accept the 
                             inherent risks associated with water activities and sailing.
                         </p>
-                        <ul className='list-disc list-inside space-y-1 my-5'>
+                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
                             <li>
                                 <b>Risks and safety:</b> Sailing involves certain natural risks. Although we take measures to ensure 
                                 safety, guests should be aware of possible risks such as falls or physical discomfort.
@@ -168,7 +168,7 @@ export default function BookPrivat() {
                         </ul>
                     </InformationCard>
                     <InformationCard title='FAQ'>
-                        <ul>
+                        <ul className='text-left'>
                             <li>
                                 <p className='font-bold'>Is this activity suitable for children? From what age?</p>
                                 <p>Yes, absolutely! Children can join the tour starting from 6 months old. It’s a safe and family-friendly experience.</p>
@@ -196,24 +196,24 @@ export default function BookPrivat() {
                         </ul>
                     </InformationCard>
                     <InformationCard title='Cancellations' >
-                        <p className='mb-3'>
+                        <p className='mb-3 text-left'>
                             Customers will receive a full refund or the option to reschedule if the cancellation is made at 
                             least 48 hours in advance. Customers will also receive a full refund or the option to reschedule in case 
                             the operator cancels due to weather or other unforeseen circumstances. No-shows will be charged the full 
                             price.
                         </p>
-                        <p className='mb-3'>
+                        <p className='mb-3 text-left'>
                             For the <b>Shared Tour</b>, the boat will depart exactly at the scheduled time. If the customer does not 
                             arrive on time, it will be considered a no-show and they will not be entitled to a refund. The shared
                             tour is subject to cancellation if the minimum required number of participants is not met (4 people). 
                             If this occurs, we commit to notifying you at least 7 hours in advance.
                         </p>
-                        <p className='mb-3'>
+                        <p className='mb-3 text-left'>
                             For <b>Private Tours</b>, if the customer does not arrive at the agreed time, the time will simply be 
                             deducted from the total duration of the tour. The boat will not depart until the customer arrives, but 
                             it will return at the originally scheduled end time.
                         </p>
-                        <p className='mb-3'>Please contact us by email to cancel or inquire about rescheduling.</p>
+                        <p className='mb-3 text-left'>Please contact us by email to cancel or inquire about rescheduling.</p>
                         <p>Thank You!</p>
                     </InformationCard>
                 </div>

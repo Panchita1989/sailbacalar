@@ -23,7 +23,7 @@ export default function Gallery({images}){
 
     return(
         <section className="w-full h-full flex flex-col justify-center items-center gap-4">
-            <img src={currentImage.url} alt={currentImage.alt} className='max-h-60 md:max-h-100'/>
+            <img src={currentImage.url} alt={currentImage.alt} className='max-h-[170px] md:max-h-100'/>
             <section className='flex gap-8'>
                 <Button onClick={next} content={<FontAwesomeIcon icon={faChevronLeft} size="lg" />} />
                 <Button onClick={prev} content={<FontAwesomeIcon icon={faChevronRight} size="lg" />} />
