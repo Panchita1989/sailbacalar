@@ -8,6 +8,9 @@ import {fotoList} from '../data/gallery.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
+import { faUniversalAccess } from "@fortawesome/free-solid-svg-icons";
+import { faCashApp } from "@fortawesome/free-brands-svg-icons"
+
 
 
 
@@ -88,7 +91,7 @@ export default function ToursNew() {
                         </li>
                         <li className='mt-3'>
                             <div className='flex gap-3 items-center'>
-                               <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                               <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                                <div className='text-left'>
                                     <h4>Ideal for:</h4>
                                     <p>Families, couples, or groups of friends looking for a relaxed and private tour.</p>
@@ -97,7 +100,7 @@ export default function ToursNew() {
                         </li>
                         <li className='mt-3'>
                             <div className='flex gap-3 items-center'>
-                                <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                                <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                                 <div className='text-left'>
                                     <h4>Prices:</h4>
                                     <p>$4'500 MXN (for 2 Persons), $800 MXN for adicional Person</p>
@@ -173,7 +176,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
                                 <h4>Ideal for:</h4>
                                 <p>Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.</p>
@@ -182,7 +185,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
                                 <p>$5'800 MXN (for 2 Persons), $900 MXN for adicional Person</p>
@@ -260,7 +263,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
                                 <h4>Ideal for:</h4>
                                 <p>Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.</p>
@@ -269,7 +272,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
                                 <p>$6'800 MXN (for 2 Persons), $1000 MXN for adicional Person</p>
@@ -349,7 +352,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
                                 <h4>Ideal for:</h4>
                                 <p>Couples looking to celebrate love in a peaceful and intimate setting.</p>
@@ -358,7 +361,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
                                 <p>$5'800 MXN (for 2 Persons)</p>
@@ -432,7 +435,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
                                 <h4>Ideal for:</h4>
                                 <p>Early risers, couples, and nature lovers seeking a peaceful sunrise experience on the lagoon.</p>
@@ -441,7 +444,7 @@ export default function ToursNew() {
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
-                            <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} />
+                            <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
                                 <p>$4'500 MXN (for 2 Persons), $800 MXN for adicional Person</p>
