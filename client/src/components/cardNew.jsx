@@ -14,19 +14,19 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
     }
 
     return (
-        <section className={titleAboveImage ? 'mt-5 mb-5 p-3 flex flex-col items-center rounded bg-neutral-300/20 ' : 'mt-5 mb-5 p-3 lg:w-1/4 flex flex-col items-center rounded bg-neutral-300/20'}>
+        <section className={titleAboveImage ? 'mt-5 mb-5 p-3 flex flex-col items-center rounded bg-neutral-300/20 ' : 'mt-5 mb-5 p-3 md:w-1/4 flex flex-col items-center rounded bg-neutral-300/20'}>
             
             {titleAboveImage && <h2 className='mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
 
             {iframe ? (
                 iframe
             ) : img ? (
-                <img src={img} alt={alt || title} className='lg:max-h-80' />
+                <img src={img} alt={alt || title} className='lg:max-h-80 md:max-h-150' />
             ) : <Gallery images={images} />}
 
             {!titleAboveImage && <h2 className='mt-4 mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
 
-            <div className="w-full max-w-3xl lg:text-left">
+            <div className="lg:text-left">
                 {children}
             </div>
 

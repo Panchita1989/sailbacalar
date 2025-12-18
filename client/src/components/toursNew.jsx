@@ -48,7 +48,7 @@ export default function ToursNew() {
         <>
         <main className='m-10  text-center  '>
             <h1 className='text-3xl font-semibold '>TOURS</h1>
-            <section className='lg:flex lg:justify-center lg:items-start  flex-wrap lg:gap-10'>
+            <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <CardNew 
                 img='./images/privat.jpg' 
                 alt='privat boat tour' 
@@ -227,7 +227,7 @@ export default function ToursNew() {
                 </div>
             )}
              </CardNew>
-             <CardNew img='./images/allDay.jpeg' alt='boat tour' title='All Day Private Tour' bookingPath='/bookPrivat'>
+             <CardNew img='./images/allDay.jpg' alt='boat tour' title='All Day Private Tour' bookingPath='/bookPrivat'>
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
