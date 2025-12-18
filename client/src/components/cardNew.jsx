@@ -10,11 +10,6 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
 
     const tour = tours.find(t => t.title === title);
 
-    if (!tour) {
-        console.warn(`Tour not found: ${title}`);
-        return null; // oder ein Fallback UI
-    }
-
     const goToBooking = () => {
         navigate(bookingPath,{
             state: { tour }
