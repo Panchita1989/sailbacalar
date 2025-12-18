@@ -17,7 +17,7 @@ export default function BookPrivat() {
     const[availableHours, setAvailableHours] = useState([])
     const[selectedHour, setSelectedHour] = useState(null)
 
-    const { title } = useLocation().state || {};
+    const { title, price, duration, maxPerson } = useLocation().state || {};
 
     const handleSelectHour = (time) => {
         setSelectedHour(time)
@@ -28,7 +28,7 @@ export default function BookPrivat() {
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
             <h1 className='mb-5 text-xl md:text-3xl text-center'>{title}</h1>
             <h2>{title}</h2>
-            <h3>Starting at $5000mxn | 4h | max 10 persons | 30ft. Catamaran</h3>           
+            <h3>Starting at {price} | {duration} | max {maxPerson} persons | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
