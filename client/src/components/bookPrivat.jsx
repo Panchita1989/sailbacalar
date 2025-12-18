@@ -17,7 +17,9 @@ export default function BookPrivat() {
     const[availableHours, setAvailableHours] = useState([])
     const[selectedHour, setSelectedHour] = useState(null)
 
-    const { title, price, duration, maxPerson } = useLocation().state || {};
+    const { tour } = useLocation().state || {};
+
+    console.log(tour.basePrice)
 
     const handleSelectHour = (time) => {
         setSelectedHour(time)
@@ -26,9 +28,9 @@ export default function BookPrivat() {
 
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
-            <h1 className='mb-5 text-xl md:text-3xl text-center'>{title}</h1>
-            <h2>{title}</h2>
-            <h3>Starting at {price} | {duration} | max {maxPerson} persons | 30ft. Catamaran</h3>           
+            <h1 className='mb-5 text-xl md:text-3xl text-center'>{tour.title}</h1>
+            <h2>{tour.title}</h2>
+            <h3>Starting at {tour.basePrice} | {tour.duration}h | max {tour.maxPersons} persons | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
@@ -41,7 +43,7 @@ export default function BookPrivat() {
                                     <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                                     <div className='text-left'>
                                         <h4>Duration:</h4>
-                                        <p>4 hours</p>
+                                        <p>{tour.duration} hours</p>
                                     </div>
                                 </div>
                             </li>
@@ -77,32 +79,24 @@ export default function BookPrivat() {
                                     <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                                     <div className='text-left'>
                                         <h4>Group Size</h4>
-                                        <p>max 10 people</p>
+                                        <p>max {tour.maxPersons} people</p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </InformationCard>
                     <InformationCard title='Activity Details'>
-                        <p>
-                            Enjoy a private tour on the beautiful Bacalar Lagoon, perfect for groups of up to 10 people. 
-                            This 4-hour experience includes stops at the lagoon’s main attractions, such as the Black Cenote, 
-                            Bird Island, the Pirate Channel, and Cocos Island.
+                        <p className='text-left'> 
+                            {tour.description}
                         </p>
-                        <p>
-                            Sail with us and live an unforgettable adventure surrounded by nature, tranquility, and exclusivity!
-                        </p>
-                        <h3 className='mt-3 mb-2'>What’s Included:</h3>
-                        <ul className='list-disc list-inside space-y-1'>
-                            <li>Guacamole with tortilla chips</li>
-                            <li>Mix of local fruits</li>
-                            <li>Beers</li>
-                            <li>Non-bottled drinking water</li>
-                            <li>Local bilingual captain</li>
-                            <li>Parking</li>
+                        <h3 className='mt-3 mb-2 text-left'>What’s Included:</h3>
+                        <ul className='list-disc list-inside space-y-1 text-left'>
+                            {tour.included.map(i =>{
+                                return <li key={i}>{i}</li>
+                            })}
                         </ul>
-                        <h3 className='mt-3 mb-2'>What’s not Included:</h3>
-                        <ul className='list-disc list-inside space-y-1'>
+                        <h3 className='text-left mt-3 mb-2'>What’s not Included:</h3>
+                        <ul className='list-disc list-inside space-y-1 text-left'>
                             <li>Pick-up service</li>
                             <li>Tips</li>
                             <li>French-speaking guide</li>
@@ -110,8 +104,8 @@ export default function BookPrivat() {
                     </InformationCard>
                     <InformationCard title='Prices'>
                         <p>
-                            The cost of our tour is $5000 MXN for groups of up to 3 people. If you’d like to add more guests, 
-                            there is an additional fee of $700 MXN per extra person, with a maximum capacity of 10 people in total.
+                            The cost of our tour is {tour.basePrice} MXN for groups of up to 2 people. If you’d like to add more guests, 
+                            there is an additional fee of {tour.extraPerson} MXN per extra person, with a maximum capacity of {tour.maxPersons} people in total.
                         </p>
                         <p>Enjoy an exclusive and personalized experience on the beautiful Bacalar Lagoon! </p>
                     </InformationCard>

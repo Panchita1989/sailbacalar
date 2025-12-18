@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import tours from '../data/tours.js'
 import Button from './button.jsx'
 import Gallery from './gallery.jsx'
 
@@ -7,20 +8,16 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
     
     const navigate = useNavigate()
 
-    const price = title === 'Classic Private Tour' ? `$4'500` :
-                   title === 'All Inclusive Private Tour' ? `$5'800` :
-                   title === 'All Day Private Tour' ? `$6'800` :
-                   title === 'Romantic Private Tour' ? `$5'800` :
-                   title === 'Sunrise Private Sail Tour' ? `$4'500` : null
+    const tour = tours.find(t => t.title === title);
 
-    const duration = title === 'Sunrise Private Sail Tour' ? '3h' :
-                     title === 'All Day Private Tour' ? '6h' : '4h'
-
-    const maxPerson = title === 'Romantic Private Tour' ? 2 : 14
+    if (!tour) {
+        console.warn(`Tour not found: ${title}`);
+        return null; // oder ein Fallback UI
+    }
 
     const goToBooking = () => {
         navigate(bookingPath,{
-            state: {title, price, duration, maxPerson}
+            state: { tour }
         })
     }
 
