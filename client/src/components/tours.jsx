@@ -52,7 +52,7 @@ export default function Tours() {
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <Card 
-                img='./images/privat.jpg' 
+                img='./images/privat.webp' 
                 alt='privat boat tour' 
                 title='Classic Private Tour' 
                 bookingPath='/bookPrivat' 
@@ -146,7 +146,7 @@ export default function Tours() {
             
             </Card> 
              <Card 
-                img='./images/allInclusive.jpg' 
+                img='./images/allInclusive.webp' 
                 alt='boat tour' 
                 title='All Inclusive Private Tour' 
                 bookingPath='/bookPrivat' >
@@ -240,7 +240,7 @@ export default function Tours() {
             )}
              </Card>
              <Card 
-                img='./images/allDay.jpg' 
+                img='./images/allDay.webp' 
                 alt='boat tour' 
                 title='All Day Private Tour' 
                 bookingPath='/bookPrivat'>
