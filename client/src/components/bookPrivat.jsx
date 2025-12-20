@@ -32,7 +32,7 @@ export default function BookPrivat() {
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
-                        <img src="./images/caption.jpg" alt="laguna bacalar" className='max-h-100 my-5'/>
+                        <img src="./images/pakal.png" alt="laguna bacalar" className='max-h-100 my-5'/>
                     </div>
                     <InformationCard title='Overview'>
                         <ul>

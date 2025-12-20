@@ -407,7 +407,7 @@ export default function ToursNew() {
                     <li>A selection of mixed seasonal fruits and berries</li>
                     <li>Guacamole</li>
                     <li>Ceviche</li>
-                    <li>little romantic surprise</li>
+                    <li>Little romantic surprise</li>
                     <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
                     <li>Parking</li>
                 </ul>                
@@ -472,7 +472,7 @@ export default function ToursNew() {
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
-                                <p>$4'500 MXN (for 2 Persons), $800 MXN for adicional Person</p>
+                                <p>$5'000 MXN (for 2 Persons), $800 MXN for adicional Person</p>
                             </div>
                         </div>
                     </li>
@@ -490,7 +490,10 @@ export default function ToursNew() {
                 <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
                 <ul className='list-disc list-inside text-left'>
                     <li>Water</li>
+                    <li>Juices</li>
                     <li>Coffee</li>
+                    <li>Homemade Cookies</li>
+                    <li>Toast with butter and jam</li>
                     <li>Mixed seasonal Fruits</li>
                     <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
                     <li>Parking</li>
