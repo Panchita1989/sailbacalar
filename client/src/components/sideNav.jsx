@@ -29,7 +29,15 @@ const SideNav = ({visible, onClose}) => {
                     <a href='https://www.instagram.com/sail.bacalar/' target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Instagram</li></a>
                     <a href="https://wa.me/9831551313" target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Book Now</li></a>
                 </ul> 
-                <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Sail Bacalar. All rights reserved.</span>           
+                <div className="mt-6 text-center pt-4 text-sm">
+                    <div className="mt-6 text-sm flex justify-center space-x-4">
+                        <button className= 'underline font-semibold cursor-pointer '>EN</button>
+                        <button className= 'underline font-semibold cursor-pointer' >ES</button>
+                        <button className= 'underline font-semibold cursor-pointer' >DE</button>
+                        <button className='underline font-semibold cursor-pointer '>FR</button>
+                    </div>
+                    <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Sail Bacalar. All rights reserved.</span>           
+                </div>
         </div>
     )
 }
