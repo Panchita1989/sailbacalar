@@ -11,7 +11,6 @@ import BookCollective from './components/bookCollective.jsx'
 import BookingForm from './components/bookingForm.jsx'
 import Payment from './components/payment.jsx'
 import ThankYou from './components/thankYou.jsx'
-import ToursNew from './components/toursNew.jsx'
 
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
         <Route path='/bookingForm' element={<BookingForm />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/thankYou' element={<ThankYou />} />
-        <Route path='/toursNew' element={<ToursNew />} />
       </Routes>
     </>
     
