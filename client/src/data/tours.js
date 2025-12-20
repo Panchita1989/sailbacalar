@@ -11,10 +11,10 @@ const tours = [
     this personalized tour is designed just for you. Swim in pristine waters, soak up the beauty of the lagoon, and indulde 
     in snacks and drinks onboard. Discover Bacalar from a whole new perspective with a fully customizable experience.`,
     idealFor: `Families, couples, or groups of friends looking for a relaxed and private tour.`,
-    basePrice: `$4'500`,
+    basePrice: `$5'000`,
     extraPerson: 800,
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
-    included: ['Water', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
+    included: ['Water', 'Sparkling Water', 'Juices', 'Mixed seasonal Fruits', 'Guacamole', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 },{
     id: 2,
     title: 'All Inclusive Private Tour',
@@ -25,10 +25,10 @@ const tours = [
     enjoying a selection of drinks and fresh snacks onboard. Discover Bacalar from a new perspective with a fully 
     personalized and carefree experience.`,
     idealFor: `Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.`,
-    basePrice: `$5'800`,
-    extraPerson: 900,
+    basePrice: `$6'300`,
+    extraPerson: 1000,
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
-    included: ['Water', 'Beers', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
+    included: ['Water', 'Sparkling Water', 'Beers', 'Soda', 'Tequila', 'Ron Bacardi', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
     id:3,
     title: 'All Day Private Tour',
@@ -39,10 +39,10 @@ const tours = [
       touristic areas. Savor refreshing drinks and fresh snacks onboard while discovering Bacalar from a new perspective 
       in a truly personalized and carefree way.`,
     idealFor: `Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.`,
-    basePrice: `$6'800`,
-    extraPerson: 1000,
+    basePrice: `$7'800`,
+    extraPerson: 1200,
     stops: ['Canal Xtomoc', 'Isla de los Cocos', 'Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
-    included: ['Water', 'Beers', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
+    included: ['Water', 'Sparkling Water', 'Beers', 'Soda', 'Tequila', 'Ron Bacardi', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
     id: 4,
     title: 'Romantic Private Tour',
@@ -52,9 +52,9 @@ const tours = [
      relaxing in pristine waters, and savor drinks and fresh snacks as you take in the lagoon’s breathtaking beauty. An unforgettable escape made for
       love and connection.`,
     idealFor: `Couples looking to celebrate love in a peaceful and intimate setting.`,
-    basePrice: `$5'800`,
+    basePrice: `$6'500`,
     stops: ['Canal Xtomoc', 'Isla de los Cocos'],
-    included:  ['Water', 'Wine', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'A selection of mixed seasonal fruits and berries', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
+    included:  ['Water', 'Wine', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'little romantic surprise', 'A selection of mixed seasonal fruits and berries', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
     id: 5,
     title: 'Sunrise Private Sail Tour',

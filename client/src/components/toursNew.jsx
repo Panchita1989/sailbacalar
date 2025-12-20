@@ -102,7 +102,7 @@ export default function ToursNew() {
                                 <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                                 <div className='text-left'>
                                     <h4>Prices:</h4>
-                                    <p>$4'500 MXN (for 2 Persons), $800 MXN for adicional Person</p>
+                                    <p>$5'000 (for 2 Persons), $800 MXN for adicional Person</p>
                                 </div>
                             </div>
                         </li>
@@ -124,7 +124,10 @@ export default function ToursNew() {
                 <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
                 <ul className='list-disc list-inside text-left'>
                     <li>Water</li>
+                    <li>Sparkling Water</li>
+                    <li>Juices</li>
                     <li>Mixed seasonal Fruits</li>
+                    <li>Guacamole</li>
                     <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
                     <li>Parking</li>
                 </ul>
@@ -191,7 +194,7 @@ export default function ToursNew() {
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
-                                <p>$5'800 MXN (for 2 Persons), $900 MXN for adicional Person</p>
+                                <p>$6'300 MXN (for 2 Persons), $1'000 MXN for adicional Person</p>
                             </div>
                         </div>
                     </li>
@@ -212,8 +215,11 @@ export default function ToursNew() {
                 <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
                 <ul className='list-disc list-inside text-left'>
                     <li>Water</li>
+                    <li>Sparkling Water</li>
                     <li>Beers</li>
                     <li>Soda</li>
+                    <li>Tequila</li>
+                    <li>Ron Bacardi</li>
                     <li>Juices</li>
                     <li>Mixed seasonal Fruits</li>
                     <li>Guacamole</li>
@@ -282,7 +288,7 @@ export default function ToursNew() {
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
-                                <p>$6'800 MXN (for 2 Persons), $1000 MXN for adicional Person</p>
+                                <p>$7'800 MXN (for 2 Persons), $1200 MXN for adicional Person</p>
                             </div>
                         </div>
                     </li>
@@ -305,7 +311,10 @@ export default function ToursNew() {
                 <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
                 <ul className='list-disc list-inside text-left'>
                     <li>Water</li>
+                    <li>Sparkling Water</li>
                     <li>Beers</li>
+                    <li>Tequila</li>
+                    <li>Ron Bacardi</li>
                     <li>Soda</li>
                     <li>Juices</li>
                     <li>Mixed seasonal Fruits</li>
@@ -375,7 +384,7 @@ export default function ToursNew() {
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>Prices:</h4>
-                                <p>$5'800 MXN (for 2 Persons)</p>
+                                <p>$6'500 MXN (for 2 Persons)</p>
                             </div>
                         </div>
                     </li>
@@ -398,6 +407,7 @@ export default function ToursNew() {
                     <li>A selection of mixed seasonal fruits and berries</li>
                     <li>Guacamole</li>
                     <li>Ceviche</li>
+                    <li>little romantic surprise</li>
                     <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
                     <li>Parking</li>
                 </ul>                
