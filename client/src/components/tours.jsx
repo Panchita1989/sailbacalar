@@ -336,7 +336,7 @@ export default function Tours() {
              )}
              </Card>
              <Card 
-                img='./images/romantic.jpg' 
+                img='./images/romantic.webp' 
                 alt='boat tour' 
                 title='Romantic Private Tour' 
                 bookingPath='/bookPrivat'>
@@ -424,7 +424,7 @@ export default function Tours() {
              )}
              </Card>
              <Card 
-                img='./images/sunrise.jpg' 
+                img='./images/sunrise.webp' 
                 alt='boat tour' 
                 title='Sunrise Private Sail Tour' 
                 bookingPath='/bookPrivat'>
