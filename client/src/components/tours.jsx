@@ -2,7 +2,7 @@ import Card from './card.jsx'
 import Footer from './footer.jsx'
 import Button from './button.jsx'
 import Reviews from './reviews.jsx'
-import InformationCard from './informationCard'
+
 import {useCollapse} from 'react-collapsed';
 import {fotoList} from '../data/gallery.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
