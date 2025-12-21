@@ -62,19 +62,19 @@ export default function Gallery({images}){
                 >
                     <Button
                     onClick={prev}
-                    content={<FontAwesomeIcon icon={faChevronLeft} size="lg" />}
+                    children={<FontAwesomeIcon icon={faChevronLeft} size="lg" />}
                     />
                     <Button
                     onClick={next}
-                    content={<FontAwesomeIcon icon={faChevronRight} size="lg" />}
+                    children={<FontAwesomeIcon icon={faChevronRight} size="lg" />}
                     />
                 </div>
             </div>
             )}
 
             <section className='flex gap-8'>
-                <Button onClick={next} content={<FontAwesomeIcon icon={faChevronLeft} size="lg" />} />
-                <Button onClick={prev} content={<FontAwesomeIcon icon={faChevronRight} size="lg" />} />
+                <Button onClick={next} children={<FontAwesomeIcon icon={faChevronLeft} size="lg" />} />
+                <Button onClick={prev} children={<FontAwesomeIcon icon={faChevronRight} size="lg" />} />
             </section>
         </section>
     )

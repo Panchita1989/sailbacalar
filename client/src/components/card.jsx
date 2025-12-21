@@ -25,7 +25,7 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
             </div>
 
             {showButton && (
-                <a href={url} target='blank'><Button className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950' content='Book now'/></a>
+                <a href={url} target='blank'><Button className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950' children='Book now'/></a>
             )}
         </section>
     )

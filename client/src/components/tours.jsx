@@ -246,12 +246,12 @@ export default function Tours() {
                 bookingPath='/bookPrivat'>
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
-                    <button
+                    <Button
                         className="mt-2 mb-4 leading-none "
                         {...getToggleAllDay()}
                     >
                         Show More ▼
-                    </button>
+                    </Button>
                 </div>
              )}
              <section {...getCollapseAllDay()}>
