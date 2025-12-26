@@ -44,7 +44,8 @@ export default function Header() {
           </Link>
         )}
         <div onClick={toggleSideBar} className="mr-5 cursor-pointer">
-          Menu <FontAwesomeIcon icon={faBars} />
+          Menu 
+          {!visible && <FontAwesomeIcon icon={faBars} />}
         </div>
       </header>
 
