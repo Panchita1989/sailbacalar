@@ -43,10 +43,11 @@ export default function Header() {
             />
           </Link>
         )}
+        {!visible && 
         <div onClick={toggleSideBar} className="mr-5 cursor-pointer">
           Menu 
-          {!visible && <FontAwesomeIcon icon={faBars} />}
-        </div>
+          <FontAwesomeIcon icon={faBars} />
+        </div>}
       </header>
 
       <SideNav onClose={onClose} visible={visible} />
