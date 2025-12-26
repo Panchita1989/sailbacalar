@@ -1,0 +1,43 @@
+{
+    "labels":{
+        "durationLabel": "Duration",
+        "groupLabel": "Group Size",
+        "duration": "hours",
+        "idealForLabel": "Ideal for",
+        "pricesLabel": "Prices",
+        "stopsLabel": "Where we’ll take you:",
+        "basePrice": "(for 2 Persons)",
+        "extraPerson": "for adicional Person",
+        "group": "max 14 people",
+        "includeLabel": "What's included"
+    },
+    "buttons":{
+        "more": "Show More ▼",
+        "less": "Show Less ▲",
+        "book": "Book Now"
+    },
+    "tours":{
+        "classic": {
+            "title": "Classic Private Tour",            
+            "idealFor": "Families, couples, or groups of friends looking for a relaxed and private tour.",            
+            "description": "Set sail on a private adventure in the breathtaking Bacalar Lagoon with our 30-foot catamaran. Whether you're celebrating a special occasion, enjoying time with family, or creating unforgettable moments with friends, this personalized tour is designed just for you. Swim in pristine waters, soak up the beauty of the lagoon, and indulde in snacks and drinks onboard. Discover Bacalar from a whole new perspective with a fully customizable experience.",            
+            "stops":[
+                "Pirate Channel",
+                "Bird Island",
+                "Cenote Esmeralda",
+                "Cenote Negro"
+            ],
+            "included": [
+                "Water",
+                "Sparkling Water",
+                "Juices",
+                "Mixed seasonal Fruits",
+                "Guacamole"
+            ]
+        }, 
+        "allInclusiv":{
+            "title": "ALL INCLUSIVE PRIVATE TOUR"
+        }
+        }
+    
+}

@@ -2,7 +2,7 @@ import Card from './card.jsx'
 import Footer from './footer.jsx'
 import Button from './button.jsx'
 import Reviews from './reviews.jsx'
-
+import { useTranslation } from 'react-i18next'
 import {useCollapse} from 'react-collapsed';
 import {fotoList} from '../data/gallery.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +15,7 @@ import { faCashApp } from "@fortawesome/free-brands-svg-icons"
 
 
 export default function Tours() {
+    const { t, i18n } = useTranslation()
 
     const{
         getCollapseProps: getCollapsePrivat, 
@@ -54,7 +55,7 @@ export default function Tours() {
             <Card 
                 img='./images/privat.webp' 
                 alt='privat boat tour' 
-                title='Classic Private Tour' 
+                title={t('tours.classic.title')}
                 bookingPath='/bookPrivat' 
             >
             {isPrivatExpanded ? '' : (
@@ -63,7 +64,7 @@ export default function Tours() {
                         className=" mt-2 mb-4 leading-none "
                         {...getTogglePrivat()}
                     >
-                       Show More ▼
+                       {t('buttons.more')}
                     </button>
                 </div>
 
@@ -74,7 +75,7 @@ export default function Tours() {
                             <div className='flex items-center gap-3'>
                                 <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                                 <div>
-                                    <h4>Duration</h4>
+                                    <h4>{t('labels.durationLabel')}</h4>
                                     <p>4 hours</p>
                                 </div>
                             </div>
@@ -83,8 +84,8 @@ export default function Tours() {
                             <div className='flex gap-3'> 
                                 <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                                 <div className='text-left'>
-                                    <h4>Group Size</h4>
-                                    <p>max 14 people</p>
+                                    <h4>{t('labels.groupLabel')}</h4>
+                                    <p>{t('labels.group')}</p>
                                 </div>
                             </div>
                         </li>
@@ -92,8 +93,8 @@ export default function Tours() {
                             <div className='flex gap-3 items-center'>
                                <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                                <div className='text-left'>
-                                    <h4>Ideal for:</h4>
-                                    <p>Families, couples, or groups of friends looking for a relaxed and private tour.</p>
+                                    <h4>{t('labels.idealForLabel')}</h4>
+                                    <p>{t('tours.classic.idealFor')}</p>
                                 </div> 
                             </div>
                         </li>
@@ -101,35 +102,26 @@ export default function Tours() {
                             <div className='flex gap-3 items-center'>
                                 <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                                 <div className='text-left'>
-                                    <h4>Prices:</h4>
-                                    <p>$5'000 (for 2 Persons), $800 MXN for adicional Person</p>
+                                    <h4>{t('labels.pricesLabel')}</h4>
+                                    <p>$5'000 {t('labels.basePrice')}, $800 MXN {t('labels.extraPerson')}</p>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 <p className='text-left'>
-                    Set sail on a private adventure in the breathtaking Bacalar Lagoon with our 30-foot catamaran.
-                    Whether you're celebrating a special occasion, enjoying time with family, or creating unforgettable moments with friends, 
-                    this personalized tour is designed just for you. Swim in pristine waters, soak up the beauty of the lagoon, and indulde 
-                    in snacks and drinks onboard. Discover Bacalar from 
-                    a whole new perspective with a fully customizable experience.
+                    {t('tours.classic.description')}
                 </p>
-                <h3 className='text-[14px] mt-5 text-left'>Where we’ll take you:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Pirats Chanel</li>
-                    <li>Bird Island</li>
-                    <li>Cenote Esmeralda</li>
-                    <li>Cenote Negro</li>
+                    {t('tours.classic.stops', { returnObjects: true }).map(stop => (
+                        <li key={stop}>{stop}</li>
+                    ))}
                 </ul>
-                <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Water</li>
-                    <li>Sparkling Water</li>
-                    <li>Juices</li>
-                    <li>Mixed seasonal Fruits</li>
-                    <li>Guacamole</li>
-                    <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
-                    <li>Parking</li>
+                    {t('tours.classic.included', { returnObjects: true }).map(item => (
+                        <li key={item}>{item}</li>
+                    ))}
                 </ul>
                 
             </section>
@@ -139,7 +131,7 @@ export default function Tours() {
                         className="mt-2 mb-4 leading-none "
                         {...getTogglePrivat()}
                     >
-                        Show Less ▲
+                        {t('buttons.less')}
                     </button>
                 </div>
             )}

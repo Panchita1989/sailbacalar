@@ -1,0 +1,42 @@
+{
+  "labels": {
+    "durationLabel": "Duración",
+    "groupLabel": "Tamaño del grupo",
+    "duration": "horas",
+    "idealForLabel": "Ideal para",
+    "pricesLabel": "Precios",
+    "stopsLabel": "Lugares que visitaremos:",
+    "basePrice": "(para 2 personas)",
+    "extraPerson": "por persona adicional",
+    "group": "máx. 14 personas",
+    "includeLabel": "Qué incluye"
+  },
+  "buttons": {
+    "more": "Ver más ▼",
+    "less": "Ver menos ▲",
+    "book": "Reservar ahora"
+  },
+  "tours": {
+    "classic": {
+      "title": "Tour Privado Clásico",
+      "idealFor": "Familias, parejas o grupos de amigos que buscan un tour relajado y privado.",
+      "description": "Zarpa en una aventura privada por la impresionante Laguna de Bacalar a bordo de nuestro catamarán de 30 pies. Ya sea que estés celebrando una ocasión especial, disfrutando tiempo en familia o creando momentos inolvidables con amigos, este tour personalizado está diseñado solo para ti. Nada en aguas cristalinas, relájate admirando la belleza de la laguna y disfruta de snacks y bebidas a bordo. Descubre Bacalar desde una perspectiva completamente nueva con una experiencia totalmente personalizable.",
+      "stops": [
+        "Canal de los Piratas",
+        "Isla de los Pájaros",
+        "Cenote Esmeralda",
+        "Cenote Negro"
+      ],
+      "included": [
+        "Agua",
+        "Agua con gas",
+        "Jugos",
+        "Frutas de temporada",
+        "Guacamole"
+      ]
+    },
+    "allInclusiv": {
+      "title": "Tour Privado Todo Incluido"
+    }
+  }
+}

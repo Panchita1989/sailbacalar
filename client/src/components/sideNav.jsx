@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 const SideNav = ({visible, onClose}) => {
     const navMenu = ['Tours', 'Location']
+    const{ t, i18n }= useTranslation()
+    const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang)
+    }
     return(
         <div
             className={`flex flex-col justify-between z-10 rounded-xl fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
@@ -31,10 +36,8 @@ const SideNav = ({visible, onClose}) => {
                 </ul> 
                 <div className="mt-6 text-center pt-4 text-sm">
                     <div className="mt-6 text-sm flex justify-center space-x-4">
-                        <button className= 'underline font-semibold cursor-pointer '>EN</button>
-                        <button className= 'underline font-semibold cursor-pointer' >ES</button>
-                        <button className= 'underline font-semibold cursor-pointer' >DE</button>
-                        <button className='underline font-semibold cursor-pointer '>FR</button>
+                        <button onClick={()=>changeLanguage('en')}  className={i18n.language === 'en' ? 'underline font-semibold' : "cursor-pointer "}>EN</button>
+                        <button onClick={()=>changeLanguage('es')}  className={i18n.language === 'es' ? 'underline font-semibold' : "cursor-pointer "} >ES</button>
                     </div>
                     <span className='text-center text-gray-900 text-sm'>  © {new Date().getFullYear()} Sail Bacalar. All rights reserved.</span>           
                 </div>
