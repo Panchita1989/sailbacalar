@@ -192,6 +192,7 @@ export default function Tours() {
                     </li>
                     </ul>
                 <p className='text-left'> 
+                    {t('tours.allInclusiv.description')}
                 </p>
                 <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
