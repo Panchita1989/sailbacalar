@@ -76,7 +76,7 @@ export default function Tours() {
                                 <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                                 <div>
                                     <h4>{t('labels.durationLabel')}</h4>
-                                    <p>4 hours</p>
+                                    <p>4 {t('labels.duration')}</p>
                                 </div>
                             </div>
                         </li>
@@ -140,7 +140,7 @@ export default function Tours() {
              <Card 
                 img='./images/allInclusive.webp' 
                 alt='boat tour' 
-                title='All Inclusive Private Tour' 
+                title={t('tours.allInclusiv.title')} 
                 bookingPath='/bookPrivat' >
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
@@ -148,7 +148,7 @@ export default function Tours() {
                         className=" mt-2 mb-4 leading-none "
                         {...getToggleInclusive()}
                     >
-                        Show More ▼
+                       {t('buttons.more')}
                     </button>
                 </div>
              )}
@@ -158,8 +158,8 @@ export default function Tours() {
                         <div className='flex items-center gap-3'>
                             <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                             <div>
-                                <h4>Duration</h4>
-                                <p>4 hours</p>
+                                <h4>{t('labels.durationLabel')}</h4>
+                                <p>4 {t('labels.duration')}</p>
                             </div>
                         </div>
                     </li>
@@ -167,8 +167,8 @@ export default function Tours() {
                         <div className='flex gap-3'> 
                             <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                             <div className='text-left'>
-                                <h4>Group Size</h4>
-                                <p>max 14 people</p>
+                                <h4>{t('labels.groupLabel')}</h4>
+                                <p>{t('labels.group')}</p>
                             </div>
                         </div>
                     </li>
@@ -176,48 +176,34 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
-                                <h4>Ideal for:</h4>
-                                <p>Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.</p>
-                            </div> 
+                                <h4>{t('labels.idealForLabel')}</h4>
+                                <p>{t('tours.allInclusiv.idealFor')}</p>
+                            </div>
                         </div>
                     </li>
                     <li className='mt-3'>
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
-                                <h4>Prices:</h4>
-                                <p>$6'300 MXN (for 2 Persons), $1'000 MXN for adicional Person</p>
+                                <h4>{t('labels.pricesLabel')}</h4>
+                                <p>$6'300 MXN {t('labels.basePrice')}, $1'000 MXN {t('labels.extraPerson')}</p>
                             </div>
                         </div>
                     </li>
                     </ul>
-                <p className='text-left'>
-                    Set sail on a private all-inclusive catamaran tour across the breathtaking Bacalar Lagoon. 
-                    Designed exclusively for your group, this experience includes swimming in crystal-clear waters, 
-                    relaxing as you take in the lagoon’s beauty, and enjoying a selection of drinks and fresh snacks onboard. 
-                    Discover Bacalar from a new perspective with a fully personalized and carefree experience.
+                <p className='text-left'> 
                 </p>
-                <h3 className='text-[14px] mt-5 text-left'>Where we’ll take you:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Pirats Chanel</li>
-                    <li>Bird Island</li>
-                    <li>Cenote Esmeralda</li>
-                    <li>Cenote Negro</li>
+                    {t('tours.allInclusiv.stops', { returnObjects: true }).map(stop => (
+                        <li key={stop}>{stop}</li>
+                    ))}
                 </ul>
-                <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Water</li>
-                    <li>Sparkling Water</li>
-                    <li>Beers</li>
-                    <li>Soda</li>
-                    <li>Tequila</li>
-                    <li>Ron Bacardi</li>
-                    <li>Juices</li>
-                    <li>Mixed seasonal Fruits</li>
-                    <li>Guacamole</li>
-                    <li>Ceviche</li>
-                    <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
-                    <li>Parking</li>
+                    {t('tours.allInclusiv.included', {returnObjects: true}).map(item =>(
+                        <li key={item}>{item}</li>
+                    ))}
                 </ul>                
             </section>
              {!isInclusiveExpanded ? '' : (
@@ -226,7 +212,7 @@ export default function Tours() {
                         className="mt-2 mb-4 leading-none "
                         {...getToggleInclusive()}
                     >
-                        Show Less ▲
+                        {t('buttons.less')}
                     </button>
                 </div>
             )}
@@ -234,7 +220,7 @@ export default function Tours() {
              <Card 
                 img='./images/allDay.webp' 
                 alt='boat tour' 
-                title='All Day Private Tour' 
+                title={t('tours.allDay.title')} 
                 bookingPath='/bookPrivat'>
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
@@ -242,7 +228,7 @@ export default function Tours() {
                         className="mt-2 mb-4 leading-none "
                         {...getToggleAllDay()}
                     >
-                        Show More ▼
+                        {t('buttons.more')}
                     </Button>
                 </div>
              )}
@@ -252,8 +238,8 @@ export default function Tours() {
                         <div className='flex items-center gap-3'>
                             <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                             <div>
-                                <h4>Duration</h4>
-                                <p>6 hours</p>
+                                <h4>{t('labels.durationLabel')}</h4>
+                                <p>6 {t('labels.duration')}</p>
                             </div>
                         </div>
                     </li>
@@ -261,8 +247,8 @@ export default function Tours() {
                         <div className='flex gap-3'> 
                             <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                             <div className='text-left'>
-                                <h4>Group Size</h4>
-                                <p>max 14 people</p>
+                                <h4>{t('labels.groupLabel')}</h4>
+                                <p>{t('labels.group')}</p>
                             </div>
                         </div>
                     </li>
@@ -270,8 +256,8 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
-                                <h4>Ideal for:</h4>
-                                <p>Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.</p>
+                                <h4>{t('labels.idealForLabel')}</h4>
+                                <p>{t('tours.allDay.idealFor')}</p>
                             </div> 
                         </div>
                     </li>
@@ -279,41 +265,26 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
-                                <h4>Prices:</h4>
-                                <p>$7'800 MXN (for 2 Persons), $1200 MXN for adicional Person</p>
+                                <h4>{t('labels.pricesLabel')}</h4>
+                                <p>$7'800 MXN {t('labels.basePrice')}, $1200 MXN {t('labels.extraPerson')}</p>
                             </div>
                         </div>
                     </li>
                 </ul>
                 <p>
-                    Set sail on a private all-day catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for 
-                    your group, this extended experience gives you plenty of time to swim in crystal-clear waters, relax, and 
-                    explore hidden spots far away from crowded, touristic areas. Savor refreshing drinks and fresh snacks onboard
-                    while discovering Bacalar from a new perspective in a truly personalized and carefree way.
+                    {t('tours.allDay.description')}
                 </p>
-                <h3 className='text-[14px] mt-5 text-left'>Where we’ll take you:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Canal Xtomoc</li>
-                    <li>Isla de los Cocos</li>
-                    <li>Pirats Chanel</li>
-                    <li>Bird Island</li>
-                    <li>Cenote Esmeralda</li>
-                    <li>Cenote Negro</li>
+                    {t('tours.allDay.stops', {returnObjects: true}).map(stop => (
+                        <li key={stop}>{stop}</li>
+                    ))}
                 </ul>
-                <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Water</li>
-                    <li>Sparkling Water</li>
-                    <li>Beers</li>
-                    <li>Tequila</li>
-                    <li>Ron Bacardi</li>
-                    <li>Soda</li>
-                    <li>Juices</li>
-                    <li>Mixed seasonal Fruits</li>
-                    <li>Guacamole</li>
-                    <li>Ceviche</li>
-                    <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
-                    <li>Parking</li>
+                    {t('tours.allDay.included', { returnObjects: true }).map(item => (
+                        <li key={item}>{item}</li>
+                    ))}
                 </ul>                
              </section>
              {!isAllDayExpanded ? '' : (
@@ -322,7 +293,7 @@ export default function Tours() {
                         className='mt-2 mb-4 leading-none'
                         {...getToggleAllDay()}
                     >
-                        Show Less ▲
+                        {t('buttons.less')}
                     </button>
                 </div>
              )}
@@ -330,7 +301,7 @@ export default function Tours() {
              <Card 
                 img='./images/romantic.webp' 
                 alt='boat tour' 
-                title='Romantic Private Tour' 
+                title={t('tours.romantic.title')}
                 bookingPath='/bookPrivat'>
              {isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
@@ -338,7 +309,7 @@ export default function Tours() {
                         className='mt-2 mb-4 leading-none'
                         {...getToggleRomantic()}
                     >
-                        Show More ▼
+                        {t('buttons.more')}
                     </button>
                 </div>
              )}
@@ -348,8 +319,8 @@ export default function Tours() {
                         <div className='flex items-center gap-3'>
                             <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                             <div>
-                                <h4>Duration</h4>
-                                <p>4 hours</p>
+                                <h4>{t('labels.durationLabel')}</h4>
+                                <p>4 {t('labels.duration')}</p>
                             </div>
                         </div>
                     </li>
@@ -357,8 +328,8 @@ export default function Tours() {
                         <div className='flex gap-3'> 
                             <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                             <div className='text-left'>
-                                <h4>Group Size</h4>
-                                <p>max 2 people</p>
+                                <h4>{t('labels.groupLabel')}</h4>
+                                <p>{t('tours.romantic.group')}</p>
                             </div>
                         </div>
                     </li>
@@ -366,8 +337,8 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
-                                <h4>Ideal for:</h4>
-                                <p>Couples looking to celebrate love in a peaceful and intimate setting.</p>
+                                <h4>{t('labels.idealForLabel')}</h4>
+                                <p>{t('tours.romantic.idealFor')}</p>
                             </div> 
                         </div>
                     </li>
@@ -375,33 +346,26 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
-                                <h4>Prices:</h4>
-                                <p>$6'500 MXN (for 2 Persons)</p>
+                                <h4>{t('labels.pricesLabel')}</h4>
+                                <p>$6'500 MXN {t('labels.basePrice')}</p>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <p>Experience Bacalar Lagoon on a private romantic catamaran tour created for two. Discover hidden, peaceful 
-                    spots, enjoy time swimming and relaxing in pristine waters, and savor drinks and fresh snacks as you take 
-                    in the lagoon’s breathtaking beauty. An unforgettable escape made for love and connection.
+                <p>
+                    {t('tours.romantic.description')}
                 </p>
-                <h3 className='text-[14px] mt-5 text-left'>Where we’ll take you:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Canal Xtomoc</li>
-                    <li>Isla de los Cocos</li>
+                    {t('tours.romantic.stops', {returnObjects: true}).map(stop => (
+                        <li key={stop}>{stop}</li>
+                    ))}
                 </ul>
-                <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Water</li>
-                    <li>Wine</li>
-                    <li>Soda</li>
-                    <li>Juices</li>
-                    <li>A selection of mixed seasonal fruits and berries</li>
-                    <li>Guacamole</li>
-                    <li>Ceviche</li>
-                    <li>Little romantic surprise</li>
-                    <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
-                    <li>Parking</li>
+                    {t('tours.romantic.included', {returnObjects: true}).map(item => (
+                        <li key={item}>{item}</li>
+                    ))}
                 </ul>                
              </section>
              {!isRomanticExpanded ? '' : (
@@ -410,7 +374,7 @@ export default function Tours() {
                         className='mt-2 mb-4 leading-none'
                         {...getToggleRomantic()}
                     >
-                        Show Less ▲
+                        {t('buttons.less')}
                     </button>
                 </div>
              )}
@@ -418,7 +382,7 @@ export default function Tours() {
              <Card 
                 img='./images/sunrise.webp' 
                 alt='boat tour' 
-                title='Sunrise Private Sail Tour' 
+                title={t('tours.sunrise.title')}
                 bookingPath='/bookPrivat'>
              {isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
@@ -426,7 +390,7 @@ export default function Tours() {
                         className='mt-2 mb-4 leading-none'
                         {...getToggleSunrise()}
                     >
-                        Show More ▼
+                        {t('buttons.more')}
                     </button>
                 </div>
              )}
@@ -436,8 +400,8 @@ export default function Tours() {
                         <div className='flex items-center gap-3'>
                             <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                             <div>
-                                <h4>Duration</h4>
-                                <p>3 hours</p>
+                                <h4>{t('labels.durationLabel')}</h4>
+                                <p>3 {t('labels.duration')}</p>
                             </div>
                         </div>
                     </li>
@@ -445,8 +409,8 @@ export default function Tours() {
                         <div className='flex gap-3'> 
                             <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                             <div className='text-left'>
-                                <h4>Group Size</h4>
-                                <p>max 14 people</p>
+                                <h4>{t('labels.groupLabel')}</h4>
+                                <p>{t('labels.group')}</p>
                             </div>
                         </div>
                     </li>
@@ -454,8 +418,8 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
-                                <h4>Ideal for:</h4>
-                                <p>Early risers, couples, and nature lovers seeking a peaceful sunrise experience on the lagoon.</p>
+                                <h4>{t('labels.idealForLabel')}</h4>
+                                <p>{t('tours.sunrise.idealFor')}</p>
                             </div> 
                         </div>
                     </li>
@@ -463,32 +427,26 @@ export default function Tours() {
                         <div className='flex gap-3 items-center'>
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
-                                <h4>Prices:</h4>
-                                <p>$5'000 MXN (for 2 Persons), $800 MXN for adicional Person</p>
+                                <h4>{t('labels.pricesLabel')}</h4>
+                                <p>$5'000 MXN {t('labels.basePrice')}, $800 MXN {t('labels.extraPerson')}</p>
                             </div>
                         </div>
                     </li>
                 </ul>
                 <p>
-                    Start your day with a private sunrise sail across the serene Bacalar Lagoon. As the first light reflects on 
-                    the crystal-clear waters, enjoy the calm atmosphere, gentle sailing, and the lagoon’s natural beauty. 
-                    Swim in peaceful waters, savor light refreshments onboard, and experience Bacalar at its most tranquil.
+                    {t('tours.sunrise.description')}
                 </p>
-                <h3 className='text-[14px] mt-5 text-left'>Where we’ll take you:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Pirats Chanel</li>
-                    <li>Isla de los Cocos</li>
+                    {t('tours.sunrise.stops', { returnObjects: true }).map(stop =>(
+                        <li key={stop}>{stop}</li>
+                    ))}
                 </ul>
-                <h3 className='text-[14px] mt-5 text-left'>What's included:</h3>
+                <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    <li>Water</li>
-                    <li>Juices</li>
-                    <li>Coffee</li>
-                    <li>Homemade Cookies</li>
-                    <li>Toast with butter and jam</li>
-                    <li>Mixed seasonal Fruits</li>
-                    <li>Day Pass Asana Glamping (Bathroom and showers available)</li>
-                    <li>Parking</li>
+                    {t('tours.sunrise.included', { returnObjects: true }).map(item => (
+                        <li key={item}>{item}</li>
+                    ))}
                 </ul>                
              </section>
              {!isSunriseExpanded ? '' : (
@@ -497,7 +455,7 @@ export default function Tours() {
                         className='mt-2 mb-4 leading-none'
                         {...getToggleSunrise()}
                     >
-                        Show Less ▲
+                        {t('buttons.less')}
                     </button>
                 </div>
              )}
@@ -507,9 +465,11 @@ export default function Tours() {
             <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-15'>
                 <h2 className='xl:text-8xl xl:w-1/2'>Sail With Us</h2>
                 <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl xl:px-5">
-                <p className=''>Escape to paradise with our private 30-ft catamaran tour on Bacalar Lagoon.
-                    Whether you're marking a special occasion or just spending quality time with loved ones.</p> <p className='hidden md:block'>This exclusive sailing experience offers tranquility, adventure, 
-                    and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks.</p>
+                <p className=''>
+                    {t('sail.description')}
+                </p> <p className='hidden md:block'>
+                    {t('sail.descriptionHidden')}
+                    </p>
                 </div>
             </section>
             <section className='flex justify-center'>                

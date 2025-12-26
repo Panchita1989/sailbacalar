@@ -1,4 +1,13 @@
 {
+    "sideNav":{
+        "location": "Location",
+        "book": "Book Now"
+    },
+    "banner":{
+        "title": "SAIL - ENJOY - GET INSPIRED",
+        "description": "DISCOVER BACALAR LAGOON IN OUR 30FT CATAMARAN",
+        "subtitle": "Sail with us"
+    },
     "labels":{
         "durationLabel": "Duration",
         "groupLabel": "Group Size",
@@ -36,8 +45,102 @@
             ]
         }, 
         "allInclusiv":{
-            "title": "ALL INCLUSIVE PRIVATE TOUR"
+            "title": "ALL INCLUSIVE PRIVATE TOUR",
+            "idealFor": "Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.",
+            "description": "Set sail on a private all-inclusive catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for your group, this experience includes swimming in crystal-clear waters, relaxing as you take in the lagoon’s beauty, and enjoying a selection of drinks and fresh snacks onboard. Discover Bacalar from a new perspective with a fully personalized and carefree experience.",
+            "stops":[
+                "Pirate Channel",
+                "Bird Island",
+                "Cenote Esmeralda",
+                "Cenote Negro"
+            ],
+            "included":[
+                "Water",
+                "Sparkling Water",
+                "Beers",
+                "Soda",
+                "Tequila",
+                "Ron Bacardi",
+                "Juices",
+                "Mixed seasonal Fruits",
+                "Guacamole",
+                "Ceviche",
+                "Day Pass Asana Glamping (Bathroom and showers available)",
+                "Parking"
+            ]
+        },
+        "allDay":{
+            "title": "all day private tour",
+            "idealFor": "Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.",
+            "description": "Set sail on a private all-day catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for your group, this extended experience gives you plenty of time to swim in crystal-clear waters, relax, and explore hidden spots far away from crowded, touristic areas. Savor refreshing drinks and fresh snacks onboard while discovering Bacalar from a new perspective in a truly personalized and carefree way.",
+            "stops":[
+                "Canal Xtomoc",
+                "Isla de los Cocos",
+                "Pirate Channel",
+                "Bird Island",
+                "Cenote Esmeralda",
+                "Cenote Negro"
+            ],
+            "included":[
+                "Water",
+                "Sparkling Water",
+                "Beers",
+                "Soda",
+                "Tequila",
+                "Ron Bacardi",
+                "Juices",
+                "Mixed seasonal Fruits",
+                "Guacamole",
+                "Ceviche",
+                "Day Pass Asana Glamping (Bathroom and showers available)",
+                "Parking"
+            ]
+        },
+        "romantic":{
+            "title": "romanitc privat tour",
+            "group": "max 2 people",
+            "idealFor": "Couples looking to celebrate love in a peaceful and intimate setting.",
+            "description": "Experience Bacalar Lagoon on a private romantic catamaran tour created for two. Discover hidden, peaceful spots, enjoy time swimming and relaxing in pristine waters, and savor drinks and fresh snacks as you take in the lagoon’s breathtaking beauty. An unforgettable escape made for love and connection.",
+            "stops": [
+                "Canal Xtomoc",
+                "Isla de los Cocos"
+            ],
+            "included":[
+                "Water",
+                "Wine",
+                "Soda",
+                "Juices",
+                "A selection of mixed seasonal fruits and berries",
+                "Guacamole",
+                "Ceviche",
+                "Little romantic surprise",
+                "Day Pass Asana Glamping (Bathroom and showers available)",
+                "Parking"
+            ]
+        },
+        "sunrise":{
+            "title": "Sunrise private Sail tour",
+            "idealFor": "Early risers, couples, and nature lovers seeking a peaceful sunrise experience on the lagoon.",
+            "description": "Start your day with a private sunrise sail across the serene Bacalar Lagoon. As the first light reflects on the crystal-clear waters, enjoy the calm atmosphere, gentle sailing, and the lagoon’s natural beauty. Swim in peaceful waters, savor light refreshments onboard, and experience Bacalar at its most tranquil.",
+            "stops":[
+                "Isla de los Cocos",
+                "Pirate Channel"
+            ],
+            "included":[
+                "Water",
+                "Juices",
+                "Coffee",
+                "Homemade Cookies",
+                "Toast with butter and jam",
+                "Mixed seasonal Fruits",
+                "Day Pass Asana Glamping (Bathroom and showers available)",
+                "Parking"
+            ]
         }
+        },
+        "sail":{
+            "description": "Escape to paradise with our private 30-ft catamaran tour on Bacalar Lagoon. Whether you're marking a special occasion or just spending quality time with loved ones.",
+            "descriptionHidden": " This exclusive sailing experience offers tranquility, adventure, and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks."
         }
     
 }

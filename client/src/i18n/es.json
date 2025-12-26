@@ -1,4 +1,13 @@
 {
+  "sideNav": {
+  "location": "Ubicación",
+  "book": "Reservar ahora"
+  },
+  "banner": {
+  "title": "NAVEGA – DISFRUTA – INSPÍRATE",
+  "description": "DESCUBRE LA LAGUNA DE BACALAR EN NUESTRO CATAMARÁN DE 30 PIES",
+  "subtitle": "Navega con nosotros"
+  },
   "labels": {
     "durationLabel": "Duración",
     "groupLabel": "Tamaño del grupo",
@@ -36,7 +45,102 @@
       ]
     },
     "allInclusiv": {
-      "title": "Tour Privado Todo Incluido"
+      "title": "TOUR PRIVADO TODO INCLUIDO",
+      "idealFor": "Ideal para familias, parejas y grupos de amigos que buscan una experiencia relajada con bebidas y snacks frescos.",
+      "description": "Zarpa en un tour privado todo incluido a bordo de un catamarán por la impresionante Laguna de Bacalar. Diseñada exclusivamente para tu grupo, esta experiencia incluye nado en aguas cristalinas, momentos de relajación mientras disfrutas de la belleza de la laguna y una selección de bebidas y snacks frescos a bordo. Descubre Bacalar desde una nueva perspectiva con una experiencia totalmente personalizada y sin preocupaciones.",
+      "stops": [
+        "Canal de los Piratas",
+        "Isla de los Pájaros",
+        "Cenote Esmeralda",
+        "Cenote Negro"
+      ],
+      "included": [
+        "Agua natural",
+        "Agua mineral",
+        "Cervezas",
+        "Refrescos",
+        "Tequila",
+        "Ron Bacardí",
+        "Jugos",
+        "Frutas frescas de temporada",
+        "Guacamole",
+        "Ceviche",
+        "Day Pass Asana Glamping (baños y duchas disponibles)",
+        "Estacionamiento"
+      ]
+    },
+    "allDay": {
+      "title": "TOUR PRIVADO DE DÍA COMPLETO",
+      "idealFor": "Ideal para familias, parejas o grupos de amigos que buscan una experiencia relajada en la laguna durante todo el día.",
+      "description": "Zarpa en un tour privado de día completo a bordo de un catamarán por la impresionante Laguna de Bacalar.Diseñada exclusivamente para tu grupo, esta experiencia extendida te brinda tiempo de sobra para nadar en aguas cristalinas, relajarte y explorar rincones escondidos lejos de las zonas turísticas y concurridas. Disfruta de bebidas refrescantes y snacks frescos a bordo mientras descubres Bacalar desde una nueva perspectiva, con una experiencia totalmente personalizada y sin preocupaciones.",
+      "stops": [
+         "Canal Xtomoc",
+         "Isla de los Cocos",
+         "Canal de los Piratas",
+         "Isla de los Pájaros",
+         "Cenote Esmeralda",
+         "Cenote Negro"
+      ],
+      "included": [
+         "Agua natural",
+         "Agua mineral",
+         "Cervezas",
+         "Refrescos",
+         "Tequila",
+         "Ron Bacardí",
+         "Jugos",
+         "Frutas frescas de temporada",
+         "Guacamole",
+         "Ceviche",
+         "Day Pass Asana Glamping (baños y duchas disponibles)",
+         "Estacionamiento"
+      ]
+    },
+    "romantic": {
+      "title": "TOUR PRIVADO ROMÁNTICO",
+      "group": "Máx. 2 personas",
+      "idealFor": "Ideal para parejas que desean celebrar el amor en un ambiente íntimo y tranquilo.",
+      "description": "Vive la Laguna de Bacalar en un tour privado romántico en catamarán, diseñado exclusivamente para dos. Descubre rincones escondidos y serenos, disfruta de momentos para nadar y relajarte en aguas cristalinas, y saborea bebidas y snacks frescos mientras contemplas la impresionante belleza de la laguna. Una experiencia inolvidable creada para el amor y la conexión.",
+      "stops": [
+        "Canal Xtomoc",
+        "Isla de los Cocos"
+      ],
+      "included": [
+        "Agua natural",
+        "Vino",
+        "Refrescos",
+        "Jugos",
+        "Selección de frutas y frutos rojos de temporada",
+        "Guacamole",
+        "Ceviche",
+        "Pequeña sorpresa romántica",
+        "Day Pass Asana Glamping (baños y duchas disponibles)",
+        "Estacionamiento"
+      ]
+    },
+    "sunrise": {
+      "title": "TOUR PRIVADO AL AMANECER",
+      "idealFor": "Perfecto para parejas, madrugadores y amantes de la naturaleza.",
+      "description": "Vive la magia del amanecer en la Laguna de Bacalar con una navegación privada y tranquila. Disfruta del silencio de la mañana, nada en aguas cristalinas y contempla los primeros rayos del sol mientras saboreas un desayuno ligero a bordo. Una experiencia serena para comenzar el día en armonía.",
+      "stops": [
+        "Isla de los Cocos",
+        "Canal de los Piratas"
+      ],
+      "included": [
+        "Agua",
+        "Jugos naturales",
+        "Café",
+        "Galletas caseras",
+        "Pan tostado con mantequilla y mermelada",
+        "Fruta fresca de temporada",
+        "Day Pass Asana Glamping (baños y duchas)",
+        "Estacionamiento"
+      ]
     }
-  }
+  },
+  "sail": {
+  "description": "Escápate al paraíso con un tour privado en nuestro catamarán de 30 pies por la Laguna de Bacalar. Ideal para celebrar una ocasión especial o simplemente disfrutar de tiempo de calidad con quienes más quieres.",
+  "descriptionHidden": "Esta experiencia de navegación exclusiva combina tranquilidad, aventura y personalización. Explora las aguas vibrantes de Bacalar, relájate con bebidas a bordo y disfruta de deliciosos snacks."
+}
+
 }
