@@ -2,7 +2,7 @@
 
 const tours = [
     {
-    id: 1,
+    id: 'classic',
     title: 'Classic Private Tour',
     duration: 4,
     maxPersons: 14,
@@ -16,7 +16,7 @@ const tours = [
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Sparkling Water', 'Juices', 'Mixed seasonal Fruits', 'Guacamole', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 },{
-    id: 2,
+    id: "allInclusiv",
     title: 'All Inclusive Private Tour',
     duration: 4,
     maxPersons: 14,

@@ -19,8 +19,8 @@ export default function Banner(){
             <title>Sail Bacalar – Discover Bacalar Lagoon on a Catamaran</title>
             <img className='md:max-h-80  max-h-60 z-10 h1-animate' src="/images/logoNew.png" alt="sail bacalar logo" />
             <h1 className='h1 md:text-5xl text-lg banner-content z-10 '>{t('banner.title').toUpperCase()}</h1>
-            <meta name="description" content="Relax at Pucté Hotel, directly on Bacalar Lagoon. Comfortable rooms, stunning views, and unforgettable boat tours." />
-            <meta name="keywords" content="Hotel Bacalar, Bacalar Lagoon, Pucté Hotel, Lagoonfront Hotel, Bacalar Accommodation" />
+            <meta name="description" content="Sail Bacalar – Enjoy private catamaran tours on the Lagoon of Seven Colors. Sunrise, all-day, romantic and all-inclusive experiences for unforgettable moments." />
+            <meta name="keywords" content="Sail Bacalar, Bacalar Lagoon, Catamaran Tours Bacalar, Private Sailing Bacalar, Lagoon of Seven Colors, Bacalar Boat Tour, Bacalar Excursion" />
             <p className='banner-content md:text-2xl text-gr content-animate text-center'>{t('banner.description').toUpperCase()}</p>     
             <ScrollToButton handleShowMore={handleShowMore} />
         </main>

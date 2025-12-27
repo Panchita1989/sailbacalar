@@ -2,6 +2,7 @@ import BookingCalendar from './bookingCalendar.jsx'
 import BookingForm from './bookingForm.jsx'
 import InformationCard from './informationCard'
 import { useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -13,11 +14,15 @@ import { useState } from "react";
 
 export default function BookPrivat() {
 
+    const{ t } = useTranslation()
+
     const[selectedDate, setSelectedDate] = useState(null)
     const[availableHours, setAvailableHours] = useState([])
     const[selectedHour, setSelectedHour] = useState(null)
 
     const { tour } = useLocation().state || {};
+
+    console.log(tour)
 
     const handleSelectHour = (time) => {
         setSelectedHour(time)
@@ -26,9 +31,9 @@ export default function BookPrivat() {
 
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
-            <h1 className='mb-5 text-xl md:text-3xl text-center'>{tour.title}</h1>
-            <h2>{tour.title}</h2>
-            <h3>Starting at {tour.basePrice} | {tour.duration}h | max {tour.maxPersons} persons | 30ft. Catamaran</h3>           
+            <h1 className='mb-5 text-xl md:text-3xl text-center'>{t(`tours.${tour.id}.title`)}</h1>
+            <h2>{t(`tours.${tour.id}.title`)}</h2>
+            <h3>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | {t('labels.group')} | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>

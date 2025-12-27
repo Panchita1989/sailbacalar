@@ -1,4 +1,13 @@
-{
+{   
+    "bookUI":{
+        "start": "Starting at",
+        "overview": "Overview",
+        "meet": "Meeting Point:",
+        "cancelLabel": "Cancellations:",
+        "cancelDescription": "48 hours in advance",
+        "ageLabel": "Age",
+        "age": "90 years and younger"
+    },
     "sideNav":{
         "location": "Location",
         "book": "Book Now"
