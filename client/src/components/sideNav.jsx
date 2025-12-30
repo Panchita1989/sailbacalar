@@ -11,13 +11,13 @@ const SideNav = ({visible, onClose}) => {
     }
     return(
         <div
-            className={`flex flex-col justify-between z-10 rounded-xl fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
+            className={`flex flex-col justify-between rounded-xl z-30 fixed top-0 right-0 h-full md:w-64 w-40 bg-neutral-300/40 backdrop-blur-md shadow-xl transform transition-transform duration-500 ease-in-out ${
                 visible ? "translate-x-0" : "translate-x-full"
                 }`}
         >
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl"
+                    className="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl "
                 >
                     ✕
                 </button>

@@ -27,13 +27,14 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`header flex text-xl w-full z-20 items-center h-20 transition-all duration-700 ease-out ${
-          show
-            ? 'sticky top-0 justify-between animate-[fadeIn_0.8s_ease-out_forwards]'
-            : 'fixed top-0 justify-end bg-neutral-200/10  text-neutral-800  pointer-events-none animate-[fadeInHeaderFooter_1.5s_ease-out_4.5s_forwards]'
-        }`}
-      >
+    <header
+      className={`header flex text-xl w-full z-20 items-center h-20 transition-all duration-700 ease-out ${
+        show
+          ? 'sticky top-0 justify-between animate-[fadeIn_0.8s_ease-out_forwards]'
+          : 'fixed top-0 justify-end bg-neutral-200/10  text-neutral-800  pointer-events-none animate-[fadeInHeaderFooter_1.5s_ease-out_4.5s_forwards]'
+      }`}
+    >
+
         {show && (
           <Link to="/" onClick={onClose}>
             <img
