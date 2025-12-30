@@ -170,7 +170,7 @@
             ]
         }, 
         "allInclusive":{
-            "title": "ALL INCLUSIVE PRIVATE TOUR",
+            "title": "All Inclusive Private Tour",
             "idealFor": "Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.",
             "description": "Set sail on a private all-inclusive catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for your group, this experience includes swimming in crystal-clear waters, relaxing as you take in the lagoon’s beauty, and enjoying a selection of drinks and fresh snacks onboard. Discover Bacalar from a new perspective with a fully personalized and carefree experience.",
             "stops":[
@@ -195,7 +195,7 @@
             ]
         },
         "allDay":{
-            "title": "all day private tour",
+            "title": "All day private tour",
             "idealFor": "Families, couples, or groups of friends looking for a full-day, relaxed lagoon experience.",
             "description": "Set sail on a private all-day catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for your group, this extended experience gives you plenty of time to swim in crystal-clear waters, relax, and explore hidden spots far away from crowded, touristic areas. Savor refreshing drinks and fresh snacks onboard while discovering Bacalar from a new perspective in a truly personalized and carefree way.",
             "stops":[
@@ -222,7 +222,7 @@
             ]
         },
         "romantic":{
-            "title": "romanitc privat tour",
+            "title": "Romanitc private tour",
             "group": "max 2 people",
             "idealFor": "Couples looking to celebrate love in a peaceful and intimate setting.",
             "description": "Experience Bacalar Lagoon on a private romantic catamaran tour created for two. Discover hidden, peaceful spots, enjoy time swimming and relaxing in pristine waters, and savor drinks and fresh snacks as you take in the lagoon’s breathtaking beauty. An unforgettable escape made for love and connection.",
@@ -266,6 +266,21 @@
         "sail":{
             "description": "Escape to paradise with our private 30-ft catamaran tour on Bacalar Lagoon. Whether you're marking a special occasion or just spending quality time with loved ones.",
             "descriptionHidden": " This exclusive sailing experience offers tranquility, adventure, and customization. Explore Bacalar’s vibrant waters, relax with onboard refreshments, and savor tasty snacks."
+        },
+        "bookingForm":{
+            "title": "Your Booking",
+            "date": "Date",
+            "time": "Time",
+            "selectExtraPerson": "select amount of Persons",
+            "amountPersons": "Amount of Persons:",
+            "requiredPrepayment": "Requiered Prepayment:",
+            "contact": "Contact Details",
+            "name": "Full Name",
+            "namePlaceholder": "Enter Full name",
+            "email": "Email",
+            "emailPlaceholder": "Enter Email",
+            "phone": "Phone",
+            "phonePlaceholder": "Enter Phone"
         }
     
 }

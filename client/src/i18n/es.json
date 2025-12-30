@@ -168,7 +168,7 @@
       ]
     },
     "allInclusive": {
-      "title": "TOUR PRIVADO TODO INCLUIDO",
+      "title": "Tour Privado Todo Incluido",
       "idealFor": "Ideal para familias, parejas y grupos de amigos que buscan una experiencia relajada con bebidas y snacks frescos.",
       "description": "Déjate llevar por una aventura privada en la impresionante Laguna de Bacalar a bordo de nuestro catamarán de 30 pies. Diseñada exclusivamente para tu grupo, esta experiencia incluye nado en aguas cristalinas, momentos de relajación mientras disfrutas de la belleza de la laguna y una selección de bebidas y snacks frescos a bordo. Descubre Bacalar desde una nueva perspectiva con una experiencia totalmente personalizada y sin preocupaciones.",
       "stops": [
@@ -193,7 +193,7 @@
       ]
     },
     "allDay": {
-      "title": "TOUR PRIVADO DE DÍA COMPLETO",
+      "title": "Tour Privado de Dia completo",
       "idealFor": "Ideal para familias, parejas o grupos de amigos que buscan una experiencia relajada en la laguna durante todo el día.",
       "description": "Explora la impresionante Laguna de Bacalar en una experiencia privada a bordo de nuestro catamarán de 30 pies. Diseñada exclusivamente para tu grupo, esta experiencia extendida te brinda tiempo de sobra para nadar en aguas cristalinas, relajarte y explorar rincones escondidos lejos de las zonas turísticas y concurridas. Disfruta de bebidas refrescantes y snacks frescos a bordo mientras descubres Bacalar desde una nueva perspectiva, con una experiencia totalmente personalizada y sin preocupaciones.",
       "stops": [
@@ -220,7 +220,7 @@
       ]
     },
     "romantic": {
-      "title": "TOUR PRIVADO ROMÁNTICO",
+      "title": "Tour Privado Romántico",
       "group": "Máx. 2 personas",
       "idealFor": "Ideal para parejas que desean celebrar el amor en un ambiente íntimo y tranquilo.",
       "description": "Vive la Laguna de Bacalar en un tour privado romántico en catamarán, diseñado exclusivamente para dos. Descubre rincones escondidos y serenos, disfruta de momentos para nadar y relajarte en aguas cristalinas, y saborea bebidas y snacks frescos mientras contemplas la impresionante belleza de la laguna. Una experiencia inolvidable creada para el amor y la conexión.",
@@ -242,7 +242,7 @@
       ]
     },
     "sunrise": {
-      "title": "TOUR PRIVADO AL AMANECER",
+      "title": "Tour Privado al Amanecer",
       "idealFor": "Perfecto para parejas, madrugadores y amantes de la naturaleza.",
       "description": "Vive la magia del amanecer en la Laguna de Bacalar con una navegación privada y tranquila. Disfruta del silencio de la mañana, nada en aguas cristalinas y contempla los primeros rayos del sol mientras saboreas un desayuno ligero a bordo. Una experiencia serena para comenzar el día en armonía.",
       "stops": [
@@ -264,6 +264,22 @@
   "sail": {
   "description": "Escápate al paraíso con un tour privado en nuestro catamarán de 30 pies por la Laguna de Bacalar. Ideal para celebrar una ocasión especial o simplemente disfrutar de tiempo de calidad con quienes más quieres.",
   "descriptionHidden": "Esta experiencia de navegación exclusiva combina tranquilidad, aventura y personalización. Explora las aguas vibrantes de Bacalar, relájate con bebidas a bordo y disfruta de deliciosos snacks."
+},
+"bookingForm": {
+    "title": "Tu Reserva",
+    "date": "Fecha",
+    "time": "Hora",
+    "selectExtraPerson": "selecciona la cantidad de personas",
+    "amountPersons": "Cantidad de personas:",
+    "requiredPrepayment": "Pago anticipado requerido:",
+    "contact": "Datos de contacto",
+    "name": "Full Name",
+    "namePlaceholder": "Enter Full name",
+    "email": "Email",
+    "emailPlaceholder": "Enter Email",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter Phone"
 }
+
 
 }

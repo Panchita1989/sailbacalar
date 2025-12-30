@@ -190,7 +190,7 @@ export default function BookPrivat() {
                     )}
                     {(selectedDate && selectedHour) && (
                         <BookingForm 
-                            title={tour.title} 
+                            title={t(`tours.${tour.id}.title`)}
                             extraPerson={tour.extraPerson}
                             basePrice={tour.basePrice} 
                             selectedDate={selectedDate} 

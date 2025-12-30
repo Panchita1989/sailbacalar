@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 
 
 export default function BookingForm({selectedDate, selectedHour, title, basePrice, extraPerson}) {
+
+    const{ t, i18n } = useTranslation()
 
     const basePerson = 2
     const basePriceNum = Number(basePrice.replace('$', '').replace("'", ""))
@@ -26,7 +29,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     console.log(extraPerson)
 
     const formatDate = (dateObj) =>{
-        return new Intl.DateTimeFormat('en-GB',{
+        return new Intl.DateTimeFormat(i18n.language === 'es' ? 'es-MX' : 'en-GB',{
             weekday: 'long',
             day: 'numeric',
             month: 'long',
@@ -36,12 +39,21 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
 
     useEffect(() => {
         if(selectedHour === '10am'){
-            setTime('from 10am to 2pm')
+            if(i18n.language === 'en'){
+                setTime('from 10am to 2pm')
+            }else if( i18n.language === 'es'){
+                setTime('de 10am a 2pm')
+            }
+            
         }
         if(selectedHour === '3pm'){
-            setTime('from 3pm to 7pm')
+            if(i18n.language === 'en'){
+                setTime('from 3pm to 7pm')
+            }else if( i18n.language === 'es'){
+                setTime('de 3pm a 7pm')
+            }
         }
-    }, [selectedHour])
+    }, [selectedHour, i18n])
 
     const handleSelect = (e) => {
         const count = parseInt(e.target.value)
@@ -78,12 +90,12 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     
     return(
         <section className='flex flex-col items-start' >            
-            <p className='text-xl'>Your Booking:</p>
+            <p className='text-xl'>{t('bookingForm.title')}:</p>
             <p className='text-lg'>{title}</p>
-            <p className='text-lg'>Date: {formatDate(selectedDate)}</p> 
-            <p className='text-lg'>Time: {`${time}`}</p>
+            <p className='text-lg'>{t('bookingForm.date')}: {formatDate(selectedDate)}</p> 
+            <p className='text-lg'>{t('bookingForm.time')}: {`${time}`}</p>
             <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='border-1'>
-                <option disabled selected value="">select amount of Persons</option>
+                <option disabled selected value="">{t('bookingForm.selectExtraPerson')}</option>
                 <option value="1" >1 Person (+ {extraPerson}p.p)</option>
                 <option value="2">2 Person (+ {extraPerson}p.p)</option>
                 <option value="3">3 Person (+ {extraPerson}p.p)</option>
@@ -97,23 +109,23 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
                 <option value="11">11 Person (+ {extraPerson}p.p)</option>
                 <option value="12">12 Person (+ {extraPerson}p.p)</option>
             </select>
-            <p className='text-lg mt-2'>Amount of Persons: {`${persons}`}</p>
+            <p className='text-lg mt-2'>{t('bookingForm.amountPersons')} {`${persons}`}</p>
             <p className='text-lg'>Total: {`${price}`} MXN</p>
-            <p className='text-lg'>Requiered Prepayment: ${`${prepayment}`} MXN</p>
+            <p className='text-lg'>{t('bookingForm.requiredPrepayment')} ${`${prepayment}`} MXN</p>
 
 
             <form onSubmit={handleSubmit} className='text-sm mt-5 flex flex-col items-start gap-3 w-full'>
-                Contact Details 
-            <label htmlFor="name" className='text-sm'>Full Name</label>
-            <input required type="text" id='name' placeholder='Enter Full Name'className='border-1 rounded w-full' onChange={(e) => setName(e.target.value)}/>
-            <label htmlFor="email">Email</label>
-            <input required type="email" id='email' placeholder='Enter Email' className='border-1 rounded w-full' onChange={(e) => setEmail(e.target.value)} />
-            <label htmlFor="phone">Phone</label>
+               {t('bookingForm.contact')}
+            <label htmlFor="name" className='text-sm'>{t('bookingForm.name')}</label>
+            <input required type="text" id='name' placeholder={t('bookingForm.namePlaceholder')}className='border-1 rounded w-full' onChange={(e) => setName(e.target.value)}/>
+            <label htmlFor="email">{t('bookingForm.email')}</label>
+            <input required type="email" id='email' placeholder={t('bookingForm.emailPlaceholder')} className='border-1 rounded w-full' onChange={(e) => setEmail(e.target.value)} />
+            <label htmlFor="phone">{t('bookingForm.phone')}</label>
             <PhoneInput 
                 required
                 id='phone'
                 className='border-1 rounded w-full'
-                placeholder="Enter phone number"
+                placeholder={t('bookingForm.phonePlaceholder')}
                 value={phone}
                 onChange={setPhone}
                 defaultCountry="MX"
