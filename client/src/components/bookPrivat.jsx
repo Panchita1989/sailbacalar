@@ -29,24 +29,29 @@ export default function BookPrivat() {
     }
     console.log(selectedHour)
 
+    const priceKey =
+        tour.id === "romantic"
+                    ? "prices.romantic"
+                    : "prices.standard";
+
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
-            <h1 className='mb-5 text-xl md:text-3xl text-center'>{t(`tours.${tour.id}.title`)}</h1>
-            <h2>{t(`tours.${tour.id}.title`)}</h2>
-            <h3>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | {t('labels.group')} | 30ft. Catamaran</h3>           
+            <h1 className='mb-5 text-xl md:text-3xl text-center'>{t(`tours.${tour.id}.title`).toUpperCase()}</h1>
+            <h2>{t(`tours.${tour.id}.title`).toUpperCase()}</h2>
+            <h3>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | max {tour.maxPersons} {t('bookUI.persons')} | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
                         <img src="./images/pakal.png" alt="laguna bacalar" className='max-h-100 my-5'/>
                     </div>
-                    <InformationCard title='Overview'>
+                    <InformationCard title={t('bookUI.overviewLabel')}>
                         <ul>
                             <li className=''>
                                 <div className='flex gap-3'>
                                     <FontAwesomeIcon className='text-xl md:text-2xl' icon={faClock} />
                                     <div className='text-left'>
-                                        <h4>Duration:</h4>
-                                        <p>{tour.duration} hours</p>
+                                        <h4>{t('labels.durationLabel')}:</h4>
+                                        <p>{tour.duration} {t('labels.duration')}</p>
                                     </div>
                                 </div>
                             </li>
@@ -54,7 +59,7 @@ export default function BookPrivat() {
                                 <div className='flex gap-3'>
                                     <FontAwesomeIcon className='text-xl md:text-2xl' icon={faLocationDot} />
                                     <div className='text-left'>
-                                        <h4>Meeting Point:</h4>
+                                        <h4>{t('bookUI.meet')}</h4>
                                         <p>Asana Glamping, km 22.5 Carretera Bacalar</p>
                                     </div>
                                 </div>
@@ -63,8 +68,8 @@ export default function BookPrivat() {
                                 <div className='flex gap-3'>
                                     <FontAwesomeIcon className='text-2xl' icon={faCircleXmark} /> 
                                     <div className='text-left'>
-                                        <h4>Cancellations:</h4>
-                                        <p>48 hours in advance</p>
+                                        <h4>{t('bookUI.cancelLabel')}</h4>
+                                        <p>{t('bookUI.cancelDescription')}</p>
                                     </div>
                                 </div>
                             </li>
@@ -72,8 +77,8 @@ export default function BookPrivat() {
                                 <div className='flex gap-3'>
                                     <FontAwesomeIcon className='text-2xl' icon={faIdBadge} /> 
                                     <div className='text-left'>
-                                        <h4>Age:</h4>
-                                        <p>90 years and younger</p>
+                                        <h4>{t('bookUI.ageLabel')}</h4>
+                                        <p>{t('bookUI.age')}</p>
                                     </div>
                                 </div>
                             </li>
@@ -81,147 +86,97 @@ export default function BookPrivat() {
                                 <div className='flex gap-3'> 
                                     <FontAwesomeIcon className='text-2xl' icon={faPeopleGroup} /> 
                                     <div className='text-left'>
-                                        <h4>Group Size</h4>
-                                        <p>max {tour.maxPersons} people</p>
+                                        <h4>{t('labels.groupLabel')}</h4>
+                                        <p>max {tour.maxPersons} {t('bookUI.persons')}</p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </InformationCard>
-                    <InformationCard title='Activity Details'>
+                    <InformationCard title={t('bookUI.activity')}>
                         <p className='text-left'> 
-                            {tour.description}
+                            {t(`tours.${tour.id}.description`)}
                         </p>
-                        <h3 className='mt-3 mb-2 text-left'>What’s Included:</h3>
+                        <h3 className='mt-3 mb-2 text-left'>{t('labels.includeLabel')}</h3>
                         <ul className='list-disc list-inside space-y-1 text-left'>
-                            {tour.included.map(i =>{
+                            {t(`tours.${tour.id}.included`, { returnObjects: true }).map(i =>{
                                 return <li key={i}>{i}</li>
                             })}
                         </ul>
-                        <h3 className='text-left mt-3 mb-2'>What’s not Included:</h3>
+                        <h3 className='text-left mt-3 mb-2'>{t('labels.notIncludedLabel')}</h3>
                         <ul className='list-disc list-inside space-y-1 text-left'>
-                            <li>Pick-up service</li>
-                            <li>Tips</li>
-                            <li>French-speaking guide</li>
+                            {t('notIncluded', { returnObjects: true}).map(i =>(
+                                <li key={i}>{i}</li>
+                            ))}
                         </ul>
                     </InformationCard>
                     <InformationCard title='Prices'>
                         <p className='text-left'>
-                            The cost of our tour is {tour.basePrice} MXN for groups of up to 2 people. If you’d like to add more guests, 
-                            there is an additional fee of {tour.extraPerson} MXN per extra person, with a maximum capacity of {tour.maxPersons} people in total.
+                            {t(priceKey, {
+                                basePrice: tour.basePrice,
+                                baseGroupSize: 2,
+                                extraPerson: tour.extraPerson,
+                                maxPersons: tour.maxPersons
+                            })}
                         </p>
-                        <p className='text-left'>Enjoy an exclusive and personalized experience on the beautiful Bacalar Lagoon! </p>
+                        <p className='text-left'>{t('prices.description')} </p>
                     </InformationCard>
-                    <InformationCard title='Additional Information'>
-                        <h3 className='mb-3 text-left'>What to Bring</h3>
-                        <p className='text-left'>To enjoy our tour to the fullest, we recommend bringing the following items:</p>
-                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
-                            <li>Cap or hat</li>
-                            <li>Towel</li>
-                            <li>Sunglasses</li>
-                            <li>UV-protection clothing</li>
-                            <li>Swimsuit</li>
-                            <li>Camera</li>
+                    <InformationCard title={t('additional.title')}>
+                        <h3 className='mb-3 text-left'>{t('additional.bring')}</h3>
+                        <p className='mt-3 text-left'>{t('additional.bringDescription')}</p>
+                        <ul className='list-disc list-inside space-y-1 mb-3 text-left'>
+                            {t('additional.bringItems', {returnObjects: true }).map(item =>(
+                                <li key={item}>{item}</li>
+                            ))}
                         </ul>
-                        <p className='mb-3 text-left'>Your comfort and safety are our priority, so don’t forget these essential items for an amazing day 
-                            in Bacalar.</p>
-                        <h3 className='mb-3 text-left'>Restrictions</h3>
-                        <p className='text-left'>To ensure the safety and comfort of all our passengers, please take the following restrictions 
-                            into consideration before booking:</p>
-                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
-                            <li><b>Pregnant women:</b> We recommend that women over 7 months pregnant consult their doctor before participating in the tour, 
-                                as it may not be suitable for safety reasons.</li>
-                            <li>
-                                <b>People with reduced mobility or wheelchair users: </b>Due to the nature of boarding and the facilities on 
-                                board, unfortunately, we do not have adequate access for individuals with limited mobility or those in wheelchairs.
-                            </li>
-                            <li>
-                                <b>Alcohol consumption:</b> While we offer moderate alcoholic beverages on board, we kindly ask our guests
-                                to drink responsibly. Excessive alcohol consumption may compromise the safety and enjoyment of the experience for everyone.
-                            </li>
+                        <p className='mb-3 text-left'>{t('additional.description')}</p>
+                        <h3 className='mb-3 text-left'>{t('additional.restrictions')}</h3>
+                        <p className='text-left'>{t('additional.restrictionsDescription')}</p>
+                        <ul className='list-disc list-inside space-y-1 mb-2 text-left'>
+                            {t('additional.restrictionItems', {returnObjects:true}).map(item =>(
+                                <li key={item}><b>{item.label}:</b> {item.text}</li>
+                            ))}
                         </ul>
-                        <p className='text-left'>Our team is here to ensure you have a safe and pleasant experience, and we appreciate your understanding and cooperation.</p>
-                        <h3 className='mb-3 text-left'>Extras</h3>
-                        <ul className='list-disc list-inside space-y-1 my-5 text-left'>
-                            <li>French-speaking guide: $650 MXN</li>
-                            <li>Private ground pick-up service (taxi): $100 MXN</li>
+                        <p className='text-left'>{t('additional.extrasDescription')}</p>
+                        <h3 className='mt-3 text-left'>Extras:</h3>
+                        <ul className='list-disc list-inside space-y-1 mb-5 text-left'>
+                            {t('additional.extrasItems', { returnObjects: true }).map(item =>(
+                                <li key={item}>{item}</li>
+                            ))}
                         </ul>
-                        <h3 className='mb-3 text-left'>Disclaimers</h3>
+                        <h3 className='mb-1 text-left'>{t('additional.disclaimers')}</h3>
                         <p className='text-left'>
-                            Before boarding our tours with Sail Bacalar, it is important that clients understand and accept the 
-                            inherent risks associated with water activities and sailing.
+                            {t('additional.disclaimersDescription')}
                         </p>
                         <ul className='list-disc list-inside space-y-1 my-5 text-left'>
-                            <li>
-                                <b>Risks and safety:</b> Sailing involves certain natural risks. Although we take measures to ensure 
-                                safety, guests should be aware of possible risks such as falls or physical discomfort.
-                            </li>
-                            <li>
-                                <b>Health and conditions:</b> Participants must be in good health and inform us of any medical conditions 
-                                before the tour.
-                            </li>
-                            <li>
-                               <b>Personal responsibility:</b> It is mandatory to follow the captain’s instructions and use the safety equipment provided.
-                            </li>
-                            <li><b>Personal belongings:</b> We are not responsible for the loss or damage of personal items.</li>
-                            <li><b>Weather conditions:</b>The itinerary may change for safety reasons if weather conditions require it.</li>
-                            <li>
-                               <b>Liability release:</b> By signing, participants release Sailing Colibrí from any responsibility for accidents or injuries not caused by gross negligence.
-                            </li>
+                            {t('additional.disclaimerItems', { returnObjects: true }).map(item => (
+                                <li key={item}><b>{item.label}: </b>{item.text}</li>
+                            ))}
                         </ul>
                     </InformationCard>
                     <InformationCard title='FAQ'>
                         <ul className='text-left'>
-                            <li>
-                                <p className='font-bold'>Is this activity suitable for children? From what age?</p>
-                                <p>Yes, absolutely! Children can join the tour starting from 6 months old. It’s a safe and family-friendly experience.</p>
-                            </li>
-                            <li>
-                                <p className='font-bold'>Can I bring extra food or drinks?</p>
-                                <p>Yes, you can. We have enough space on board and a cooler with ice to keep your drinks and food fresh during the tour.</p>
-                            </li>
-                            <li>
-                                <p className='font-bold'>Can you pick me up at the hotel dock where I’m staying?</p>
-                                <p>Sorry, we do not offer that service due to the time required for that maneuver. We will meet at our designated departure point to ensure everything runs on time and stays organized.</p>                     
-                            </li>
-                            <li>
-                                <p className='font-bold'>Do you provide life jackets and safety equipment?</p>
-                                <p>Yes, all safety equipment is in perfect condition and fully compliant with regulations. We have life jackets available for both adults and children.</p>
-                            </li>
-                            <li>
-                                <p className='font-bold'>Do I need prior experience to navigate?</p>
-                                <p>No, you don’t need any previous experience. Our expert bilingual captains will take care of the navigation — you just need to relax and enjoy the scenery.</p>
-                            </li>
-                            <li>
-                                <p className='font-bold'>Is the tour private or shared?</p>
-                                <p>We offer both private and shared tours. However, if you prefer an exclusive experience just for you and your group, this is the perfect option to choose.</p>
-                            </li>
+                            {t('faqItems', { returnObjects: true}).map(item =>(
+                                <li key={item}>
+                                    <p className='font-bold'>{item.question}</p>
+                                    <p>{item.answer}</p>
+                                </li>
+                            ))}                        
                         </ul>
                     </InformationCard>
-                    <InformationCard title='Cancellations' >
+                    <InformationCard title={t('cancellations.title')} >
                         <p className='mb-3 text-left'>
-                            Customers will receive a full refund or the option to reschedule if the cancellation is made at 
-                            least 48 hours in advance. Customers will also receive a full refund or the option to reschedule in case 
-                            the operator cancels due to weather or other unforeseen circumstances. No-shows will be charged the full 
-                            price.
+                            {t('cancellations.description')}
                         </p>
                         <p className='mb-3 text-left'>
-                            For the <b>Shared Tour</b>, the boat will depart exactly at the scheduled time. If the customer does not 
-                            arrive on time, it will be considered a no-show and they will not be entitled to a refund. The shared
-                            tour is subject to cancellation if the minimum required number of participants is not met (4 people). 
-                            If this occurs, we commit to notifying you at least 7 hours in advance.
+                            {t('cancellations.timeSchedule')}
                         </p>
-                        <p className='mb-3 text-left'>
-                            For <b>Private Tours</b>, if the customer does not arrive at the agreed time, the time will simply be 
-                            deducted from the total duration of the tour. The boat will not depart until the customer arrives, but 
-                            it will return at the originally scheduled end time.
-                        </p>
-                        <p className='mb-3 text-left'>Please contact us by email to cancel or inquire about rescheduling.</p>
-                        <p>Thank You!</p>
+                        <p className='mb-3 text-left'>{t('cancellations.reschedule')}</p>
+                        <p>{t('cancellations.thanks')}</p>
                     </InformationCard>
                 </div>
                 <div className='text-center order-1 lg:order-2'>
-                    <h2 className='lg:flex-[1] mt-10'>Choose your date</h2>
+                    <h2 className='lg:flex-[1] mt-10'>{t('calendar.choose')}</h2>
                     <BookingCalendar 
                         setSelectedHour={setSelectedHour} 
                         setAvailableHours={setAvailableHours}  

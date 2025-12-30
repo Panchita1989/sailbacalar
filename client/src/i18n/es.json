@@ -1,4 +1,115 @@
 {
+  "bookUI": {
+  "start": "Desde",
+  "overviewLabel": "Resumen",
+  "meet": "Punto de encuentro:",
+  "cancelLabel": "Cancelaciones:",
+  "cancelDescription": "48 horas de anticipación",
+  "ageLabel": "Edad",
+  "age": "90 años o menos",
+  "persons": "personas",
+  "activity": "Detalles de la actividad"
+  
+},
+"additional":{
+  "title": "Información adicional",
+  "bring": "Qué llevar",
+  "bringDescription": "Para disfrutar al máximo de nuestro tour, recomendamos llevar los siguientes artículos:",
+  "bringItems": [
+    "Gorra o sombrero",
+    "Toalla",
+    "Gafas de sol",
+    "Ropa con protección UV",
+    "Traje de baño",
+    "Cámara"
+], 
+  "description": "Tu comodidad y seguridad son nuestra prioridad, así que no olvides estos artículos esenciales para disfrutar de un día increíble en Bacalar.",
+  "restrictions": "Restricciones",
+  "restrictionsDescription": "Para garantizar la seguridad y comodidad de todos nuestros pasajeros, por favor ten en cuenta las siguientes restricciones antes de reservar:",
+  "restrictionItems": [
+    {
+      "label": "Mujeres embarazadas",
+      "text": "Recomendamos que las mujeres con más de 7 meses de embarazo consulten a su médico antes de participar en el tour, ya que podría no ser adecuado por razones de seguridad."
+    },
+    {
+      "label": "Personas con movilidad reducida o usuarias de silla de ruedas",
+      "text": "Debido a la naturaleza del embarque y a las instalaciones a bordo, lamentablemente no contamos con acceso adecuado para personas con movilidad limitada o usuarias de silla de ruedas."
+    },
+    {
+      "label": "Consumo de alcohol",
+      "text": "Aunque ofrecemos bebidas alcohólicas con moderación a bordo, solicitamos amablemente a nuestros invitados consumirlas de manera responsable. El consumo excesivo de alcohol puede comprometer la seguridad y el disfrute de la experiencia para todos."
+    }
+  ],  
+  "extrasDescription": "Nuestro equipo está aquí para garantizar que tengas una experiencia segura y agradable, y agradecemos tu comprensión y cooperación.",
+  "extrasItems": [
+    "Guía de habla francesa: $1,000 MXN",
+    "Servicio privado de recogida terrestre (taxi): $200 MXN"
+  ], 
+  "disclaimers": "Avisos legales:",
+  "disclaimersDescription": "Antes de abordar nuestros tours con Sail Bacalar, es importante que los clientes comprendan y acepten los riesgos inherentes asociados con las actividades acuáticas y la navegación.",
+  "disclaimerItems": [
+    {
+      "label": "Riesgos y seguridad",
+      "text": "La navegación implica ciertos riesgos naturales. Aunque tomamos medidas para garantizar la seguridad, los invitados deben ser conscientes de posibles riesgos como caídas o molestias físicas."
+    },
+    {
+      "label": "Salud y condiciones",
+      "text": "Los participantes deben gozar de buena salud e informarnos sobre cualquier condición médica antes del tour."
+    },
+    {
+      "label": "Responsabilidad personal",
+      "text": "Es obligatorio seguir las instrucciones del capitán y utilizar el equipo de seguridad proporcionado."
+    },
+    {
+      "label": "Pertenencias personales",
+      "text": "No nos hacemos responsables de la pérdida o daño de objetos personales."
+    },
+    {
+      "label": "Condiciones climáticas",
+      "text": "El itinerario puede cambiar por motivos de seguridad si las condiciones climáticas lo requieren."
+    },
+    {
+      "label": "Exención de responsabilidad",
+      "text": "Al firmar, los participantes liberan a Sailing Colibrí de cualquier responsabilidad por accidentes o lesiones no causadas por negligencia grave."
+    }
+  ]  
+},
+"faqItems": [
+  {
+    "question": "¿Es esta actividad adecuada para niños? ¿A partir de qué edad?",
+    "answer": "¡Sí, absolutamente! Los niños pueden unirse al tour a partir de los 6 meses. Es una experiencia segura y familiar."
+  },
+  {
+    "question": "¿Puedo llevar comida o bebidas adicionales?",
+    "answer": "Sí, puedes. Tenemos suficiente espacio a bordo y una nevera con hielo para mantener tus bebidas y alimentos frescos durante el tour."
+  },
+  {
+    "question": "¿Pueden recogerme en el muelle del hotel donde estoy alojado?",
+    "answer": "Lo sentimos, no ofrecemos ese servicio debido al tiempo que requiere esa maniobra. Nos encontraremos en nuestro punto de salida designado para asegurar que todo funcione a tiempo y de manera organizada."
+  },
+  {
+    "question": "¿Proporcionan chalecos salvavidas y equipo de seguridad?",
+    "answer": "Sí, todo el equipo de seguridad está en perfectas condiciones y cumple con las normativas. Tenemos chalecos salvavidas disponibles tanto para adultos como para niños."
+  },
+  {
+    "question": "¿Necesito experiencia previa para navegar?",
+    "answer": "No, no necesitas experiencia previa. Nuestros capitanes bilingües expertos se encargarán de la navegación — solo necesitas relajarte y disfrutar del paisaje."
+  },
+  {
+    "question": "¿El tour es privado o compartido?",
+    "answer": "Ofrecemos tours tanto privados como compartidos. Sin embargo, si prefieres una experiencia exclusiva solo para ti y tu grupo, esta es la opción perfecta."
+  }
+],
+"cancellations": {
+    "title": "Cancelaciones",
+    "description": "Los clientes recibirán un reembolso completo o la opción de reprogramar si la cancelación se realiza al menos 48 horas antes. Los clientes también recibirán un reembolso completo o la opción de reprogramar en caso de que el operador cancele debido al clima u otras circunstancias imprevistas.",
+    "timeSchedule": "Si el cliente no llega a la hora acordada, el tiempo simplemente se deducirá de la duración total del tour. El barco no partirá hasta que el cliente llegue, pero regresará a la hora originalmente programada.",
+    "reschedule": "Por favor contáctanos por correo electrónico para cancelar o consultar sobre reprogramaciones.",
+    "thanks": "¡Gracias!"
+},
+"calendar": {
+  "choose": "Elige tu fecha"
+},
   "sideNav": {
   "location": "Ubicación",
   "book": "Reservar ahora"
@@ -18,13 +129,25 @@
     "basePrice": "(para 2 personas)",
     "extraPerson": "por persona adicional",
     "group": "máx. 14 personas",
-    "includeLabel": "Qué incluye"
+    "includeLabel": "Qué incluye",
+    "notIncludedLabel": "Qué no está incluido:"
   },
   "buttons": {
     "more": "Ver más ▼",
     "less": "Ver menos ▲",
     "book": "Reservar ahora"
   },
+  "notIncluded": [
+    "Servicio de recogida",
+    "Propinas",
+    "Guía de habla francesa"
+  ],
+  "prices": {
+    "standard": "El costo de nuestro tour es de {{basePrice}} MXN para grupos de hasta {{baseGroupSize}} personas. Si deseas agregar más participantes, hay un costo adicional de {{extraPerson}} MXN por persona extra, con una capacidad máxima de {{maxPersons}} personas en total.",
+     "romantic": "El precio del Tour Romántico es de {{basePrice}} MXN para dos personas. Este tour es privado y está limitado a un máximo de 2 personas.",
+     "description": "Disfruta de una experiencia exclusiva y personalizada en la hermosa Laguna de Bacalar."
+  },
+
   "tours": {
     "classic": {
       "title": "Tour Privado Clásico",
@@ -44,7 +167,7 @@
         "Guacamole"
       ]
     },
-    "allInclusiv": {
+    "allInclusive": {
       "title": "TOUR PRIVADO TODO INCLUIDO",
       "idealFor": "Ideal para familias, parejas y grupos de amigos que buscan una experiencia relajada con bebidas y snacks frescos.",
       "description": "Déjate llevar por una aventura privada en la impresionante Laguna de Bacalar a bordo de nuestro catamarán de 30 pies. Diseñada exclusivamente para tu grupo, esta experiencia incluye nado en aguas cristalinas, momentos de relajación mientras disfrutas de la belleza de la laguna y una selección de bebidas y snacks frescos a bordo. Descubre Bacalar desde una nueva perspectiva con una experiencia totalmente personalizada y sin preocupaciones.",

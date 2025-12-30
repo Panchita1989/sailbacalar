@@ -16,7 +16,7 @@ const tours = [
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Sparkling Water', 'Juices', 'Mixed seasonal Fruits', 'Guacamole', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 },{
-    id: "allInclusiv",
+    id: "allInclusive",
     title: 'All Inclusive Private Tour',
     duration: 4,
     maxPersons: 14,
@@ -30,7 +30,7 @@ const tours = [
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Sparkling Water', 'Beers', 'Soda', 'Tequila', 'Ron Bacardi', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
-    id:3,
+    id: "allDay",
     title: 'All Day Private Tour',
     duration: 6,
     maxPersons: 14,
@@ -44,7 +44,7 @@ const tours = [
     stops: ['Canal Xtomoc', 'Isla de los Cocos', 'Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Sparkling Water', 'Beers', 'Soda', 'Tequila', 'Ron Bacardi', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
-    id: 4,
+    id: "romantic",
     title: 'Romantic Private Tour',
     duration: 4,
     maxPersons: 2,
@@ -56,7 +56,7 @@ const tours = [
     stops: ['Canal Xtomoc', 'Isla de los Cocos'],
     included:  ['Water', 'Wine', 'Soda', 'Juices', 'Guacamole', 'Ceviche', 'Little romantic surprise', 'A selection of mixed seasonal fruits and berries', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
 }, {
-    id: 5,
+    id: "sunrise",
     title: 'Sunrise Private Sail Tour',
     duration: 3,
     maxPersons: 14,

@@ -1,12 +1,116 @@
 {   
     "bookUI":{
         "start": "Starting at",
-        "overview": "Overview",
+        "overviewLabel": "Overview",
         "meet": "Meeting Point:",
         "cancelLabel": "Cancellations:",
         "cancelDescription": "48 hours in advance",
         "ageLabel": "Age",
-        "age": "90 years and younger"
+        "age": "90 years and younger",
+        "persons": "people",
+        "activity": "Activity Details"       
+    },
+    "additional":{
+        "title": "Additional Information",
+        "bring": "What to Bring",
+        "bringDescription": "To enjoy our tour to the fullest, we recommend bringing the following items:",
+        "bringItems": [
+            "Cap or Hat",
+            "Towel",
+            "Sunglasses",
+            "UV-protection clothing",
+            "Swimsuit",
+            "Camera"
+        ],
+        "description": "Your comfort and safety are our priority, so don’t forget these essential items for an amazing day in Bacalar.",
+        "restrictions": "Restrictions",
+        "restrictionsDescription": "To ensure the safety and comfort of all our passengers, please take the following restrictions into consideration before booking:",
+        "restrictionItems": [
+            {
+                "label": "Pregnant women",
+                "text": "We recommend that women over 7 months pregnant consult their doctor before participating in the tour, as it may not be suitable for safety reasons."
+            },
+            {
+                "label": "People with reduced mobility or wheelchair users",
+                "text": "Due to the nature of boarding and the facilities on board, unfortunately, we do not have adequate access for individuals with limited mobility or those in wheelchairs."
+            },
+            {
+                "label": "Alcohol consumption",
+                "text": "While we offer moderate alcoholic beverages on board, we kindly ask our guests to drink responsibly. Excessive alcohol consumption may compromise the safety and enjoyment of the experience for everyone."
+            }
+        ],
+
+        "extrasDescription": "Our team is here to ensure you have a safe and pleasant experience, and we appreciate your understanding and cooperation.",
+        "extrasItems": [
+            "French-speaking guide: $1,000 MXN",
+            "Privat ground pick-up Service (taxi): $200 MXN"
+        ],
+        "disclaimers": "Disclaimers:",
+        "disclaimersDescription": "Before boarding our tours with Sail Bacalar, it is important that clients understand and accept the inherent risks associated with water activities and sailing.",
+        "disclaimerItems": [
+            {
+              "label": "Risks and safety",
+              "text": "Sailing involves certain natural risks. Although we take measures to ensure safety, guests should be aware of possible risks such as falls or physical discomfort."
+            },
+            {
+              "label": "Health and conditions",
+              "text": "Participants must be in good health and inform us of any medical conditions before the tour."
+            },
+            {
+              "label": "Personal responsibility",
+              "text": "It is mandatory to follow the captain’s instructions and use the safety equipment provided."
+            },
+            {
+              "label": "Personal belongings",
+              "text": "We are not responsible for the loss or damage of personal items."
+            },
+            {
+              "label": "Weather conditions",
+              "text": "The itinerary may change for safety reasons if weather conditions require it."
+            },
+            {
+              "label": "Liability release",
+              "text": "By signing, participants release Sailing Colibrí from any responsibility for accidents or injuries not caused by gross negligence."
+            }
+        ]           
+
+    },
+    "faqItems": [
+        {
+          "question": "Is this activity suitable for children? From what age?",
+          "answer": "Yes, absolutely! Children can join the tour starting from 6 months old. It’s a safe and family-friendly experience."
+        },
+        {
+          "question": "Can I bring extra food or drinks?",
+          "answer": "Yes, you can. We have enough space on board and a cooler with ice to keep your drinks and food fresh during the tour."
+        },
+        {
+          "question": "Can you pick me up at the hotel dock where I’m staying?",
+          "answer": "Sorry, we do not offer that service due to the time required for that maneuver. We will meet at our designated departure point to ensure everything runs on time and stays organized."
+        },
+        {
+          "question": "Do you provide life jackets and safety equipment?",
+          "answer": "Yes, all safety equipment is in perfect condition and fully compliant with regulations. We have life jackets available for both adults and children."
+        },
+        {
+          "question": "Do I need prior experience to navigate?",
+          "answer": "No, you don’t need any previous experience. Our expert bilingual captains will take care of the navigation — you just need to relax and enjoy the scenery."
+        },
+        {
+          "question": "Is the tour private or shared?",
+          "answer": "We offer both private and shared tours. However, if you prefer an exclusive experience just for you and your group, this is the perfect option to choose."
+        }
+    ],
+    "cancellations": {
+        "title": "Cancellations",
+        "description": "Customers will receive a full refund or the option to reschedule if the cancellation is made at least 48 hours in advance. Customers will also receive a full refund or the option to reschedule in case the operator cancels due to weather or other unforeseen circumstances. No-shows will be charged the full price.",
+        "timeSchedule": "If the customer does not arrive at the agreed time, the time will simply be deducted from the total duration of the tour. The boat will not depart until the customer arrives, but it will return at the originally scheduled end time.",
+        "reschedule": "Please contact us by email to cancel or inquire about rescheduling.",
+        "thanks": "Thank You"
+    },
+
+    "calendar":{
+        "choose": "Choose your Date"
     },
     "sideNav":{
         "location": "Location",
@@ -27,13 +131,25 @@
         "basePrice": "(for 2 Persons)",
         "extraPerson": "for adicional Person",
         "group": "max 14 people",
-        "includeLabel": "What's included"
+        "includeLabel": "What's included",
+        "notIncludedLabel": "What’s not Included:"
     },
     "buttons":{
         "more": "Show More ▼",
         "less": "Show Less ▲",
         "book": "Book Now"
     },
+    "notIncluded": [
+        "Pick-up service",
+        "Tips",
+        "French-speaking guide"
+    ],
+    "prices": {
+        "standard": "The cost of our tour is {{basePrice}} MXN for groups of up to {{baseGroupSize}} people. If you’d like to add more guests, there is an additional fee of {{extraPerson}} MXN per extra person, with a maximum capacity of {{maxPersons}} people in total.",
+        "romantic": "The price of the Romantic Tour is {{basePrice}} MXN for two people. This tour is private and limited to a maximum of 2 guests.",
+        "description": "Enjoy an exclusive and personalized experience on the beautiful Bacalar Lagoon!"
+    },
+
     "tours":{
         "classic": {
             "title": "Classic Private Tour",            
@@ -53,7 +169,7 @@
                 "Guacamole"
             ]
         }, 
-        "allInclusiv":{
+        "allInclusive":{
             "title": "ALL INCLUSIVE PRIVATE TOUR",
             "idealFor": "Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.",
             "description": "Set sail on a private all-inclusive catamaran tour across the breathtaking Bacalar Lagoon. Designed exclusively for your group, this experience includes swimming in crystal-clear waters, relaxing as you take in the lagoon’s beauty, and enjoying a selection of drinks and fresh snacks onboard. Discover Bacalar from a new perspective with a fully personalized and carefree experience.",

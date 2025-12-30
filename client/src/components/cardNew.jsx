@@ -4,11 +4,11 @@ import Button from './button.jsx'
 import Gallery from './gallery.jsx'
 
 
-export default function CardNew({ img, alt, title, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath}) {
+export default function CardNew({ img, alt, title, tourId, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath}) {
     
     const navigate = useNavigate()
 
-    const tour = tours.find(t => t.title === title);
+    const tour = tours.find(t => t.id === tourId);
 
     const goToBooking = () => {
         navigate(bookingPath,{
