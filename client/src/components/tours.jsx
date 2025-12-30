@@ -140,7 +140,7 @@ export default function Tours() {
              <Card 
                 img='./images/allInclusive.webp' 
                 alt='boat tour' 
-                title={t('tours.allInclusiv.title')} 
+                title={t('tours.allInclusive.title')} 
                 bookingPath='/bookPrivat' >
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
@@ -177,7 +177,7 @@ export default function Tours() {
                             <FontAwesomeIcon className='text-2xl' icon={faUniversalAccess} />
                             <div className='text-left'>
                                 <h4>{t('labels.idealForLabel')}</h4>
-                                <p>{t('tours.allInclusiv.idealFor')}</p>
+                                <p>{t('tours.allInclusive.idealFor')}</p>
                             </div>
                         </div>
                     </li>
@@ -192,17 +192,17 @@ export default function Tours() {
                     </li>
                     </ul>
                 <p className='text-left'> 
-                    {t('tours.allInclusiv.description')}
+                    {t('tours.allInclusive.description')}
                 </p>
                 <h3 className='text-[14px] mt-5 text-left'>{t('labels.stopsLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    {t('tours.allInclusiv.stops', { returnObjects: true }).map(stop => (
+                    {t('tours.allInclusive.stops', { returnObjects: true }).map(stop => (
                         <li key={stop}>{stop}</li>
                     ))}
                 </ul>
                 <h3 className='text-[14px] mt-5 text-left'>{t('labels.includeLabel')}</h3>
                 <ul className='list-disc list-inside text-left'>
-                    {t('tours.allInclusiv.included', {returnObjects: true}).map(item =>(
+                    {t('tours.allInclusive.included', {returnObjects: true}).map(item =>(
                         <li key={item}>{item}</li>
                     ))}
                 </ul>                
