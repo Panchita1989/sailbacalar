@@ -11,12 +11,14 @@ import BookingForm from './components/bookingForm.jsx'
 import Payment from './components/payment.jsx'
 import ThankYou from './components/thankYou.jsx'
 import ToursTest from './components/toursTest.jsx'
+import GoogleAdsPageView from './components/googleAdsPageView.jsx'
+
 
 
 function App() {
 
   const {pathname} = useLocation()
-  const location = useLocation()
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,6 +28,7 @@ function App() {
   return(
     <>
       <Header />
+      <GoogleAdsPageView />
       <Routes >
         <Route path='/' element={<Banner/>} />
         <Route path='/tours' element={<Tours />} />

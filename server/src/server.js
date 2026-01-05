@@ -11,5 +11,5 @@ app.listen(5000, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.send('Hello node js')
 })
