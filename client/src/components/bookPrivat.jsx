@@ -99,14 +99,14 @@ export default function BookPrivat() {
                         </p>
                         <h3 className='mt-3 mb-2 text-left'>{t('labels.includeLabel')}</h3>
                         <ul className='list-disc list-inside space-y-1 text-left'>
-                            {t(`tours.${tour.id}.included`, { returnObjects: true }).map(i =>{
-                                return <li key={i}>{i}</li>
+                            {t(`tours.${tour.id}.included`, { returnObjects: true }).map((i, index) =>{
+                                return <li key={index}>{i}</li>
                             })}
                         </ul>
                         <h3 className='text-left mt-3 mb-2'>{t('labels.notIncludedLabel')}</h3>
                         <ul className='list-disc list-inside space-y-1 text-left'>
-                            {t('notIncluded', { returnObjects: true}).map(i =>(
-                                <li key={i}>{i}</li>
+                            {t('notIncluded', { returnObjects: true}).map((i, index) =>(
+                                <li key={index}>{i}</li>
                             ))}
                         </ul>
                     </InformationCard>
@@ -125,23 +125,23 @@ export default function BookPrivat() {
                         <h3 className='mb-3 text-left'>{t('additional.bring')}</h3>
                         <p className='mt-3 text-left'>{t('additional.bringDescription')}</p>
                         <ul className='list-disc list-inside space-y-1 mb-3 text-left'>
-                            {t('additional.bringItems', {returnObjects: true }).map(item =>(
-                                <li key={item}>{item}</li>
+                            {t('additional.bringItems', {returnObjects: true }).map((item, index) =>(
+                                <li key={index}>{item}</li>
                             ))}
                         </ul>
                         <p className='mb-3 text-left'>{t('additional.description')}</p>
                         <h3 className='mb-3 text-left'>{t('additional.restrictions')}</h3>
                         <p className='text-left'>{t('additional.restrictionsDescription')}</p>
                         <ul className='list-disc list-inside space-y-1 mb-2 text-left'>
-                            {t('additional.restrictionItems', {returnObjects:true}).map(item =>(
-                                <li key={item}><b>{item.label}:</b> {item.text}</li>
+                            {t('additional.restrictionItems', {returnObjects:true}).map((item) =>(
+                                <li key={item.label}><b>{item.label}:</b> {item.text}</li>
                             ))}
                         </ul>
                         <p className='text-left'>{t('additional.extrasDescription')}</p>
                         <h3 className='mt-3 text-left'>Extras:</h3>
                         <ul className='list-disc list-inside space-y-1 mb-5 text-left'>
-                            {t('additional.extrasItems', { returnObjects: true }).map(item =>(
-                                <li key={item}>{item}</li>
+                            {t('additional.extrasItems', { returnObjects: true }).map((item, index) =>(
+                                <li key={index}>{item}</li>
                             ))}
                         </ul>
                         <h3 className='mb-1 text-left'>{t('additional.disclaimers')}</h3>
@@ -150,14 +150,14 @@ export default function BookPrivat() {
                         </p>
                         <ul className='list-disc list-inside space-y-1 my-5 text-left'>
                             {t('additional.disclaimerItems', { returnObjects: true }).map(item => (
-                                <li key={item}><b>{item.label}: </b>{item.text}</li>
+                                <li key={item.label}><b>{item.label}: </b>{item.text}</li>
                             ))}
                         </ul>
                     </InformationCard>
                     <InformationCard title='FAQ'>
                         <ul className='text-left'>
                             {t('faqItems', { returnObjects: true}).map(item =>(
-                                <li key={item}>
+                                <li key={item.question}>
                                     <p className='font-bold'>{item.question}</p>
                                     <p>{item.answer}</p>
                                 </li>
@@ -185,7 +185,11 @@ export default function BookPrivat() {
                     />
                     {selectedDate && (
                         availableHours.map(e =>{
-                            return <button key={e} value={e} onClick={() => handleSelectHour(e)} className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
+                            return <button 
+                                key={e} 
+                                value={e} 
+                                onClick={() => handleSelectHour(e)} 
+                                className='m-5 py-1 px-3 border-1 rounded'>{e}</button>
                         })
                     )}
                     {(selectedDate && selectedHour) && (

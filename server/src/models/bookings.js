@@ -3,17 +3,17 @@ import mongoose from 'mongoose'
 const bookingSchema = new mongoose.Schema(
   {
     date: {
-      type: Date,
+      type: String,
       required: true
     },
     time: {
       type: String,
+      enum: ['10:00', '15:00'],
       required: true
     },
     persons: {
       type: Number,
-      required: true,
-      min: 1
+      required: true
     },
     name: {
       type: String,
@@ -36,7 +36,13 @@ const bookingSchema = new mongoose.Schema(
     prepayment: {
       type: Number,
       default: 0
-    }    
+    },
+    status: {
+      type: String,
+      enum: ['pending', 'paid', 'cancelled'],
+      default: 'pending'
+    }
+    
   },
   {
     timestamps: true

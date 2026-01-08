@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import { useEffect } from 'react'
 import { useLocation } from "react-router-dom";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Banner from './components/banner.jsx'
 import Header from './components/header.jsx'
 import Tours from './components/tours.jsx'

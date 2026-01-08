@@ -3,8 +3,15 @@ import 'react-calendar/dist/Calendar.css';
 import openWednesday from '../mock/data/openWednesday.js'
 import { useEffect, useState } from "react";
 
-export default function BookingCalendar({setSelectedHour, selectedDate, setSelectedDate, availableHours, setAvailableHours}){
+export default function BookingCalendar({
+    setSelectedHour, 
+    selectedDate, 
+    setSelectedDate, 
+    availableHours, 
+    setAvailableHours
+}){
     const[fullyBookedDays, setfullybookedDays] = useState([])
+    const[disabledDays, setDisabledDays] = useState([])
     
     const today= new Date()
     const maxDate= new Date()
@@ -15,8 +22,8 @@ export default function BookingCalendar({setSelectedHour, selectedDate, setSelec
     const handleChangeDate = (e) => {
         setSelectedHour(null)
         setSelectedDate(e)
-        console.log(selectedDate)
     }
+    /*
     const disabled = (date)=>{
         const iso =  date.toISOString().split('T')[0]
         const weekday = date.getDay()
@@ -30,7 +37,8 @@ export default function BookingCalendar({setSelectedHour, selectedDate, setSelec
 
         return false
     }
-
+*/
+/*
     useEffect(() =>{
         fetch('/api/fullyBookedDays')
         .then(res => res.json())
@@ -40,22 +48,35 @@ export default function BookingCalendar({setSelectedHour, selectedDate, setSelec
         })
         .catch(error => console.log(error))
     }, [])
+*/
+    useEffect(() => {
+    
+    fetch('http://localhost:5000/calendar/availability') // kein date Query → liefert disabledDays
+      .then(res => res.json())
+      .then(data => {
+        setDisabledDays(data.disabledDays)
+        console.log(data.disabledDays)
+      })      
+      .catch(console.error)
+  }, [])
+
 
     useEffect(() => {
         if(!selectedDate) return
 
-        const iso = selectedDate.toISOString().split('T')[0]
+        const iso = selectedDate.toLocaleDateString('en-CA')
         console.log(iso)
-
-        fetch(`/api/available-times?date=${iso}`)
+        fetch(`http://localhost:5000/calendar/availability?date=${iso}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data.time)
-            setAvailableHours(data.time)
+            console.log(data.availableTimes)
+            setAvailableHours(data.availableTimes)
         })
         .catch(error => console.log(error))
     }, [selectedDate])
+    
 
+    
     return(
         <Calendar
             className='max-w-fit mt-5 '
@@ -63,7 +84,8 @@ export default function BookingCalendar({setSelectedHour, selectedDate, setSelec
             maxDate={maxDate}
             onChange={handleChangeDate}
             value={selectedDate}
-            tileDisabled={({date}) => disabled(date)}
+            tileDisabled={({ date }) => disabledDays.includes(date.toISOString().split('T')[0])}
+
             
         />
     )

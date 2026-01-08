@@ -24,7 +24,7 @@ const SideNav = ({visible, onClose}) => {
                
                 <ul className="flex flex-col items-center mt-20 space-y-8 text-lg font-medium text-gray-800">
                 {navMenu.map(e => {              
-                    return <li key={e}
+                    return <li key={e.path}
                             onClick={onClose}>
                                 <Link className="active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors"
                                  to={`${e.path}`}

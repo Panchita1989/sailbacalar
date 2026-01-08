@@ -9,8 +9,8 @@ async function defereRender() {
   if(process.env.NODE_ENV !== 'development'){
     return
   }
-  const { worker } = await import('./mock/browser.js')
-  return worker.start()
+  
+  
 }
 
 defereRender().then(() => {

@@ -38,7 +38,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     }
 
     useEffect(() => {
-        if(selectedHour === '10am'){
+        if(selectedHour === '10:00'){
             if(i18n.language === 'en'){
                 setTime('from 10am to 2pm')
             }else if( i18n.language === 'es'){
@@ -46,7 +46,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
             }
             
         }
-        if(selectedHour === '3pm'){
+        if(selectedHour === '15:00'){
             if(i18n.language === 'en'){
                 setTime('from 3pm to 7pm')
             }else if( i18n.language === 'es'){
