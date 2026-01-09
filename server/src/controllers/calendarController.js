@@ -53,7 +53,7 @@ export const calendarController = async (req, res) => {
     const disabledDays = []
     let current = new Date(start)
     while (current <= end) {
-      const iso = current.toISOString().split('T')[0]
+      const iso = current.toLocaleDateString('en-CA')
       const weekday = current.getDay()
       const isWednesday = weekday === 3
       const isOpen = openWednesday.includes(iso)

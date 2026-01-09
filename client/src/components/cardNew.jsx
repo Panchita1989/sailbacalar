@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 import tours from '../data/tours.js'
 import Button from './button.jsx'
 import Gallery from './gallery.jsx'
@@ -7,6 +8,7 @@ import Gallery from './gallery.jsx'
 export default function CardNew({ img, alt, title, tourId, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath}) {
     
     const navigate = useNavigate()
+    const{ t } = useTranslation()
 
     const tour = tours.find(t => t.id === tourId);
 
@@ -34,7 +36,7 @@ export default function CardNew({ img, alt, title, tourId, children, iframe, ima
             </div>
 
             {showButton && (
-                <Button onClick={goToBooking} className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950' content='Book now'/>
+                <Button onClick={goToBooking} className='mt-2 p-2 border-1 rounded active:bg-neutral-300 xl:hover:bg-neutral-300 active:text-teal-950 xl:hover:text-teal-950'  children={t('buttons.book')}/>
             )}
         </section>
     )
