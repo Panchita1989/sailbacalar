@@ -5,7 +5,7 @@ const TIME_SLOTS = ['10:00', '15:00']
 
 export const calendarController = async (req, res) => {
   try {
-    const { date } = req.query
+    const { date, tourId } = req.query
     const today = new Date()
     const start = new Date(today)
     start.setDate(start.getDate() + 1) // ab morgen
@@ -28,6 +28,13 @@ export const calendarController = async (req, res) => {
         date,
         status: { $ne: 'cancelled' }
       })
+
+      if(tourId === 'allDay'){
+        if(bookings.length > 0){
+          return res.json({disabled: true, availableTimes: []})
+        }
+        return res.json({disabled: false, availableTimes: ['10:00']})
+      }
 
       const bookedTimes = bookings.map(b => b.time)
       const availableTimes = TIME_SLOTS.filter(slot => !bookedTimes.includes(slot))
@@ -57,7 +64,11 @@ export const calendarController = async (req, res) => {
       const weekday = current.getDay()
       const isWednesday = weekday === 3
       const isOpen = openWednesday.includes(iso)
-      const fullyBooked = bookingCount[iso] >= TIME_SLOTS.length
+      const count = bookingCount[iso] || 0
+      const fullyBooked = 
+        tourId === 'allDay'
+        ? count > 0
+        : count >= TIME_SLOTS.length
     
 
       if (fullyBooked || (isWednesday && !isOpen)) {

@@ -8,9 +8,10 @@ export default function BookingCalendar({
     selectedDate, 
     setSelectedDate, 
     availableHours, 
-    setAvailableHours
+    setAvailableHours,
+    tourId
 }){
-    const[fullyBookedDays, setfullybookedDays] = useState([])
+    
     const[disabledDays, setDisabledDays] = useState([])
     
     const today= new Date()
@@ -21,35 +22,9 @@ export default function BookingCalendar({
         setSelectedHour(null)
         setSelectedDate(e)
     }
-    /*
-    const disabled = (date)=>{
-        const iso =  date.toISOString().split('T')[0]
-        const weekday = date.getDay()
-
-        const isFullyBooked = fullyBookedDays.includes(iso)
-        const isWednesday = weekday === 3
-        const isOpen = openWednesday.includes(iso)
-
-        if(isFullyBooked) return true 
-        if(isWednesday && !isOpen) return true
-
-        return false
-    }
-*/
-/*
-    useEffect(() =>{
-        fetch('/api/fullyBookedDays')
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data.fullyBooked)
-            setfullybookedDays(data.fullyBooked)
-        })
-        .catch(error => console.log(error))
-    }, [])
-*/
-    useEffect(() => {
     
-    fetch('http://localhost:5000/calendar/availability') // kein date Query → liefert disabledDays
+    useEffect(() => {    
+    fetch(`http://localhost:5000/calendar/availability?tourId=${tourId}`) // kein date Query → liefert disabledDays
       .then(res => res.json())
       .then(data => {
         setDisabledDays(data.disabledDays)
@@ -64,7 +39,7 @@ export default function BookingCalendar({
 
         const iso = selectedDate.toLocaleDateString('en-CA')
         console.log(iso)
-        fetch(`http://localhost:5000/calendar/availability?date=${iso}`)
+        fetch( `http://localhost:5000/calendar/availability?date=${iso}&tourId=${tourId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data.availableTimes)

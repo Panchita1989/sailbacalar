@@ -192,6 +192,7 @@ export default function BookPrivat() {
                         setAvailableHours={setAvailableHours}  
                         selectedDate={selectedDate} 
                         setSelectedDate={setSelectedDate} 
+                        tourId={tour.id}
                     />
                     {selectedDate && (
                         availableHours.map(e =>{
