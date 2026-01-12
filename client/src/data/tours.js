@@ -64,7 +64,7 @@ const tours = [
     enjoy the calm atmosphere, gentle sailing, and the lagoon’s natural beauty. Swim in peaceful waters, savor light refreshments onboard, 
     and experience Bacalar at its most tranquil.`,
     idealFor: `Early risers, couples, and nature lovers seeking a peaceful sunrise experience on the lagoon.`,
-    basePrice: `$5'000 MXN`,
+    basePrice: `$5'000`,
     extraPerson: 800,
     stops: ['Pirats Chanel', 'Isla de los Cocos'],
     included: ['Water', 'Juices', 'Coffee', 'Toast with butter and jam', 'Homemade Cookies', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
