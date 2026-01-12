@@ -57,7 +57,7 @@ export default function ToursTest() {
                 img='./images/privat.webp' 
                 alt='privat boat tour' 
                 title={t('tours.classic.title')}
-                bookingPath='/bookPrivat' 
+                bookingPath= {`/bookPrivat/classic`}  
             >
             {isPrivatExpanded ? '' : (
                 <div className="flex justify-center">
@@ -143,7 +143,7 @@ export default function ToursTest() {
                 img='./images/allInclusive.webp' 
                 alt='boat tour' 
                 title={t('tours.allInclusive.title')} 
-                bookingPath='/bookPrivat' >
+                bookingPath={`/bookPrivat/allInclusive`}  >
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
@@ -225,7 +225,7 @@ export default function ToursTest() {
                 img='./images/allDay.webp' 
                 alt='boat tour' 
                 title={t('tours.allDay.title')} 
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/allDay`} >
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <Button
@@ -307,7 +307,7 @@ export default function ToursTest() {
                 img='./images/romantic.webp' 
                 alt='boat tour' 
                 title={t('tours.romantic.title')}
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/romantic`} >
              {isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
@@ -389,7 +389,7 @@ export default function ToursTest() {
                 img='./images/sunrise.webp' 
                 alt='boat tour' 
                 title={t('tours.sunrise.title')}
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/sunrise`} >
              {isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button

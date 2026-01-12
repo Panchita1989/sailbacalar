@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next'
 
 
-
-export default function BookingForm({selectedDate, selectedHour, title, basePrice, extraPerson}) {
+export default function BookingForm({selectedDate, selectedHour, title, basePrice, extraPerson, tourId}) {
 
     const{ t, i18n } = useTranslation()
 
@@ -23,7 +21,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
         
     const prepayment = price/2
 
-    const navigate = useNavigate()
+   
   
     console.log(basePrice)
     console.log(extraPerson)
@@ -68,32 +66,59 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     }
     console.log(price)
     console.log(persons)
+      
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        navigate('/payment',{
-            state:{
-                name,
-                email,
-                phone,
-                selectedDate,
-                selectedHour,
-                price,
-                title,
-                persons,
-                prepayment,
-
-            }
-        })
-    }
+    const makePayment = async (e) => {
+    e.preventDefault();
     
+    const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/payment';
+
+    const body = {
+        tourId,
+        name,
+        email,
+        phone,
+        title,
+        date: selectedDate,
+        time: selectedHour,
+        persons,
+        price: price,
+        prepayment,
+        currency: 'mxn',
+    };
+
+    try {
+        const response = await fetch(`${apiURL}/create-checkout-session`, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+        });
+
+        const session = await response.json();
+
+        if (!session.url) {
+            console.error("No session URL returned from server", session);
+            return;
+        }
+
+        // leitet auf Stripe Checkout weiter
+        window.location.href = session.url;
+    } catch (error) {
+        console.error("Error creating checkout session", error);
+    }
+};
+
+
+
+
+
     return(
         <section className='flex flex-col items-start' >            
             <p className='text-xl'>{t('bookingForm.title')}:</p>
             <p className='text-lg'>{title}</p>
             <p className='text-lg'>{t('bookingForm.date')}: {formatDate(selectedDate)}</p> 
             <p className='text-lg'>{t('bookingForm.time')}: {`${time}`}</p>
+            { tourId !== 'romantic' &&
             <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='border-1'>
                 <option disabled selected value="">{t('bookingForm.selectExtraPerson')}</option>
                 <option value="1" >1 Person (+ {extraPerson}p.p)</option>
@@ -108,13 +133,13 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
                 <option value="10">10 Person (+ {extraPerson}p.p)</option>
                 <option value="11">11 Person (+ {extraPerson}p.p)</option>
                 <option value="12">12 Person (+ {extraPerson}p.p)</option>
-            </select>
+            </select>}
             <p className='text-lg mt-2'>{t('bookingForm.amountPersons')} {`${persons}`}</p>
             <p className='text-lg'>Total: {`${price}`} MXN</p>
             <p className='text-lg'>{t('bookingForm.requiredPrepayment')} ${`${prepayment}`} MXN</p>
 
 
-            <form onSubmit={handleSubmit} className='text-sm mt-5 flex flex-col items-start gap-3 w-full'>
+            <form onSubmit={makePayment} className='text-sm mt-5 flex flex-col items-start gap-3 w-full'>
                {t('bookingForm.contact')}
             <label htmlFor="name" className='text-sm'>{t('bookingForm.name')}</label>
             <input required type="text" id='name' placeholder={t('bookingForm.namePlaceholder')}className='border-1 rounded w-full' onChange={(e) => setName(e.target.value)}/>

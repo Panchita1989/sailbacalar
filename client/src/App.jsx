@@ -9,7 +9,7 @@ import Location from './components/location.jsx'
 import BookPrivat from './components/bookPrivat.jsx'
 import BookingForm from './components/bookingForm.jsx'
 import Payment from './components/payment.jsx'
-import ThankYou from './components/thankYou.jsx'
+import ThankYou from './components/success.jsx'
 import ToursTest from './components/toursTest.jsx'
 import GoogleAdsPageView from './components/googleAdsPageView.jsx'
 
@@ -33,11 +33,11 @@ function App() {
         <Route path='/' element={<Banner/>} />
         <Route path='/tours' element={<Tours />} />
         <Route path='/location' element={<Location />} />
-        <Route path='/bookPrivat' element={<BookPrivat />} />
+        <Route path='/bookPrivat/:tourId' element={<BookPrivat />} />
         <Route path='/bookingForm' element={<BookingForm />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/toursTest' element={<ToursTest />} />
-        <Route path='/thankYou' element={<ThankYou />} />
+        <Route path='/success' element={<ThankYou />} />
       </Routes>
     </>
     

@@ -1,6 +1,8 @@
 import BookingCalendar from './bookingCalendar.jsx'
 import BookingForm from './bookingForm.jsx'
 import InformationCard from './informationCard'
+import tours from '../data/tours.js';
+import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,30 +11,38 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faIdBadge } from "@fortawesome/free-regular-svg-icons";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export default function BookPrivat() {
 
     const{ t } = useTranslation()
+    const { tourId } = useParams()
+    const location = useLocation()
 
-    const[selectedDate, setSelectedDate] = useState(null)
-    const[availableHours, setAvailableHours] = useState([])
-    const[selectedHour, setSelectedHour] = useState(null)
+    const [tour, setTour] = useState(location.state?.tour)
+    const [priceKey, setPriceKey] = useState("");
+    const [selectedDate, setSelectedDate] = useState(null)
+    const [availableHours, setAvailableHours] = useState([])
+    const [selectedHour, setSelectedHour] = useState(null)
 
-    const { tour } = useLocation().state || {};
+    useEffect(() => {
+        const foundTour = tours.find(t => t.id === tourId)
+        setTour(foundTour)
+    }, [tour, tourId])
 
-    console.log(tour)
+    useEffect(() => {
+        const key = tour.id === "romantic" ? "prices.romantic" : "prices.standard";
+        setPriceKey(key)
+    }, [tour])
+
 
     const handleSelectHour = (time) => {
         setSelectedHour(time)
+        console.log(selectedHour)
     }
-    console.log(selectedHour)
+   
 
-    const priceKey =
-        tour.id === "romantic"
-                    ? "prices.romantic"
-                    : "prices.standard";
 
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
@@ -42,7 +52,7 @@ export default function BookPrivat() {
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
-                        <img src="./images/pakal.png" alt="laguna bacalar" className='max-h-100 my-5'/>
+                        <img src="/images/pakal.png" alt="laguna bacalar" className='max-h-100 my-5'/>
                     </div>
                     <InformationCard title={t('bookUI.overviewLabel')}>
                         <ul>
@@ -198,7 +208,9 @@ export default function BookPrivat() {
                             extraPerson={tour.extraPerson}
                             basePrice={tour.basePrice} 
                             selectedDate={selectedDate} 
-                            selectedHour={selectedHour} />
+                            selectedHour={selectedHour} 
+                            tourId={tour.id}
+                        />
                     )}
                 </div>
                 

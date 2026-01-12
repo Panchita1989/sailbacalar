@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import bookingRoutes from './routes/bookings.js'
 import calendarRoutes from './routes/calendar.js'
+import paymentRoutes from './routes/payment.js'
 import cors from 'cors'
 
 dotenv.config()
@@ -25,6 +26,7 @@ mongoose.connect(process.env.DATABASE_URL)
 //Routes
 app.use('/bookings', bookingRoutes )
 app.use('/calendar', calendarRoutes)
+app.use('/payment', paymentRoutes)
 
 
 app.get('/', (req, res) => {
