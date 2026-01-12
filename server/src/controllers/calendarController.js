@@ -55,7 +55,7 @@ export const calendarController = async (req, res) => {
 
       const bookedTimes = bookings.map(b => b.time)
       const availableTimes = TIME_SLOTS.filter(slot => !bookedTimes.includes(slot))
-      console.log(availableTimes)
+
       const isFullyBooked = availableTimes.length === 0
 
 

@@ -46,7 +46,6 @@ export default function BookingCalendar({
         //fetch( `${apiURL}/calendar/availability?date=${iso}&tourId=${tourId}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data.availableTimes)
             setAvailableHours(data.availableTimes)
         })
         .catch(error => console.log(error))

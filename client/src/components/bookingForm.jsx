@@ -51,6 +51,13 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
                 setTime('de 3pm a 7pm')
             }
         }
+        if(selectedHour === '06:00'){
+            if(i18n.language === 'en'){
+                setTime('from 6am to 9am')
+            }else if(i18n.language === 'es'){
+                setTime('de 6am a 9am')
+            }
+        }
     }, [selectedHour, i18n])
 
     const handleSelect = (e) => {
