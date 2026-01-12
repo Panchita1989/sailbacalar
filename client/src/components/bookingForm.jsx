@@ -21,11 +21,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
         
     const prepayment = price/2
 
-   
-  
-    console.log(basePrice)
-    console.log(extraPerson)
-
+    console.log(tourId)
     const formatDate = (dateObj) =>{
         return new Intl.DateTimeFormat(i18n.language === 'es' ? 'es-MX' : 'en-GB',{
             weekday: 'long',
@@ -36,7 +32,14 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     }
 
     useEffect(() => {
-        if(selectedHour === '10:00'){
+        if((selectedHour === '10:00') && (tourId === 'allDay')){
+            if(i18n.language === 'en'){
+                setTime('from 10am to 4pm')
+            }else if( i18n.language === 'es'){
+                setTime('de 10am a 4pm')
+            }
+        }
+        if(selectedHour === '10:00' && tourId !== 'allDay'){
             if(i18n.language === 'en'){
                 setTime('from 10am to 2pm')
             }else if( i18n.language === 'es'){
@@ -58,6 +61,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
                 setTime('de 6am a 9am')
             }
         }
+       
     }, [selectedHour, i18n])
 
     const handleSelect = (e) => {
