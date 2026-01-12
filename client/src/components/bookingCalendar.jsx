@@ -23,7 +23,7 @@ export default function BookingCalendar({
         setSelectedDate(e)
     }
 
-    const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    const apiURL = import.meta.env.VITE_API_URL || 'https://sailbacalar-backend.onrender.com'
     
     useEffect(() => {    
     fetch(`${apiURL}/calendar/availability?tourId=${tourId}`) // kein date Query → liefert disabledDays
@@ -59,7 +59,7 @@ export default function BookingCalendar({
             maxDate={maxDate}
             onChange={handleChangeDate}
             value={selectedDate}
-            tileDisabled={({ date }) => disabledDays.includes(date.toISOString().split('T')[0])}
+            tileDisabled={({ date }) => (disabledDays || []).includes(date.toISOString().split('T')[0])}
 
             
         />
