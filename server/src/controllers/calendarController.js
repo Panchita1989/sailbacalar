@@ -1,9 +1,8 @@
 import Booking from '../models/bookings.js'
 import openWednesday from '../data/openWednesday.js'
 
-const TIME_SLOTS = ['10:00', '15:00']
-
 export const calendarController = async (req, res) => {
+
   try {
     const { date, tourId } = req.query
     const today = new Date()
@@ -11,6 +10,8 @@ export const calendarController = async (req, res) => {
     start.setDate(start.getDate() + 1) // ab morgen
     const end = new Date(today)
     end.setMonth(end.getMonth() + 3) // 3 Monate in die Zukunft
+
+    let TIME_SLOTS = ['06:00', '10:00', '15:00']
 
     // 🔹 Fall 1: Uhrzeiten für ein ausgewähltes Datum
     if (date) {
@@ -21,6 +22,13 @@ export const calendarController = async (req, res) => {
 
       if (isWednesday && !isOpenWednesday) {
         return res.json({ disabled: true, availableTimes: [] })
+      }
+      let TIME_SLOTS = ['10:00', '15:00']
+      if(tourId === 'sunrise'){
+        TIME_SLOTS = ['06:00']
+      }
+      if(tourId === 'allDay'){
+        TIME_SLOTS = ['10:00']
       }
 
       // Buchungen an diesem Tag
@@ -35,6 +43,15 @@ export const calendarController = async (req, res) => {
         }
         return res.json({disabled: false, availableTimes: ['10:00']})
       }
+
+      if(tourId === 'sunrise'){
+        if(bookings.length > 0){
+          return res.json({disabled: true, availableTimes: []})
+        }
+        return res.json({disabled: true, availableTimes:['06:00']})
+      }
+      
+      
 
       const bookedTimes = bookings.map(b => b.time)
       const availableTimes = TIME_SLOTS.filter(slot => !bookedTimes.includes(slot))
@@ -69,6 +86,7 @@ export const calendarController = async (req, res) => {
         tourId === 'allDay'
         ? count > 0
         : count >= TIME_SLOTS.length
+
     
 
       if (fullyBooked || (isWednesday && !isOpen)) {
