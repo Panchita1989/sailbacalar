@@ -8,6 +8,10 @@ console.log('STRIPE SECRET USED:', process.env.STRIPE_SECRET)
 
 const router = express.Router(); 
 
+const FRONTEND_URL = process.env.NODE_ENV === 'production' 
+  ? process.env.FRONTEND_URL_PROD 
+  : process.env.FRONTEND_URL_DEV
+
 router.post("/create-checkout-session", async (req, res) => {
   try {
     // destructure die wichtigen Daten aus dem Body
@@ -39,10 +43,9 @@ router.post("/create-checkout-session", async (req, res) => {
         persons,
         price: price,
         prepayment,
-      },     
-
-      success_url: "http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}", // anpassen
-      cancel_url: "http://localhost:5173/cancel",   // anpassen
+      },
+      success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`, // anpassen
+      cancel_url:  `${FRONTEND_URL}/cancel`,   // anpassen
     });
 
     res.json({ url: session.url });
