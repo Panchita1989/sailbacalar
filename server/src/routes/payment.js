@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv';
 import bookingSchema from '../models/bookings.js'
 import { sendBookingEmails } from '../services/emailService.js';
+import { addBookingToCalendar } from '../services/calendarServices.js';
 dotenv.config();
 
 const Bookings = bookingSchema
@@ -92,6 +93,11 @@ router.post('/confirm-booking', async (req, res) => {
       language: session.metadata.language,
 
     })
+    try {
+      await addBookingToCalendar(booking)
+    } catch (error) {
+      console.error('Google Calendar error: ', error)
+    }
     
     sendBookingEmails(booking).catch(err => console.error("Email error:", err));
 
