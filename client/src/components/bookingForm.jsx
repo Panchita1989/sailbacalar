@@ -32,14 +32,14 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     }
 
     useEffect(() => {
-        if((selectedHour === '10:00') && (tourId === 'allDay')){
+        if((selectedHour === '13:00' && tourId === 'allDay')){
             if(i18n.language === 'en'){
                 setTime('from 1pm to 7pm')
             }else if( i18n.language === 'es'){
                 setTime('de 1pm a 7pm')
             }
         }
-        if(selectedHour === '10:00' && tourId !== 'allDay'){
+        if(selectedHour === '13:00' && tourId !== 'allDay'){
             if(i18n.language === 'en'){
                 setTime('from 10am to 2pm')
             }else if( i18n.language === 'es'){
@@ -63,6 +63,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
         }
        
     }, [selectedHour, i18n])
+    console.log(time)
 
     const handleSelect = (e) => {
         const count = parseInt(e.target.value)
