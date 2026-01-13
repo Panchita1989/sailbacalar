@@ -28,7 +28,7 @@ export const calendarController = async (req, res) => {
         TIME_SLOTS = ['06:00']
       }
       if(tourId === 'allDay'){
-        TIME_SLOTS = ['10:00']
+        TIME_SLOTS = ['13:00']
       }
 
       // Buchungen an diesem Tag
@@ -41,7 +41,7 @@ export const calendarController = async (req, res) => {
         if(bookings.length > 0){
           return res.json({disabled: true, availableTimes: []})
         }
-        return res.json({disabled: false, availableTimes: ['10:00']})
+        return res.json({disabled: false, availableTimes: ['13:00']})
       }
 
       if(tourId === 'sunrise'){

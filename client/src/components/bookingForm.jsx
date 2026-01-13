@@ -34,9 +34,9 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     useEffect(() => {
         if((selectedHour === '10:00') && (tourId === 'allDay')){
             if(i18n.language === 'en'){
-                setTime('from 10am to 4pm')
+                setTime('from 1pm to 7pm')
             }else if( i18n.language === 'es'){
-                setTime('de 10am a 4pm')
+                setTime('de 1pm a 7pm')
             }
         }
         if(selectedHour === '10:00' && tourId !== 'allDay'){
