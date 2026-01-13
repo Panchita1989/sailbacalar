@@ -39,7 +39,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
                 setTimeLabel('de 1pm a 7pm')
             }
         }
-        if(selectedHour === '13:00' && tourId !== 'allDay'){
+        if(selectedHour === '10:00'){
             if(i18n.language === 'en'){
                 setTimeLabel('from 10am to 2pm')
             }else if( i18n.language === 'es'){
