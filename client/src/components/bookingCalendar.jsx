@@ -26,8 +26,7 @@ export default function BookingCalendar({
     const apiURL = import.meta.env.VITE_API_URL || 'https://sailbacalar-backend.onrender.com'
     
     useEffect(() => {   
-    fetch(`http://localhost:5000/calendar/availability?tourId=${tourId}`)
-    //fetch(`${apiURL}/calendar/availability?tourId=${tourId}`) // kein date Query → liefert disabledDays
+    fetch(`${apiURL}/calendar/availability?tourId=${tourId}`) // kein date Query → liefert disabledDays
       .then(res => res.json())
       .then(data => {
         setDisabledDays(data.disabledDays)
@@ -41,9 +40,8 @@ export default function BookingCalendar({
         if(!selectedDate) return
 
         const iso = selectedDate.toLocaleDateString('en-CA')
-        console.log(iso)
-        fetch( `http://localhost:5000/calendar/availability?date=${iso}&tourId=${tourId}`)
-        //fetch( `${apiURL}/calendar/availability?date=${iso}&tourId=${tourId}`)
+        console.log(iso)        
+    fetch( `${apiURL}/calendar/availability?date=${iso}&tourId=${tourId}`)
         .then(res => res.json())
         .then(data => {
             setAvailableHours(data.availableTimes)
