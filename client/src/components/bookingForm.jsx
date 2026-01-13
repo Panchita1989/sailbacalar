@@ -97,6 +97,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
         price: price,
         prepayment,
         currency: 'mxn',
+        language: i18n.language
     };
 
     try {

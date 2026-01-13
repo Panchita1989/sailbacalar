@@ -2,6 +2,10 @@ import mongoose from 'mongoose'
 
 const bookingSchema = new mongoose.Schema(
   {
+    title:{
+      type: String,
+      required: true
+    },
     date: {
       type: String,
       required: true
@@ -22,7 +26,7 @@ const bookingSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: false
+      required: true
     },
     email: {
       type: String,

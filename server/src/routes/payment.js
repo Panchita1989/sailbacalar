@@ -2,6 +2,7 @@ import Stripe from 'stripe'
 import express from 'express'
 import dotenv from 'dotenv';
 import bookingSchema from '../models/bookings.js'
+import { sendBookingEmails } from '../services/emailService.js';
 dotenv.config();
 
 const Bookings = bookingSchema
@@ -19,7 +20,7 @@ const FRONTEND_URL = process.env.NODE_ENV === 'production'
 router.post("/create-checkout-session", async (req, res) => {
   try {
     // destructure die wichtigen Daten aus dem Body
-    const { name, title, date, time, persons, price, prepayment, email, phone, currency } = req.body;
+    const { name, title, date, time, persons, price, prepayment, email, phone, currency, language } = req.body;
 
     // Stripe Checkout Session erstellen
     const session = await stripe.checkout.sessions.create({
@@ -49,6 +50,7 @@ router.post("/create-checkout-session", async (req, res) => {
         persons,
         price: price,
         prepayment,
+        language
       },
       success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`, // anpassen
       cancel_url:  `${FRONTEND_URL}/cancel`,   // anpassen
@@ -60,21 +62,6 @@ router.post("/create-checkout-session", async (req, res) => {
     res.status(500).json({ error: "Stripe checkout session failed" });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 router.post('/confirm-booking', async (req, res) => {
@@ -101,9 +88,13 @@ router.post('/confirm-booking', async (req, res) => {
       time: session.metadata.time, 
       persons: session.metadata.persons,
       price: session.metadata.price,
-      prepayment: session.metadata.prepayment
+      prepayment: session.metadata.prepayment,
+      language: session.metadata.language,
+
     })
-    console.log(booking)
+    
+    sendBookingEmails(booking).catch(err => console.error("Email error:", err));
+
 
     res.json(booking)
   } catch (err) {
