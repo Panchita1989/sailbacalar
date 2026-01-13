@@ -8,7 +8,7 @@ const bookingSchema = new mongoose.Schema(
     },
     time: {
       type: String,
-      enum: ['10:00', '15:00'],
+      enum: ['10:00', '15:00', '13:00', '06:00'],
       required: true
     },
     persons: {
@@ -22,14 +22,14 @@ const bookingSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: true
+      required: false
     },
     email: {
       type: String,
       required: true,
       lowercase: true
     },
-    totalPrice: {
+    price: {
       type: Number,
       required: true
     },

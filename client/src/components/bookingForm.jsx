@@ -17,7 +17,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
 
     const[price, setPrice] = useState(basePriceNum)
     const[persons, setPersons] = useState(basePerson)
-    const[time, setTime] = useState(null)
+    const[timeLabel, setTimeLabel] = useState(null)
         
     const prepayment = price/2
 
@@ -34,36 +34,36 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
     useEffect(() => {
         if((selectedHour === '13:00' && tourId === 'allDay')){
             if(i18n.language === 'en'){
-                setTime('from 1pm to 7pm')
+                setTimeLabel('from 1pm to 7pm')
             }else if( i18n.language === 'es'){
-                setTime('de 1pm a 7pm')
+                setTimeLabel('de 1pm a 7pm')
             }
         }
         if(selectedHour === '13:00' && tourId !== 'allDay'){
             if(i18n.language === 'en'){
-                setTime('from 10am to 2pm')
+                setTimeLabel('from 10am to 2pm')
             }else if( i18n.language === 'es'){
-                setTime('de 10am a 2pm')
+                setTimeLabel('de 10am a 2pm')
             }
             
         }
         if(selectedHour === '15:00'){
             if(i18n.language === 'en'){
-                setTime('from 3pm to 7pm')
+                setTimeLabel('from 3pm to 7pm')
             }else if( i18n.language === 'es'){
-                setTime('de 3pm a 7pm')
+                setTimeLabel('de 3pm a 7pm')
             }
         }
         if(selectedHour === '06:00'){
             if(i18n.language === 'en'){
-                setTime('from 6am to 9am')
+                setTimeLabel('from 6am to 9am')
             }else if(i18n.language === 'es'){
-                setTime('de 6am a 9am')
+                setTimeLabel('de 6am a 9am')
             }
         }
        
     }, [selectedHour, i18n])
-    console.log(time)
+    
 
     const handleSelect = (e) => {
         const count = parseInt(e.target.value)
@@ -91,7 +91,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
         email,
         phone,
         title,
-        date: selectedDate,
+        date: selectedDate.toLocaleDateString('en-CA'), 
         time: selectedHour,
         persons,
         price: price,
@@ -129,7 +129,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
             <p className='text-xl'>{t('bookingForm.title')}:</p>
             <p className='text-lg'>{title}</p>
             <p className='text-lg'>{t('bookingForm.date')}: {formatDate(selectedDate)}</p> 
-            <p className='text-lg'>{t('bookingForm.time')}: {`${time}`}</p>
+            <p className='text-lg'>{t('bookingForm.time')}: {`${timeLabel}`}</p>
             { tourId !== 'romantic' &&
             <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='border-1'>
                 <option disabled selected value="">{t('bookingForm.selectExtraPerson')}</option>

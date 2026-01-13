@@ -1,7 +1,11 @@
 import Stripe from 'stripe'
 import express from 'express'
 import dotenv from 'dotenv';
+import bookingSchema from '../models/bookings.js'
 dotenv.config();
+
+const Bookings = bookingSchema
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET)
 console.log('STRIPE SECRET USED:', process.env.STRIPE_SECRET)
@@ -15,7 +19,7 @@ const FRONTEND_URL = process.env.NODE_ENV === 'production'
 router.post("/create-checkout-session", async (req, res) => {
   try {
     // destructure die wichtigen Daten aus dem Body
-    const { name, title, date, time, persons, price, prepayment, email, currency } = req.body;
+    const { name, title, date, time, persons, price, prepayment, email, phone, currency } = req.body;
 
     // Stripe Checkout Session erstellen
     const session = await stripe.checkout.sessions.create({
@@ -37,6 +41,8 @@ router.post("/create-checkout-session", async (req, res) => {
       ],
       metadata: {
         name,
+        email, 
+        phone,
         title,
         date,
         time,
@@ -54,21 +60,56 @@ router.post("/create-checkout-session", async (req, res) => {
     res.status(500).json({ error: "Stripe checkout session failed" });
   }
 });
-router.get('/session/:id', async (req, res)=> {
-    try{
-        const session = await stripe.checkout.sessions.retrieve(req.params.id)
-        res.json({
-            name: session.metadata.name,
-            title: session.metadata.title,
-            date: session.metadata.date,
-            time: session.metadata.time, 
-            persons: session.metadata.persons,
-            price: session.metadata.price,
-            prepayment: session.metadata.prepayment
-        })
-    }catch(err){
-        res.status(500).json({error: 'Session not found'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+router.post('/confirm-booking', async (req, res) => {
+  const { sessionId } = req.body
+
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId)
+
+    if (session.payment_status !== 'paid') {
+      return res.status(400).json({ message: 'Payment not completed' })
     }
+
+    const existing = await Bookings.findOne({ stripeSessionId: sessionId })
+    if (existing) {
+      return res.json(existing)
+    }
+
+    const booking = await Bookings.create({
+      name: session.metadata.name,
+      email:session.metadata.email,
+      phone: session.metadata.phone,
+      title: session.metadata.title,
+      date: session.metadata.date,
+      time: session.metadata.time, 
+      persons: session.metadata.persons,
+      price: session.metadata.price,
+      prepayment: session.metadata.prepayment
+    })
+    console.log(booking)
+
+    res.json(booking)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: 'Server error' })
+  }
 })
 
 

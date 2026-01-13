@@ -37,18 +37,20 @@ export const calendarController = async (req, res) => {
         status: { $ne: 'cancelled' }
       })
 
-      if(tourId === 'allDay'){
-        if(bookings.length > 0){
-          return res.json({disabled: true, availableTimes: []})
-        }
-        return res.json({disabled: false, availableTimes: ['13:00']})
-      }
+      const DAY_BLOCKING_TOURS = ['allDay', 'sunrise']
 
-      if(tourId === 'sunrise'){
-        if(bookings.length > 0){
-          return res.json({disabled: true, availableTimes: []})
+      if (DAY_BLOCKING_TOURS.includes(tourId)) {
+        if (bookings.length > 0) {
+          return res.json({
+            dayDisabled: true,
+            availableTimes: []
+          })
         }
-        return res.json({disabled: true, availableTimes:['06:00']})
+      
+        return res.json({
+          dayDisabled: false,
+          availableTimes: tourId === 'sunrise' ? ['06:00'] : ['13:00']
+        })
       }
       
       
@@ -75,6 +77,7 @@ export const calendarController = async (req, res) => {
     })
 
     const disabledDays = []
+    
     let current = new Date(start)
     while (current <= end) {
       const iso = current.toLocaleDateString('en-CA')
@@ -82,20 +85,27 @@ export const calendarController = async (req, res) => {
       const isWednesday = weekday === 3
       const isOpen = openWednesday.includes(iso)
       const count = bookingCount[iso] || 0
+      
+
       const fullyBooked = 
-        tourId === 'allDay'
+        (tourId === 'allDay' || tourId === 'sunrise')
         ? count > 0
         : count >= TIME_SLOTS.length
 
-    
+      const hasBlockingTour = bookings.some(
+        b =>
+          b.date === iso &&
+          (b.time === '06:00' || b.time === '13:00')
+      )
+      
 
-      if (fullyBooked || (isWednesday && !isOpen)) {
+      if (fullyBooked || hasBlockingTour || (isWednesday && !isOpen)) {
         disabledDays.push(iso)
       }
 
       current.setDate(current.getDate() + 1)
     }
-
+    console.log(disabledDays)
     return res.json({ disabledDays })
 
   } catch (error) {
