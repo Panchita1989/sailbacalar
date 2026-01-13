@@ -10,9 +10,11 @@ export default function ThankYou() {
     
     const[booking, setBooking] = useState(null)
 
+    const apiURL = import.meta.env.VITE_API_URL || 'https://sailbacalar-backend.onrender.com'
+
     useEffect(()=>{
         if(!sessionId) return
-        fetch(`http://localhost:5000/payment/session/${sessionId}`)
+        fetch(`${apiURL}/payment/session/${sessionId}`)
             .then(res => res.json())
             .then(data => {
                 setBooking(data)
