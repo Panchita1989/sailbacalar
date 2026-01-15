@@ -4,7 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-
+async function createDomain(){
+  const domain = await resend.domains.create({ name: 'sailbacalar.com', customReturnPath: 'outbound' });
+  console.log(domain)
+}
+createDomain()
 export const sendBookingEmails = async (booking) => {
     const { name, email, date, time, persons, price, prepayment,language } = booking;
     const pending = price - prepayment;
@@ -60,13 +64,15 @@ export const sendBookingEmails = async (booking) => {
   await resend.emails.send({
     from: `"Bacalar Tours" <${process.env.FROM_EMAIL}>`,
     to: email,
+    reply_to: process.env.ADMIN_EMAIL,
     subject: messages[language]?.subject || messages.en.subject,
     text: messages[language]?.customer || messages.en.customer,
   });
 
   await resend.emails.send({
-    from: `"Bacalar Tours" <${process.env.FROM_EMAIL}>`,
+    from: `Bacalar Tours <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
+    reply_to: process.env.ADMIN_EMAIL,
     subject: `New booking on ${date}`,
     text: `New Booking Received:
             Name: ${name}
