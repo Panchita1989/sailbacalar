@@ -1,18 +1,9 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const sendBookingEmails = async (booking) => {
     const { name, email, date, time, persons, price, prepayment,language } = booking;
@@ -66,15 +57,15 @@ export const sendBookingEmails = async (booking) => {
       };
 
 
-  await transporter.sendMail({
-    from: `"Bacalar Tours" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: `"Bacalar Tours" <${process.env.FROM_EMAIL}>`,
     to: email,
     subject: messages[language]?.subject || messages.en.subject,
     text: messages[language]?.customer || messages.en.customer,
   });
 
-  await transporter.sendMail({
-    from: `"Bacalar Tours" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: `"Bacalar Tours" <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
     subject: `New booking on ${date}`,
     text: `New Booking Received:

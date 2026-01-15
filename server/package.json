@@ -18,7 +18,7 @@
     "google-auth-library": "^10.5.0",
     "googleapis": "^170.0.0",
     "mongoose": "^9.1.2",
-    "nodemailer": "^7.0.12",
+    "resend": "^6.7.0",
     "stripe": "^20.1.2"
   },
   "devDependencies": {
