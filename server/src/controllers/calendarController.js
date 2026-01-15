@@ -11,7 +11,7 @@ export const calendarController = async (req, res) => {
     const end = new Date(today)
     end.setMonth(end.getMonth() + 3) // 3 Monate in die Zukunft
 
-    let TIME_SLOTS = ['06:00', '10:00', '15:00']
+    let TIME_SLOTS = ['10:00', '15:00']
 
     // 🔹 Fall 1: Uhrzeiten für ein ausgewähltes Datum
     if (date) {
