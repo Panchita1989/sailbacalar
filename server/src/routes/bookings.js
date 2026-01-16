@@ -25,9 +25,10 @@ router.post('/', async(req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         totalPrice: req.body.totalPrice,
-        prepayment: req.body.prepayment
+        prepayment: req.body.prepayment,
+        language: { type: String, default: 'en' }
 
-    })
+    },{ timestamps: true })
     try {
         const newBooking = await booking.save()
         res.status(201).json(newBooking)

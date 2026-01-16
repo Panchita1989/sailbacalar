@@ -25,6 +25,7 @@ export default function BookPrivat() {
     const [selectedDate, setSelectedDate] = useState(null)
     const [availableHours, setAvailableHours] = useState([])
     const [selectedHour, setSelectedHour] = useState(null)
+    
 
     useEffect(() => {
         const foundTour = tours.find(t => t.id === tourId)
@@ -186,7 +187,7 @@ export default function BookPrivat() {
                     </InformationCard>
                 </div>
                 <div className='text-center order-1 lg:order-2'>
-                    <h2 className='lg:flex-[1] mt-10'>{t('calendar.choose')}</h2>
+                    <h2 className='lg:flex-[1] mt-10'>{t('calendar.choose')}</h2>                     
                     <BookingCalendar 
                         setSelectedHour={setSelectedHour} 
                         setAvailableHours={setAvailableHours}  
