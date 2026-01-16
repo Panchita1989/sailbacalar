@@ -39,6 +39,9 @@ mongoose.connect(process.env.DATABASE_URL)
 
 
 //Routes
+app.get("/health", (req, res) => {
+  res.status(200).send("ok");
+});
 app.use('/bookings', bookingRoutes )
 app.use('/calendar', calendarRoutes)
 app.use('/payment', paymentRoutes)
