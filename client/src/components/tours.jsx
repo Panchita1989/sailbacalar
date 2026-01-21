@@ -61,7 +61,7 @@ export default function Tours() {
             {isPrivatExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
-                        className=" mt-2 mb-4 leading-none "
+                        className="text-lg mt-2 mb-4 leading-none "
                         {...getTogglePrivat()}
                     >
                        {t('buttons.more')}
@@ -128,7 +128,7 @@ export default function Tours() {
             {!isPrivatExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
-                        className="mt-2 mb-4 leading-none "
+                        className="text-lg mt-2 mb-4 leading-none "
                         {...getTogglePrivat()}
                     >
                         {t('buttons.less')}
@@ -145,7 +145,7 @@ export default function Tours() {
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
-                        className=" mt-2 mb-4 leading-none "
+                        className="text-lg mt-2 mb-4 leading-none "
                         {...getToggleInclusive()}
                     >
                        {t('buttons.more')}
@@ -210,7 +210,7 @@ export default function Tours() {
              {!isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
-                        className="mt-2 mb-4 leading-none "
+                        className="text-lg mt-2 mb-4 leading-none "
                         {...getToggleInclusive()}
                     >
                         {t('buttons.less')}
@@ -226,7 +226,7 @@ export default function Tours() {
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <Button
-                        className="mt-2 mb-4 leading-none "
+                        className="text-lg mt-2 mb-4 leading-none "
                         {...getToggleAllDay()}
                     >
                         {t('buttons.more')}
@@ -291,7 +291,7 @@ export default function Tours() {
              {!isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
-                        className='mt-2 mb-4 leading-none'
+                        className='text-lg mt-2 mb-4 leading-none'
                         {...getToggleAllDay()}
                     >
                         {t('buttons.less')}
@@ -307,7 +307,7 @@ export default function Tours() {
              {isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
-                        className='mt-2 mb-4 leading-none'
+                        className='text-lg mt-2 mb-4 leading-none'
                         {...getToggleRomantic()}
                     >
                         {t('buttons.more')}
@@ -372,7 +372,7 @@ export default function Tours() {
              {!isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
-                        className='mt-2 mb-4 leading-none'
+                        className='text-lg mt-2 mb-4 leading-none'
                         {...getToggleRomantic()}
                     >
                         {t('buttons.less')}
@@ -388,7 +388,7 @@ export default function Tours() {
              {isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
-                        className='mt-2 mb-4 leading-none'
+                        className='text-lg mt-2 mb-4 leading-none'
                         {...getToggleSunrise()}
                     >
                         {t('buttons.more')}
@@ -453,7 +453,7 @@ export default function Tours() {
              {!isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
-                        className='mt-2 mb-4 leading-none'
+                        className='text-lg mt-2 mb-4 leading-none'
                         {...getToggleSunrise()}
                     >
                         {t('buttons.less')}
