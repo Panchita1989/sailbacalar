@@ -132,7 +132,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
             <p className='text-lg'>{t('bookingForm.date')}: {formatDate(selectedDate)}</p> 
             <p className='text-lg'>{t('bookingForm.time')}: {`${timeLabel}`}</p>
             { tourId !== 'romantic' &&
-            <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='border-1'>
+            <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='text-lg border-1'>
                 <option disabled selected value="">{t('bookingForm.selectExtraPerson')}</option>
                 <option value="1" >1 Person (+ {extraPerson}p.p)</option>
                 <option value="2">2 Person (+ {extraPerson}p.p)</option>
