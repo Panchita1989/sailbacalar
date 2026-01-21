@@ -14,14 +14,14 @@ export default function InformationCard({title, children}){
     return(
         <section className='border-b border-neutral-300 pb-3'>
             <div className='flex justify-between my-3 items-center'>
-                <h3 className='text-md md:text-xl'>{title}</h3>
+                <h3 className='text-lg md:text-xl'>{title}</h3>
                 {isInformationExpanded ? (
-                    <FontAwesomeIcon className='text-md md:text-xl outline-none focus:outline-none' icon={faChevronUp}  {...getToggleInfromation()}/>
+                    <FontAwesomeIcon className='text-lg md:text-xl outline-none focus:outline-none' icon={faChevronUp}  {...getToggleInfromation()}/>
                 ) : (
-                    <FontAwesomeIcon className='text-md md:text-xl outline-none focus:outline-none' icon={faChevronDown} {...getToggleInfromation()}/> 
+                    <FontAwesomeIcon className='text-lg md:text-xl outline-none focus:outline-none' icon={faChevronDown} {...getToggleInfromation()}/> 
                 )}
             </div>
-            <section className='mx-4' {...getCollapseInformation()}>
+            <section className='mx-4 text-lg' {...getCollapseInformation()}>
                 {children}                    
             </section>
         </section>

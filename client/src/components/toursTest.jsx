@@ -15,7 +15,7 @@ import { faCashApp } from "@fortawesome/free-brands-svg-icons"
 
 
 export default function ToursTest() {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     const{
         getCollapseProps: getCollapsePrivat, 
@@ -49,7 +49,7 @@ export default function ToursTest() {
 
     return(
         <>
-        <main className='m-10  text-center  '>
+        <main className='m-10  text-center'>
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <CardNew 

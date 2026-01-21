@@ -152,7 +152,7 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
             <p className='text-lg'>{t('bookingForm.requiredPrepayment')} ${`${prepayment}`} MXN</p>
 
 
-            <form onSubmit={makePayment} className='text-sm mt-5 flex flex-col items-start gap-3 w-full'>
+            <form onSubmit={makePayment} className='text-[18px] mt-5 flex flex-col items-start gap-3 w-full'>
                {t('bookingForm.contact')}
             <label htmlFor="name" className='text-sm'>{t('bookingForm.name')}</label>
             <input required type="text" id='name' placeholder={t('bookingForm.namePlaceholder')}className='border-1 rounded w-full' onChange={(e) => setName(e.target.value)}/>

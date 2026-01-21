@@ -48,8 +48,8 @@ export default function BookPrivat() {
     return(
         <section className='text-center p-10 xl:mx-60 rounded bg-neutral-300/20 '>
             <h1 className='mb-5 text-xl md:text-3xl text-center'>{t(`tours.${tour.id}.title`).toUpperCase()}</h1>
-            <h2>{t(`tours.${tour.id}.title`).toUpperCase()}</h2>
-            <h3>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | max {tour.maxPersons} {t('bookUI.persons')} | 30ft. Catamaran</h3>           
+            <h2 className='text-[15px]'>{t(`tours.${tour.id}.title`).toUpperCase()}</h2>
+            <h3 className='text-[14px]'>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | max {tour.maxPersons} {t('bookUI.persons')} | 30ft. Catamaran</h3>           
             <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
                 <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
                     <div className='text-center mt-10 '>
@@ -186,7 +186,7 @@ export default function BookPrivat() {
                         <p>{t('cancellations.thanks')}</p>
                     </InformationCard>
                 </div>
-                <div className='text-center order-1 lg:order-2'>
+                <div className='text-center text-[18px] order-1 lg:order-2'>
                     <h2 className='lg:flex-[1] mt-10'>{t('calendar.choose')}</h2>                     
                     <BookingCalendar 
                         setSelectedHour={setSelectedHour} 
