@@ -54,7 +54,7 @@ export default function ToursTest() {
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <CardNew 
                 tourId='classic'
-                img='./images/privat.webp' 
+                img='../images/gallery/us.webp' 
                 alt='privat boat tour' 
                 title={t('tours.classic.title')}
                 bookingPath= {`/bookPrivat/classic`}  

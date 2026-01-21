@@ -53,7 +53,7 @@ export default function Tours() {
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <Card 
-                img='./images/privat.webp' 
+                img='./images/gallery/us.webp' 
                 alt='privat boat tour' 
                 title={t('tours.classic.title')}
                 bookingPath='/bookPrivat' 
