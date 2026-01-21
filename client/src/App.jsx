@@ -18,14 +18,6 @@ import GoogleAdsPageView from './components/googleAdsPageView.jsx'
 
 function App() {
 
-  const {pathname} = useLocation()
-  
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-
   return(
     <>
       <Header />

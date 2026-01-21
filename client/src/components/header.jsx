@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SideNav from './sideNav.jsx';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,13 +18,13 @@ export default function Header() {
     <header 
       className= 'flex text-xl w-full z-20 items-center h-20 sticky top-0 justify-between '
     >
-          <Link to="/" onClick={onClose}>
-            <img
-              className="h-20 rounded ml-5"
-              src="images/logoNew.png"
-              alt="sail bacalar"
-            />
-          </Link>
+        <Link to="/" onClick={onClose}>
+          <img
+            className="h-20 rounded ml-5"
+            src='/images/logoNew.png'
+            alt="sail bacalar"
+          />
+        </Link>
         
         {!visible && 
         <div onClick={toggleSideBar} className="mr-5 cursor-pointer">

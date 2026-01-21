@@ -41,7 +41,6 @@ export default function BookPrivat() {
     const handleSelectHour = (time) => {
         setSelectedHour(time)
     }
-    console.log(selectedHour)
    
 
 
