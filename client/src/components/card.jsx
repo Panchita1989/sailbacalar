@@ -17,7 +17,17 @@ export default function CardNew({ img, alt, title, children, iframe, images, sho
             {iframe ? (
                 iframe
             ) : img ? (
-                <img src={img} alt={alt || title} className='lg:max-h-80 md:max-h-150' />
+            <img
+                src={img.src || img}
+                srcSet={img.srcSet}
+                sizes={img.sizes || '(max-width: 768px) 100vw, 385px'}
+                alt={alt || title}
+                loading="lazy"
+                decoding="async"
+                width="385"
+                height="569"
+                className="lg:max-h-80 md:max-h-150 object-cover"
+            />
             ) : <Gallery images={images} />}
 
             {!titleAboveImage && <h2 className='mt-4 mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}

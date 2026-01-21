@@ -31,8 +31,7 @@ function App() {
       <Header />
       <GoogleAdsPageView />
       <Routes >
-        <Route path='/' element={<Banner/>} />
-        <Route path='/tours' element={<Tours />} />
+        <Route path='/' element={<Tours/>} />
         <Route path='/location' element={<Location />} />
         <Route path='/bookPrivat/:tourId' element={<BookPrivat />} />
         <Route path='/bookingForm' element={<BookingForm />} />
