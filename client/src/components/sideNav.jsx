@@ -34,7 +34,7 @@ const SideNav = ({visible, onClose}) => {
                     </li>
                 })}
                     <a href='https://www.instagram.com/sail.bacalar/' target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Instagram</li></a>
-                    <a href="https://wa.me/9831551313" target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >{t('sideNav.book')}</li></a>
+                    <a href="https://wa.me/9831551313" target='blank'><li className='active:bg-teal-950 active:text-neutral-300 xl:hover:bg-teal-950 xl:hover:text-neutral-300 rounded p-2 transition-colors' >Whatsapp</li></a>
                 </ul> 
                 <div className="mt-6 text-center pt-4 text-sm">
                     <div className="mt-6 text-sm flex justify-center space-x-4">

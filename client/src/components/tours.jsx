@@ -49,14 +49,15 @@ export default function Tours() {
 
     return(
         <>
-        <main className='m-10  text-center  '>
+        <main className='m-10  text-center'>
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <Card 
-                img='./images/gallery/us.webp' 
+                tourId='classic'
+                img='../images/gallery/us.webp' 
                 alt='privat boat tour' 
                 title={t('tours.classic.title')}
-                bookingPath='/bookPrivat' 
+                bookingPath= {`/bookPrivat/classic`}  
             >
             {isPrivatExpanded ? '' : (
                 <div className="flex justify-center">
@@ -138,10 +139,11 @@ export default function Tours() {
             
             </Card> 
              <Card 
+                tourId='allInclusive'
                 img='./images/allInclusive.webp' 
                 alt='boat tour' 
                 title={t('tours.allInclusive.title')} 
-                bookingPath='/bookPrivat' >
+                bookingPath={`/bookPrivat/allInclusive`}  >
              {isInclusiveExpanded ? '' : (
                 <div className="flex justify-center">
                     <button 
@@ -219,10 +221,11 @@ export default function Tours() {
             )}
              </Card>
              <Card 
+                tourId="allDay"
                 img='./images/allDay.webp' 
                 alt='boat tour' 
                 title={t('tours.allDay.title')} 
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/allDay`} >
              {isAllDayExpanded ? '' : (
                 <div className='flex justify-center'>
                     <Button
@@ -300,10 +303,11 @@ export default function Tours() {
              )}
              </Card>
              <Card 
+                tourId="romantic"
                 img='./images/romantic.webp' 
                 alt='boat tour' 
                 title={t('tours.romantic.title')}
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/romantic`} >
              {isRomanticExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
@@ -381,10 +385,11 @@ export default function Tours() {
              )}
              </Card>
              <Card 
+                tourId='sunrise'
                 img='./images/sunrise.webp' 
                 alt='boat tour' 
                 title={t('tours.sunrise.title')}
-                bookingPath='/bookPrivat'>
+                bookingPath={`/bookPrivat/sunrise`} >
              {isSunriseExpanded ? '' : (
                 <div className='flex justify-center'>
                     <button
