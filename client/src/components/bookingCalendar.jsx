@@ -15,7 +15,7 @@ export default function BookingCalendar({
     
     const today= new Date()
     const maxDate= new Date()
-    maxDate.setMonth(maxDate.getMonth() + 3)
+    maxDate.setMonth(maxDate.getMonth()+6)
 
     const handleChangeDate = (e) => {
         setSelectedHour(null)
