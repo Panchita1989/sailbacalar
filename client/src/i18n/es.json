@@ -269,7 +269,8 @@
     "title": "Tu Reserva",
     "date": "Fecha",
     "time": "Hora",
-    "selectExtraPerson": "selecciona la cantidad de personas",
+    "defaultPersons": "El tour comienza con 2 personas por defecto. Puedes añadir personas adicionales si es necesario.",
+    "selectExtraPerson": "selecciona la cantidad de personas extras",
     "amountPersons": "Cantidad de personas:",
     "requiredPrepayment": "Pago anticipado requerido:",
     "contact": "Datos de contacto",
@@ -279,6 +280,19 @@
     "emailPlaceholder": "Enter Email",
     "phone": "Phone",
     "phonePlaceholder": "Enter Phone"
+},
+"thankYouPage": {
+  "title": "Gracias,",
+  "confirmed": "Tu reserva ha sido confirmada 🎉",
+  "date": "Fecha",
+  "time": "Hora",
+  "persons": "Personas",
+  "total": "Precio total",
+  "prepayment": "Pago anticipado",
+  "pending": "Pendiente",
+  "contact": "Se te ha enviado un correo de confirmación. Para cualquier otra pregunta, por favor contáctanos en",
+  "back": "Volver al inicio"
+
 }
 
 

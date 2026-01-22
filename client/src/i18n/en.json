@@ -8,7 +8,7 @@
         "ageLabel": "Age",
         "age": "90 years and younger",
         "persons": "people",
-        "activity": "Activity Details"       
+        "activity": "Activity Details"      
     },
     "additional":{
         "title": "Additional Information",
@@ -271,7 +271,8 @@
             "title": "Your Booking",
             "date": "Date",
             "time": "Time",
-            "selectExtraPerson": "select amount of Persons",
+            "defaultPersons": "The Tour starts with 2 people by default. You can add extra persons if needed." ,
+            "selectExtraPerson": "select amount of extra Persons",
             "amountPersons": "Amount of Persons:",
             "requiredPrepayment": "Requiered Prepayment:",
             "contact": "Contact Details",
@@ -281,6 +282,18 @@
             "emailPlaceholder": "Enter Email",
             "phone": "Phone",
             "phonePlaceholder": "Enter Phone"
+        },
+        "thankYouPage":{
+            "title": "Thank You,",
+            "confirmed": "Your booking has been confirmed 🎉",
+            "date": "Date",
+            "time": "Time",
+            "persons": "Persons",
+            "total": "Total Price",
+            "prepayment": "Prepayment",
+            "pending": "Pending",
+            "contact": "A confirmation email has been sent to you. For any further questions, please contact us on",
+            "back": "Back to Home"
         }
     
 }

@@ -132,21 +132,24 @@ export default function BookingForm({selectedDate, selectedHour, title, basePric
             <p className='text-lg'>{t('bookingForm.date')}: {formatDate(selectedDate)}</p> 
             <p className='text-lg'>{t('bookingForm.time')}: {`${timeLabel}`}</p>
             { tourId !== 'romantic' &&
+            <>
+            <p>{t('bookingForm.defaultPersons')}</p>
             <select select name="extraPerson" id="extraPerson" onChange={handleSelect} className='text-lg border-1'>
                 <option disabled selected value="">{t('bookingForm.selectExtraPerson')}</option>
-                <option value="1" >1 Person (+ {extraPerson}p.p)</option>
-                <option value="2">2 Person (+ {extraPerson}p.p)</option>
-                <option value="3">3 Person (+ {extraPerson}p.p)</option>
-                <option value="4">4 Person (+ {extraPerson}p.p)</option>
-                <option value="5">5 Person (+ {extraPerson}p.p)</option>
-                <option value="6">6 Person (+ {extraPerson}p.p)</option>
-                <option value="7">7 Person (+ {extraPerson}p.p)</option>
-                <option value="8">8 Person (+ {extraPerson}p.p)</option>
-                <option value="9">9 Person (+ {extraPerson}p.p)</option>
-                <option value="10">10 Person (+ {extraPerson}p.p)</option>
-                <option value="11">11 Person (+ {extraPerson}p.p)</option>
-                <option value="12">12 Person (+ {extraPerson}p.p)</option>
-            </select>}
+                <option value="1" >+1 Person (+ {extraPerson}p.p)</option>
+                <option value="2">+2 Person (+ {extraPerson}p.p)</option>
+                <option value="3">+3 Person (+ {extraPerson}p.p)</option>
+                <option value="4">+4 Person (+ {extraPerson}p.p)</option>
+                <option value="5">+5 Person (+ {extraPerson}p.p)</option>
+                <option value="6">+6 Person (+ {extraPerson}p.p)</option>
+                <option value="7">+7 Person (+ {extraPerson}p.p)</option>
+                <option value="8">+8 Person (+ {extraPerson}p.p)</option>
+                <option value="9">+9 Person (+ {extraPerson}p.p)</option>
+                <option value="10">+10 Person (+ {extraPerson}p.p)</option>
+                <option value="11">+11 Person (+ {extraPerson}p.p)</option>
+                <option value="12">+12 Person (+ {extraPerson}p.p)</option>
+            </select>
+            </>}
             <p className='text-lg mt-2'>{t('bookingForm.amountPersons')} {`${persons}`}</p>
             <p className='text-lg'>Total: {`${price}`} MXN</p>
             <p className='text-lg'>{t('bookingForm.requiredPrepayment')} ${`${prepayment}`} MXN</p>
