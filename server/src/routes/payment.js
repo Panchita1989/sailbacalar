@@ -10,7 +10,7 @@ const Bookings = bookingSchema
 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET)
-console.log('STRIPE SECRET USED:', process.env.STRIPE_SECRET)
+
 
 const router = express.Router(); 
 
