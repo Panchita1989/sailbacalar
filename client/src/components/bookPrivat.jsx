@@ -49,8 +49,8 @@ export default function BookPrivat() {
             <h1 className='mb-5 text-xl md:text-3xl text-center'>{t(`tours.${tour.id}.title`).toUpperCase()}</h1>
             <h2 className='text-[15px]'>{t(`tours.${tour.id}.title`).toUpperCase()}</h2>
             <h3 className='text-[14px]'>{t('bookUI.start')} {tour.basePrice} | {t('labels.durationLabel')} {tour.duration}h | max {tour.maxPersons} {t('bookUI.persons')} | 30ft. Catamaran</h3>           
-            <section className='flex flex-col lg:flex-row lg:justify-center lg:items-start items-center md:gap-10'>
-                <div className='lg:flex-[2] lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1'>
+            <section className="flex flex-col lg:flex-row items-start gap-10">
+                <div className="w-full lg:w-2/3 lg:border-r border-neutral-300 pr-5 mx-2 order-2 lg:order-1">
                     <div className='text-center mt-10 '>
                         <img src="/images/pakal.png" alt="laguna bacalar" className='max-h-100 my-5'/>
                     </div>
@@ -185,8 +185,8 @@ export default function BookPrivat() {
                         <p>{t('cancellations.thanks')}</p>
                     </InformationCard>
                 </div>
-                <div className='text-center text-[18px] order-1 lg:order-2'>
-                    <h2 className='lg:flex-[1] mt-10'>{t('calendar.choose')}</h2>                     
+                <div className="w-full lg:w-1/3 text-[18px] order-1 lg:order-2">
+                    <h2 className=''>{t('calendar.choose')}</h2>                     
                     <BookingCalendar 
                         setSelectedHour={setSelectedHour} 
                         setAvailableHours={setAvailableHours}  

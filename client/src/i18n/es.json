@@ -270,7 +270,9 @@
     "date": "Fecha",
     "time": "Hora",
     "defaultPersons": "El tour comienza con 2 personas por defecto. Puedes añadir personas adicionales si es necesario.",
+    "kids" : "Los niños de hasta 10 años (inclusive) pagan el 50% del precio de adulto; a partir de los 11 años se aplica el precio completo.",
     "selectExtraPerson": "selecciona la cantidad de personas extras",
+    "selectExtraKid": "selecciona la cantidad de niños extras",
     "amountPersons": "Cantidad de personas:",
     "requiredPrepayment": "Pago anticipado requerido:",
     "contact": "Datos de contacto",
@@ -279,7 +281,8 @@
     "email": "Email",
     "emailPlaceholder": "Enter Email",
     "phone": "Phone",
-    "phonePlaceholder": "Enter Phone"
+    "phonePlaceholder": "Enter Phone",
+    "error": "Lo sentimos, el número máximo de personas es 14."
 },
 "thankYouPage": {
   "title": "Gracias,",

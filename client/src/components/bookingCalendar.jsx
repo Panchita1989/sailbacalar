@@ -54,7 +54,7 @@ export default function BookingCalendar({
         <>
         { loading ? <p>Loading... </p> :
         <Calendar
-            className='max-w-fit mt-5 '
+            className='booking-calendar mt-5'
             minDate={today}
             maxDate={maxDate}
             onChange={handleChangeDate}

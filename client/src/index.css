@@ -179,3 +179,76 @@ body.home .footer {
 .beaver-widget_review-footer{
   background-color: rgba(255, 255, 255, 0.8) !important;
 }
+/* Wrapper */
+.booking-calendar {
+  width: 100%;
+  max-width: 320px;
+  background: #fcfafa !important; /* neutral-200 */
+  border-radius: 1.25rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: inherit;
+}
+
+/* Navigation (month + arrows) */
+.booking-calendar .react-calendar__navigation button {
+  border-radius: 0.5rem;
+  color: #111827;
+}
+
+/* Weekday labels */
+.booking-calendar .react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Day tiles */
+.booking-calendar .react-calendar__tile {
+  border-radius: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+/* Hover */
+.booking-calendar .react-calendar__tile:enabled:hover {
+  background: #e5e7eb; /* neutral-300 */
+}
+
+/* Today */
+.booking-calendar .react-calendar__tile--now {
+  background: #e5e7eb; /* neutral-300 */
+  border-radius: 0.75rem;
+}
+
+/* Selected day */
+.booking-calendar .react-calendar__tile--active {
+  background: #0f172a !important; /* dark neutral */
+  color: #d1d5db; /* neutral-300 */
+  border-radius: 0.75rem;
+}
+
+/* Selected weekend */
+.booking-calendar
+.react-calendar__tile--active.react-calendar__month-view__days__day--weekend {
+  color: #d1d5db !important;
+}
+
+/* Disabled days = dashed look */
+.booking-calendar .react-calendar__tile:disabled {
+  background: transparent;
+  color: #9ca3af; /* neutral-400 */
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  cursor: not-allowed;
+}
+
+/* prevent hover effect on disabled */
+.booking-calendar .react-calendar__tile:disabled:hover {
+  background: transparent;
+}
+
+/* Remove red weekends */
+.booking-calendar .react-calendar__month-view__days__day--weekend {
+  color: inherit !important;
+}
