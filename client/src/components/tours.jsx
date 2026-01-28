@@ -50,7 +50,7 @@ export default function Tours() {
     return(
         <>
         <main className='m-10  text-center'>
-            <section className='sail lg:m-20 mb-20 rounded bg-neutral-300/20 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-10'>
+            <section className='sail lg:m-20 mb-5 rounded bg-neutral-300/20 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-10'>
                 <h2 className='xl:text-8xl text-2xl xl:w-1/2'>Sail With Us</h2>
                 <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl text-lg xl:px-5">
                 <p className=''>
