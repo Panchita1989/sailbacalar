@@ -14,6 +14,34 @@ export default function Gallery({images}){
 
     const [isFullscreen, setIsFullscreen] = useState(false)
 
+    const [touchStartX, setTouchStartX] = useState(null);
+    const [touchEndX, setTouchEndX] = useState(null);
+
+    function handleTouchStart(e) {
+      setTouchStartX(e.targetTouches[0].clientX);
+    }
+
+    function handleTouchMove(e) {
+      setTouchEndX(e.targetTouches[0].clientX);
+    }
+
+    function handleTouchEnd() {
+      if (!touchStartX || !touchEndX) return;
+
+      const distance = touchStartX - touchEndX;
+
+      if (distance > 50) {
+        next(); 
+      }
+
+      if (distance < -50) {
+        prev(); 
+      }
+
+      setTouchStartX(null);
+      setTouchEndX(null);
+    }
+
     
     useEffect(()=>{
         const preloadNext = new Image()
@@ -37,7 +65,14 @@ export default function Gallery({images}){
 
     return(
         <section className="w-full h-full flex flex-col justify-center items-center gap-4">
-            <img src={currentImage.url} alt={currentImage.alt} onClick={() => setIsFullscreen(true)} className='max-h-[400px] md:max-h-100 object-contain' />
+            <img 
+                src={currentImage.url} 
+                alt={currentImage.alt} 
+                onClick={() => setIsFullscreen(true)}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd} 
+                className='max-h-[400px] md:max-h-100 object-contain' />
             
             {isFullscreen && (
             <div
@@ -52,6 +87,9 @@ export default function Gallery({images}){
                     className="max-h-full max-w-full object-contain cursor-zoom-in"
                     draggable={false}
                     onClick={(e) => e.stopPropagation()}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd} 
                     />
                 </div>
 
