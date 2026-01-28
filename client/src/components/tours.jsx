@@ -50,6 +50,14 @@ export default function Tours() {
     return(
         <>
         <main className='m-10  text-center'>
+            <section className='sail lg:m-20 mb-20 rounded bg-neutral-300/20 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-10'>
+                <h2 className='xl:text-8xl text-2xl xl:w-1/2'>Sail With Us</h2>
+                <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl text-lg xl:px-5">
+                <p className=''>
+                    {t('sail.description')}
+                </p> 
+                </div>
+            </section>
             <h1 className='text-3xl font-semibold '>TOURS</h1>
             <section className='flex flex-col items-center md:flex-row justify-center md:items-start  md:flex-wrap md:gap-10'>
             <Card 
@@ -468,18 +476,8 @@ export default function Tours() {
              </Card>
              
             </section>
-            <section className='sail text-neutral-100 flex flex-col md:font-normal gap-2 items-center justify-center rounded xl:flex-row px-10'>
-                <h2 className='xl:text-8xl text-xl xl:w-1/2'>Sail With Us</h2>
-                <div className="xl:w-1/2 xl:px-5 flex flex-col gap-2 xl:text-xl text-lg xl:px-5">
-                <p className=''>
-                    {t('sail.description')}
-                </p> <p className='hidden md:block'>
-                    {t('sail.descriptionHidden')}
-                    </p>
-                </div>
-            </section>
             <section className='flex justify-center'>                
-                <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false} />               
+                <Card title='The Vibe' images={fotoList} titleAboveImage  showButton={false} description='Sail, enjoy and get inspired' />               
             </section>           
         </main>  
         <Reviews /> 

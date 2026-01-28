@@ -5,7 +5,7 @@ import Button from './button.jsx'
 import Gallery from './gallery.jsx'
 
 
-export default function Card({ img, alt, title, tourId, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath}) {
+export default function Card({ img, alt, title, tourId, children, iframe, images, showButton = true, titleAboveImage = false, bookingPath, description}) {
     
     const navigate = useNavigate()
     const{ t } = useTranslation()
@@ -21,7 +21,12 @@ export default function Card({ img, alt, title, tourId, children, iframe, images
     return (
         <section className={titleAboveImage ? 'mt-5 mb-5 p-3 flex flex-col items-center rounded bg-neutral-300/20 ' : 'mt-5 mb-5 p-3 md:w-1/4 flex flex-col items-center rounded bg-neutral-300/20'}>
             
-            {titleAboveImage && <h2 className='mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>}
+            {titleAboveImage &&
+            <>
+                <h2 className='mb-2 text-2xl font-semibold text-center'>{title.toUpperCase()}</h2>
+                <p className='mb-2 text-lg'>{description}</p>
+            </>
+            }
 
             {iframe ? (
                 iframe
