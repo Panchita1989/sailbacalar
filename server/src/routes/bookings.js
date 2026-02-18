@@ -4,16 +4,37 @@ import bookingSchema from '../models/bookings.js'
 const router = express.Router()
 const Bookings = bookingSchema
 
-router.get('/', async(req, res) => {
-    try {
-        const bookings = await Bookings.find()
-        res.json(bookings)
-        res.send('Alle Bookings')
-    } catch (err) {
-        res.status(500).json({messsage: err.message})
-        console.error(err)
-    }
-    
+router.get("/", async (req, res) => {
+  try {
+    const bookings = await Bookings.find().sort({ date: 1, time: 1 })
+    res.json(bookings)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: err.message })
+  }
+})
+
+router.post("/manual", async (req, res) => {
+  try {
+    const booking = new Bookings({
+      title: req.body.title,
+      date: req.body.date,
+      time: req.body.time,
+      persons: req.body.persons,
+      name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+      price: req.body.price,
+      prepayment: req.body.prepayment || 0,
+      status: req.body.status || "pending",
+    })
+
+    const savedBooking = await booking.save()
+    res.status(201).json(savedBooking)
+  } catch (err) {
+    console.error("Manual booking error:", err)
+    res.status(400).json({ message: err.message })
+  }
 })
 
 router.post('/', async(req, res) => {
@@ -37,5 +58,41 @@ router.post('/', async(req, res) => {
         console.error(err)
     }
 })
+
+router.delete("/:id", async (req, res) => {
+  try {
+    await Bookings.findByIdAndDelete(req.params.id)
+    res.json({ message: "Booking deleted" })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: err.message })
+  }
+})
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedBooking = await Bookings.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        date: req.body.date,
+        time: req.body.time,
+        persons: req.body.persons,
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        price: req.body.price,
+        prepayment: req.body.prepayment,
+        status: req.body.status
+      },
+      { new: true }
+    );
+
+    res.json(updatedBooking);
+  } catch (err) {
+    console.error("Update error:", err);
+    res.status(400).json({ message: err.message });
+  }
+});
+
 
 export default router
