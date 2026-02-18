@@ -12,6 +12,8 @@ import Payment from './components/payment.jsx'
 import ThankYou from './components/success.jsx'
 import CancelPage from './components/cancel.jsx'
 import GoogleAdsPageView from './components/googleAdsPageView.jsx'
+import Admin from './components/admin.jsx'
+import ManualBookingForm from './components/manualBookingForm.jsx'
 
 
 
@@ -29,6 +31,8 @@ function App() {
         <Route path='/payment' element={<Payment />} />
         <Route path='/success' element={<ThankYou />} />
         <Route path="/cancel" element={<CancelPage />} />
+        <Route path="/admin" element={<Admin/>} />
+        <Route path="/admin/add-tour" element={<ManualBookingForm />} />
       </Routes>
     </>
     
