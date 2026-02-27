@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; //
 import tours from "../data/tours"; // Pfad anpassen
 
 export default function ManualBookingForm() {
+  const navigate = useNavigate()
   const [selectedTourId, setSelectedTourId] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -35,6 +37,12 @@ export default function ManualBookingForm() {
     return;
   }
 
+  const token = localStorage.getItem("adminToken"); // 🔑 Token holen
+   if (!token) {
+    alert("You must be logged in as admin");
+    return;
+  }
+
   const booking = {
     tourId: selectedTour.id,
     title: selectedTour.title,
@@ -54,7 +62,10 @@ export default function ManualBookingForm() {
   try {
     const res = await fetch(`${apiURL}/bookings/manual`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json" ,
+        "Authorization": `Bearer ${token}`, 
+      },
       body: JSON.stringify(booking),
     });
 
@@ -67,6 +78,7 @@ export default function ManualBookingForm() {
     console.log("Saved booking:", data);
 
     alert("Tour added successfully ✅");
+    navigate("/admin"); // ✅ hier weiterleiten
 
   } catch (error) {
     console.error("Manual booking error:", error);

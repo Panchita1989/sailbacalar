@@ -5,6 +5,8 @@ export default function Admin() {
   const [tours, setTours] = useState([]);
   const [editingTour, setEditingTour] = useState(null);
 
+  const token = localStorage.getItem("adminToken");
+
   const handleUpdate = async (e) => {
   e.preventDefault();
 
@@ -14,6 +16,7 @@ export default function Admin() {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
     },
     body: JSON.stringify(editingTour),
       });
@@ -52,6 +55,9 @@ export default function Admin() {
         
       await fetch(`${apiURL}/bookings/${id}`, {
         method: "DELETE",
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
       });
     
       // aus State entfernen (ohne neu laden)

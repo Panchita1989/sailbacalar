@@ -1,5 +1,6 @@
 import express from 'express'
 import bookingSchema from '../models/bookings.js'
+import { verifyAdmin } from "../middleware/verifyAdmin.js";
 
 const router = express.Router()
 const Bookings = bookingSchema
@@ -14,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.post("/manual", async (req, res) => {
+router.post("/manual", verifyAdmin, async (req, res) => {
   try {
     const booking = new Bookings({
       title: req.body.title,
@@ -59,7 +60,7 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verifyAdmin, async (req, res) => {
   try {
     await Bookings.findByIdAndDelete(req.params.id)
     res.json({ message: "Booking deleted" })
@@ -68,7 +69,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: err.message })
   }
 })
-router.put("/:id", async (req, res) => {
+router.put("/:id",verifyAdmin, async (req, res) => {
   try {
     const updatedBooking = await Bookings.findByIdAndUpdate(
       req.params.id,

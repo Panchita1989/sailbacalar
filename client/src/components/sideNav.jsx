@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 const SideNav = ({visible, onClose}) => {
     const{ t, i18n }= useTranslation()
 
-    const navMenu = [{path: '/tours', label: 'Tours'}, {path: '/location', label: t('sideNav.location')}]
+    const navMenu = [{path: '/tours', label: 'Tours'}, {path: '/location', label: t('sideNav.location')}, {path: '/adminLogin', label: 'Admin'}]
     
     const changeLanguage = (lang) => {
     i18n.changeLanguage(lang)

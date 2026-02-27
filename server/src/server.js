@@ -5,6 +5,8 @@ import bookingRoutes from './routes/bookings.js'
 import calendarRoutes from './routes/calendar.js'
 import paymentRoutes from './routes/payment.js'
 import cors from 'cors'
+import adminAuthRoutes from "./routes/adminAuthRoutes.js";
+
 
 dotenv.config()
 
@@ -45,11 +47,14 @@ app.get("/health", (req, res) => {
 app.use('/bookings', bookingRoutes )
 app.use('/calendar', calendarRoutes)
 app.use('/payment', paymentRoutes)
+app.use("/admin", adminAuthRoutes)
 
 
 app.get('/', (req, res) => {
   res.send('Hello Node.js')
 })
+
+
 
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`)
