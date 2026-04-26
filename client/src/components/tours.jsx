@@ -196,7 +196,7 @@ export default function Tours() {
                             <FontAwesomeIcon className='text-2xl' icon={faCashApp} />
                             <div className='text-left'>
                                 <h4>{t('labels.pricesLabel')}</h4>
-                                <p>$6'300 MXN {t('labels.basePrice')}, $1'000 MXN {t('labels.extraPerson')}</p>
+                                <p>$7'000 MXN {t('labels.basePrice')}, $1'000 MXN {t('labels.extraPerson')}</p>
                             </div>
                         </div>
                     </li>

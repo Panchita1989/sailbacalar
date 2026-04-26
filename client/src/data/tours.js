@@ -25,7 +25,7 @@ const tours = [
     enjoying a selection of drinks and fresh snacks onboard. Discover Bacalar from a new perspective with a fully 
     personalized and carefree experience.`,
     idealFor: `Families, couples, and groups of friends seeking a relaxed experience with drinks and fresh snacks.`,
-    basePrice: `$6'300`,
+    basePrice: `$7'000`,
     extraPerson: 1000,
     stops: ['Pirats Chanel', 'Bird Island', 'Cenote Esmeralda', 'Cenote Negro'],
     included: ['Water', 'Sparkling Water', 'Beers', 'Soda', 'Tequila', 'Ron Bacardi', 'Juices', 'Guacamole', 'Ceviche', 'Mixed seasonal Fruits', 'Day Pass Asana Glamping (Bathroom and showers available)', 'Parking']
