@@ -32,6 +32,8 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
 
   const prepayment = price / 2;
 
+  const [customPrepayment, setCustomPrepayment] = useState(prepayment);
+
   const formatDate = (dateObj) => {
     return new Intl.DateTimeFormat(i18n.language === 'es' ? 'es-MX' : 'en-GB', {
       weekday: 'long',
@@ -64,6 +66,10 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
     }
   }, [adultCount, kidsCount]);
 
+  useEffect(() => {
+    setCustomPrepayment(prepayment);
+  }, [prepayment]);
+
   const handleSelect = (e) => {
     const { name, value } = e.target;
     const count = Number(value);
@@ -74,6 +80,8 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
 
   const makePayment = async (e) => {
     e.preventDefault();
+
+    if (customPrepayment < prepayment || customPrepayment > price) return
 
     const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/payment';
 
@@ -87,7 +95,7 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
       time: selectedHour,
       persons,
       price,
-      prepayment,
+      prepayment: customPrepayment,
       currency: 'mxn',
       language: i18n.language
     };
@@ -144,7 +152,22 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
       <div className="bg-gray-100 rounded-xl p-3">
         <p className="font-semibold">{persons} persons</p>
         <p className="font-semibold">Total: {price} MXN</p>
-        <p className="text-gray-600">Prepayment: {prepayment} MXN</p>
+        <p className="text-gray-600">
+          Prepayment: 
+          <input
+            type="number"
+            min={prepayment}
+            value={customPrepayment}
+            onChange={(e) => setCustomPrepayment(Number(e.target.value))}
+            className="border rounded-xl px-3 py-2 bg-white ml-2 w-32"
+          /> MXN
+        </p>
+         {customPrepayment < prepayment && (
+            <p className="text-sm text-amber-700 mt-1">Minimum prepayment is {prepayment} MXN</p>
+          )}
+          {customPrepayment > price && (
+            <p className="text-sm text-amber-700 mt-1">Prepayment cannot exceed the total of {price} MXN</p>
+          )}
       </div>
 
       <form onSubmit={makePayment} className="flex flex-col gap-3">
@@ -165,7 +188,7 @@ export default function BookingForm({ selectedDate, selectedHour, title, basePri
         />
 
         <button
-          disabled={error}
+          disabled={error|| customPrepayment < prepayment || customPrepayment > price}
           className={`rounded-xl py-4 text-lg font-semibold transition
             ${error
               ? "bg-gray-300 text-gray-500"
