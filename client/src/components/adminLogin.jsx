@@ -62,7 +62,7 @@ export default function AdminLogin() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2 text-sm text-gray-600"
+            className="absolute right-2 top-2 text-sm text-gray-600 cursor-pointer"
           >
             {showPassword ? "🙈" : "👁️"}
           </button>
