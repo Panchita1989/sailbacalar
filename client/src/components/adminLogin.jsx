@@ -62,13 +62,13 @@ export default function AdminLogin() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2 text-sm text-gray-600 cursor-pointer"
+            className="absolute right-2 top-2 text-sm text-gray-600"
           >
             {showPassword ? "🙈" : "👁️"}
           </button>
         </div>
 
-        <button className="bg-black text-white py-2 rounded">
+        <button className="bg-black text-white py-2 rounded cursor-pointer hover:text-gray-900">
           Login
         </button>
       </form>
