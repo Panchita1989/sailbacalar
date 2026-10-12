@@ -59,7 +59,8 @@ export default function BookingCalendar({
             maxDate={maxDate}
             onChange={handleChangeDate}
             value={selectedDate}
-            tileDisabled={({ date }) => (disabledDays || []).includes(date.toISOString().split('T')[0])}
+            tileDisabled={({ date }) => (disabledDays || []).includes(date.toLocaleDateString('en-CA'))}
+            //tileDisabled={({ date }) => (disabledDays || []).includes(date.toISOString().split('T')[0])}
 
             
         />}
