@@ -37,7 +37,7 @@ export default function Admin() {
     const res = await fetch(`${apiURL}/bookings`);
     const data = await res.json();
 
-    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Cancun" });
 
     const futureTours = data.filter((tour) => tour.date >= today);
 
